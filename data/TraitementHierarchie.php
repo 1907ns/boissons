@@ -1,11 +1,12 @@
 <?php
-
+//Tests des fonctions
 print_r(getBaseArbo());
 echo "<br/><br/>";
 print_r(getSousCategories("Fruit"));
 echo "<br/><br/>";
 print_r(getSurCategories("Jus de tomates"));
 
+//Fonction permettant de récupérer la/les base.s de l'arborescence des ingrédients
 function getBaseArbo(){
     $Hierarchie = array();
     $res = array();
@@ -21,6 +22,8 @@ function getBaseArbo(){
     return $res;
 }
 
+//Fonction permettant de récupérer la/les sous-catégorie.s d'un ingrédient
+// ** paramètre nomSource = nom de l'ingrédient dont on veut connaître la/les sous-catégorie.s
 function getSousCategories($nomSource){
     $Hierarchie = array();
     include 'Donnees.inc.php';
@@ -31,6 +34,9 @@ function getSousCategories($nomSource){
     return $res;
 }
 
+//Fonction permettant de récupérer les super-catégories chainées d'un ingrédient, un seul chemin est choisi de base
+// ** paramètre nomSource = nom de l'ingrédient dont on veut connaître les super-catégories
+// ***  à modifier si le chemin doit être défini par des paramètres extérieurs
 function getSurCategories($nomSource){
     $Hierarchie = array();
     include 'Donnees.inc.php';
