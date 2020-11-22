@@ -29,11 +29,11 @@
   2 => 
   array (
     'titre' => 'Aquarium',
-    'ingredients' => '1/5 de curaçao|1/5 de rhum blanc|1/5 de tequila|1/5 de martini dry|1/5 de sirop de sucre de canne',
+    'ingredients' => '1/5 de curacao|1/5 de rhum blanc|1/5 de tequila|1/5 de martini dry|1/5 de sirop de sucre de canne',
     'preparation' => 'Preparer le melange dans un recipient transparent, ressemblant le plus possible a un aquarium, si vous n\'en avez pas! Melanger. Ajouter des glaçons, et placer le tout au frigo. Decorer votre recipient, en y incorporant les elements de deco. L\'effet aquarium doit etre surprenant!Les proportions sont a adapter en fonction du nombre de personnes. Ce Boisson se boit normalement a la paille.',
     'index' => 
     array (
-      0 => 'Curaçao',
+      0 => 'Curacao',
       1 => 'Rhum blanc',
       2 => 'Tequila',
       3 => 'Martini',
@@ -197,12 +197,12 @@
   15 => 
   array (
     'titre' => 'Boisson Eau de mer',
-    'ingredients' => '6 bouteilles de mousseux|20 cl de curaçao|70 cl de triple sec|35 cl de sirop de citrons|35 cl de sirop d\'oranges|25 cl de sucre de canne',
+    'ingredients' => '6 bouteilles de mousseux|20 cl de curacao|70 cl de triple sec|35 cl de sirop de citrons|35 cl de sirop d\'oranges|25 cl de sucre de canne',
     'preparation' => 'Dans un grand recipient melanger le triple sec, le curacao, le pulco citron, le pulco orange et le sucre de canne. Ensuite, ajouter les bouteilles de mousseux bien fraîches. Servir aussitôt.',
     'index' => 
     array (
       0 => 'Vin effervescent',
-      1 => 'Curaçao',
+      1 => 'Curacao',
       2 => 'Triple sec',
       3 => 'Sirop de citrons',
       4 => 'Sirop d\'oranges',
@@ -690,12 +690,12 @@
   51 => 
   array (
     'titre' => 'Boisson exotique au fruit de la passion',
-    'ingredients' => '1 l de limonade|35 cl de sirop de curaçao|35 cl de sirop de fruit de la passion|20 cl de jus de citron|5 glaçons',
-    'preparation' => 'Dans un shaker, melanger le sirop de curaçao, le sirop de fruit de la passion et le jus de citron. Bien secouer puis verser le melange obtenu dans un recipient. Incorporer le litre de limonade et bien melanger. Ajouter les 5 glaçons et servir.',
+    'ingredients' => '1 l de limonade|35 cl de sirop de curacao|35 cl de sirop de fruit de la passion|20 cl de jus de citron|5 glaçons',
+    'preparation' => 'Dans un shaker, melanger le sirop de curacao, le sirop de fruit de la passion et le jus de citron. Bien secouer puis verser le melange obtenu dans un recipient. Incorporer le litre de limonade et bien melanger. Ajouter les 5 glaçons et servir.',
     'index' => 
     array (
       0 => 'Limonade',
-      1 => 'Curaçao',
+      1 => 'Curacao',
       2 => 'Sirop de fruit de la passion',
       3 => 'Jus de citron',
       4 => 'Glaçon',
@@ -1094,12 +1094,12 @@
   81 => 
   array (
     'titre' => 'Le baiser de la Schtroumpfette',
-    'ingredients' => '2cl de vodka|2cl de curaçao|5cl de limonade|5cl de jus de banane',
+    'ingredients' => '2cl de vodka|2cl de curacao|5cl de limonade|5cl de jus de banane',
     'preparation' => 'Verser tous les ingredients dans l\'ordre dans un verre a martini ou a Boisson et servir tres tres frais!',
     'index' => 
     array (
       0 => 'Vodka',
-      1 => 'Curaçao',
+      1 => 'Curacao',
       2 => 'Limonade',
       3 => 'Jus de bananes',
     ),
@@ -1268,7 +1268,7 @@
   93 => 
   array (
     'titre' => 'Punch-sangria de pasteque',
-    'ingredients' => '1 pasteque de 2 kg|1 orange|2 peches|6 fraises|10 feuilles de menthe|1 l de vin blanc au choix|1/2 cuillere a cafe de gingembre frais ou en poudre|curaçao ou rhum',
+    'ingredients' => '1 pasteque de 2 kg|1 orange|2 peches|6 fraises|10 feuilles de menthe|1 l de vin blanc au choix|1/2 cuillere a cafe de gingembre frais ou en poudre|curacao ou rhum',
     'preparation' => 'Laver la pasteque. Decouper un &quot;couvercle&quot;, vider la pasteque avec une cuillere {si possible creer des petites boules de la grosseur de billes} Laisser 1/2 cm de chair pour ne pas crever la peau. Refroidir la pasteque vide 1 bonne heure. Reduire la moitie de la pulpe retiree en jus, y ajouter : 1 litre de vin blanc les feuilles de menthe + l orange avec sa peau et les peches en fines tranches, laisser macerer 3 heures au refrigerateur dans un recipient ferme. Au moment de servir ce Boisson, verser dans la pasteque avec quelques feuilles de menthe et des petites billes de pasteque.',
     'index' => 
     array (
@@ -1299,14 +1299,14 @@
   95 => 
   array (
     'titre' => 'Rainbow',
-    'ingredients' => '10 cl de jus d\'orange|3 cl de vodka|3 cl de sirop de grenadine|2 cl de curaçao bleu',
-    'preparation' => 'Recette pour 10 verres. versez la grenadine dans le shaker, remplissez le shaker de glaçons aux 2/3, versez la vodka, versez le jus d\'orange. Finissez de remplir le shaker de glaçons. Versez delicatement le curaçao, de melangez pas, versez en filtrant dans tous les verres alignes sans vous arreter. Servir dans des verres de type &quot;shooter&quot;. La couleur du contenu de chaque verre sera differente en creant un tres bel effet visuel degrade de type arc-en-ciel d\'un verre a l\'autre. Appele aussi Rainbow Shot, ou Double Rainbow.',
+    'ingredients' => '10 cl de jus d\'orange|3 cl de vodka|3 cl de sirop de grenadine|2 cl de curacao bleu',
+    'preparation' => 'Recette pour 10 verres. versez la grenadine dans le shaker, remplissez le shaker de glaçons aux 2/3, versez la vodka, versez le jus d\'orange. Finissez de remplir le shaker de glaçons. Versez delicatement le curacao, de melangez pas, versez en filtrant dans tous les verres alignes sans vous arreter. Servir dans des verres de type &quot;shooter&quot;. La couleur du contenu de chaque verre sera differente en creant un tres bel effet visuel degrade de type arc-en-ciel d\'un verre a l\'autre. Appele aussi Rainbow Shot, ou Double Rainbow.',
     'index' => 
     array (
       0 => 'Jus d\'orange',
       1 => 'Vodka',
       2 => 'Sirop de grenadine',
-      3 => 'Curaçao bleu',
+      3 => 'Curacao bleu',
     ),
   ),
   96 => 
@@ -2557,7 +2557,7 @@ $Hierarchie=array (
   array (
     'sous-categorie' => 
     array (
-      0 => 'Curaçao',
+      0 => 'Curacao',
       1 => 'Grand marnier',
       2 => 'Triple sec',
     ),
@@ -2566,7 +2566,7 @@ $Hierarchie=array (
       0 => 'Liqueur d\'agrume',
     ),
   ),
-  'Curaçao' => 
+  'Curacao' => 
   array (
     'super-categorie' => 
     array (
@@ -2574,14 +2574,14 @@ $Hierarchie=array (
     ),
     'sous-categorie' => 
     array (
-      0 => 'Curaçao bleu',
+      0 => 'Curacao bleu',
     ),
   ),
-  'Curaçao bleu' => 
+  'Curacao bleu' => 
   array (
     'super-categorie' => 
     array (
-      0 => 'Curaçao',
+      0 => 'Curacao',
     ),
   ),
   'Eau' => 

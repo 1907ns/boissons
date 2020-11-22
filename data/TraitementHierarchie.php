@@ -19,9 +19,15 @@ if (isset($_POST['func'])){
                 $fail=false;
             }
             break;
-        case 'sup':
+        case 'sur':
             if (isset($_POST['var'])){
                 getSurCategories($_POST['var']);
+                $fail=false;
+            }
+            break;
+        case 'sup':
+            if (isset($_POST['var'])){
+                getSupCategories($_POST['var']);
                 $fail=false;
             }
             break;
@@ -30,7 +36,6 @@ if (isset($_POST['func'])){
         $res = array('fail');
         echo json_encode($res);
     }
-
 }
 
 //Fonction permettant de récupérer la/les base.s de l'arborescence des ingrédients
@@ -78,4 +83,15 @@ function getSurCategories($nomSource){
     //return $res;
     echo json_encode($res);
 }
-?>
+
+function getSupCategories($nomSource){
+    $Hierarchie = array();
+    include 'Donnees.inc.php';
+    $res = array();
+    if(isset($Hierarchie[$nomSource]['super-categorie']))
+        $res = $Hierarchie[$nomSource]['super-categorie'];
+    else
+        $res = array('false');
+    //return $res;
+    echo json_encode($res);
+}
