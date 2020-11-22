@@ -81,7 +81,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         </li>
                                         <li class="nav-item mr-lg-3 ">
                                             <form action="" class="nav-link scroll">
-                                                <input type="text" placeholder="Jus d'orange.." name="search">
+                                                <input type="text" placeholder="Jus d'orange.." class="form-control border" name="search">
                                                 <button type="submit" href="#"><i class="fa fa-search"></i></button>
                                             </form>
                                         </li>
@@ -202,13 +202,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="modal-body">
                     <form action="#" method="post">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Email</label>
-                            <input type="text" class="form-control border" placeholder="Enes Ayata" name="Name" id="recipient-name"
+                            <label for="pseudo" class="col-form-label">Pseudo</label>
+                            <input type="text" class="form-control border" placeholder="pseudotest" name="pseudo" id="pseudo"
                                 required="">
                         </div>
                         <div class="form-group">
                             <label for="password" class="col-form-label">Mot de passe</label>
-                            <input type="password" class="form-control border" placeholder="********" name="Password" id="password"
+                            <input type="password" class="form-control border" placeholder="********" name="password" id="password"
                                 required="">
                         </div>
                         <div class="right-w3l">
@@ -244,24 +244,69 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="modal-body">
                     <form action="#" method="post">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Pseudo</label>
-                            <input type="text" class="form-control border" placeholder="john mercy " name="Name" id="recipient-rname"
+                            <label for="pseudo" class="col-form-label">Pseudo</label>
+                            <input type="text" class="form-control border" placeholder="Enes88" name="pseudo" id="pseudo"
+                                   required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="nomuser" class="col-form-label">Nom</label>
+                            <input type="text" class="form-control border" placeholder="Ayata" name="nomuser" id="nomuser"
                                 required="">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-email" class="col-form-label">Email</label>
-                            <input type="email" class="form-control border" placeholder="username@email.com" name="Email"
-                                id="recipient-email" required="">
+                            <label for="prenomuser" class="col-form-label">Prénom</label>
+                            <input type="text" class="form-control border" placeholder="Enes" name="prenomuser" id="prenomuser"
+                                   required="">
                         </div>
+                        <div class="form-group">
+                            <label for="emailuser" class="col-form-label">Email</label>
+                            <input type="email" class="form-control border" placeholder="username@email.com" name="emailuser"
+                                id="emailuser" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="telephone" class="col-form-label">Numéro de tél.</label>
+                            <input type="tel" class="form-control border" placeholder="0123456789" name="telephone"
+                                   id="telephone" >
+                        </div>
+                        <div class="form-group">
+                            <label for="dnaissance" class="col-form-label">Date de naissance</label>
+                            <input type="date" class="form-control border" placeholder="********" name="dnaissance"
+                                   id="dnaissance" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="adresse" class="col-form-label">Adresse</label>
+                            <input type="text" class="form-control border" placeholder="19 rue des cerisiers" name="adresse"
+                                   id="adresse" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="cpville" class="col-form-label">CP </label>
+                            <input type="text" class="form-control border" placeholder="54000" name="cpville"
+                                   id="cpville" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="ville" class="col-form-label">Ville</label>
+                            <input type="text" class="form-control border" placeholder="Nancy" name="ville"
+                                   id="ville" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="sexe" class="col-form-label">Sexe:</label>
+
+                            <select name="sexe" id="sexe" class="form-control border">
+                                <option value="NF">Non défini</option>
+                                <option value="M">M</option>
+                                <option value="M">F</option>
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label for="password1" class="col-form-label">Mot de passe</label>
-                            <input type="password" class="form-control border" placeholder="********" name="Password" id="password1"
-                                required="">
+                            <input type="password" class="form-control border" placeholder="********" name="password1" id="password1"
+                                   required="">
                         </div>
                         <div class="form-group">
                             <label for="password2" class="col-form-label">Confirmer le mot de passe</label>
-                            <input type="password" class="form-control border" placeholder="********" name="Confirm Password"
-                                id="password2" required="">
+                            <input type="password" class="form-control border" placeholder="********" name="password2"
+                                   id="password2" required="">
                         </div>
                         <div class="right-w3l">
                             <input type="submit" class="form-control bg-theme text-white" value="Valider">
