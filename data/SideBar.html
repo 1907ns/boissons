@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests sidebar</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        let menusup = 0;
+        function load(){
+            let res = "";
+            $.ajax({
+                type:"POST",
+                url:"TraitementHierarchie.php",
+                data:{func:'base'},
+                success: function(ret){
+                    if(ret.includes('fail')){
+                        alert("Erreur de chargement de la sidebar")
+                    }else{
+                        ret = ret.replaceAll('"', '');
+                        ret = ret.replaceAll('[', '');
+                        ret = ret.replaceAll(']', '');
+                        let base = ret.split(',');
+                        for (let i = 0; i < base.length; i++) {
+                            res += '<li value="false"><span id = "' + base[i] + '"onclick="sousMenu(\'' + base[i] + '\')">' + base[i] + '</span></li>';
+                        }
+                        document.getElementById('sidebar').innerHTML = res;
+                    }
+                }
+            })
+        }
+        function sousMenu(nom){
+            let res="";
+            if(document.getElementById(nom).parentElement.value){
+                document.getElementById(nom).parentElement.innerHTML = '<li value="false"><span id = "' + nom + '"onclick="sousMenu(\'' + nom + '\')" value="false">' + nom + '</span></li>';
+            }else {
+                $.ajax({
+                    type: "POST",
+                    url: "TraitementHierarchie.php",
+                    data: {func: 'sub', var: nom},
+                    success: function (ret) {
+                        if (ret.includes('fail')) {
+                            alert("Erreur de chargement de sous-menu")
+                        } else {
+                            ret = ret.replaceAll('"', '');
+                            ret = ret.replaceAll('[', '');
+                            ret = ret.replaceAll(']', '');
+                            ret = ret.replaceAll('{', '');
+                            ret = ret.replaceAll('}', '');
+                            ret = ret.replaceAll(':', '');
+                            ret = ret.replaceAll('0', '');
+                            ret = ret.replaceAll('1', '');
+                            ret = ret.replaceAll('2', '');
+                            ret = ret.replaceAll('3', '');
+                            ret = ret.replaceAll('4', '');
+                            ret = ret.replaceAll('5', '');
+                            ret = ret.replaceAll('6', '');
+                            ret = ret.replaceAll('7', '');
+                            ret = ret.replaceAll('8', '');
+                            ret = ret.replaceAll('9', '');
+                            //ret = ret.replace("/[^a-zA-Z,]/gm", ""); //ne fonctionne pas
+                            //alert(ret);
+                            if (!ret.includes('false')) {
+                                let sub = ret.split(',');
+                                for (let i = 0; i < sub.length; i++) {
+                                    res += '<li value="false"><span id = "' + sub[i] + '"onclick="sousMenu(\'' + sub[i] + '\')" value="false">' + sub[i] + '</span></li>';
+                                }
+                                document.getElementById(nom).parentElement.value = true;
+                                document.getElementById(nom).parentElement.innerHTML += res;
+                            }
+                        }
+                    }
+                })
+            }
+        }
+    </script>
+</head>
+<body onload="load()">
+    <ul id = "sidebar">
+    </ul>
+</body>
+</html>

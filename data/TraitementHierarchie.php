@@ -1,10 +1,37 @@
 <?php
 //Tests des fonctions
-print_r(getBaseArbo());
-echo "<br/><br/>";
-print_r(getSousCategories("Fruit"));
-echo "<br/><br/>";
-print_r(getSurCategories("Jus de tomates"));
+//print_r(getBaseArbo());
+//echo "<br/><br/>";
+//print_r(getSousCategories("Agrume"));
+//echo "<br/><br/>";
+//print_r(getSurCategories("Jus de tomates"));
+
+if (isset($_POST['func'])){
+    $fail = true;
+    switch ($_POST['func']){
+        case 'base':
+            getBaseArbo();
+            $fail=false;
+            break;
+        case 'sub':
+            if (isset($_POST['var'])){
+                getSousCategories($_POST['var']);
+                $fail=false;
+            }
+            break;
+        case 'sup':
+            if (isset($_POST['var'])){
+                getSurCategories($_POST['var']);
+                $fail=false;
+            }
+            break;
+    }
+    if($fail){
+        $res = array('fail');
+        echo json_encode($res);
+    }
+
+}
 
 //Fonction permettant de récupérer la/les base.s de l'arborescence des ingrédients
 function getBaseArbo(){
@@ -19,7 +46,8 @@ function getBaseArbo(){
             }
         }
     }
-    return $res;
+    //print_r($res);
+    echo json_encode($res);
 }
 
 //Fonction permettant de récupérer la/les sous-catégorie.s d'un ingrédient
@@ -30,8 +58,9 @@ function getSousCategories($nomSource){
     if (isset($Hierarchie[$nomSource]['sous-categorie']))
         $res = $Hierarchie[$nomSource]['sous-categorie'];
     else
-        $res = false;
-    return $res;
+        $res = array('false');
+    //return $res;
+    echo json_encode($res);
 }
 
 //Fonction permettant de récupérer les super-catégories chainées d'un ingrédient, un seul chemin est choisi de base
@@ -46,6 +75,7 @@ function getSurCategories($nomSource){
         $nomSource = $Hierarchie[$nomSource]['super-categorie'][0];
         array_push($res, $nomSource);
     }
-    return $res;
+    //return $res;
+    echo json_encode($res);
 }
 ?>
