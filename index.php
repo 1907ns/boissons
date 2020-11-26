@@ -86,9 +86,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         <li class="nav-item   mr-lg-3">
                                             <a class="nav-link scroll" href="#why">Mes cocktails préférés</a>
                                         </li>
-                                        <li class="nav-item   mr-lg-3">
-                                            <a class="nav-link scroll" href="#services">Mon Compte</a>
-                                        </li>
+                                        <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){ ?>
+                                            <li class="nav-item   mr-lg-3">
+                                                <a class="nav-link scroll" href="compte/index.php">Mon Compte</a>
+                                            </li>
+                                        <?php } ?>
                                         <li class="nav-item mr-lg-3 ">
                                             <form action="" class="nav-link scroll">
                                                 <input type="text" placeholder="Jus d'orange.." class="form-control border" name="search">
@@ -255,7 +257,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- start-smooth-scrolling -->
     <script src="js/move-top.js"></script>
     <script src="js/easing.js"></script>
-    <script>
+    <!--<script>
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
                 event.preventDefault();
@@ -265,7 +267,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 }, 1000);
             });
         });
-    </script>
+    </script> -->
     <!-- //end-smooth-scrolling -->
     <!-- smooth-scrolling-of-move-up -->
     <script>
