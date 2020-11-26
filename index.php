@@ -3,7 +3,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 -->
-
+<?php
+  //Initialisation de la session
+  session_start();
+  ?>
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -50,10 +53,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="col-lg-9 header-bottom-wthree">
                         <div class="d-md-flex justify-content-lg-end justify-content-center header-right">
                             <div class="right_nav">
-                                <button type="button" class="btn  wthree-link-bnr bg-transparent text-secondary"
-                                    data-toggle="modal" aria-pressed="false" data-target="#exampleModal">Se connecter
+                                <?php
+                                if(isset($_SESSION['pseudo'])) {
+                                    echo "Bienvenue " . $_SESSION['pseudo'];
+                                    ?><button type="button" class="btn  wthree-link-bnr bg-transparent text-secondary"
+                                              onclick="location.href='deconnexion/index.php' ">Se déconnecter
+                                    </button>
+                                <?php }  else{ ?><button type="button" class="btn  wthree-link-bnr bg-transparent text-secondary"
+                                    onclick="location.href='connexion/index.php' ">Se connecter
                                 </button>
-                                <button type="button" class="btn  ml-2 wthree-link-bnr" data-toggle="modal" data-target="#exampleModal1">Créer un compte</button>
+                                <button type="button"  onclick="location.href='creation_compte/index.php' "class="btn  ml-2 wthree-link-bnr" data-toggle="modal" data-target="#exampleModal1">Créer un compte</button>
+                                <?php } ?>
                             </div>
                         </div>
                         <nav class="navbar second navbar-expand-lg navbar-light">
@@ -188,135 +198,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </section>
     <!-- //populaire -->
 
-    <!-- Login modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header bg-theme2">
-                    <h5 class="modal-title" id="exampleModalLabel">Connexion</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="pseudo" class="col-form-label">Pseudo</label>
-                            <input type="text" class="form-control border" placeholder="pseudotest" name="pseudo" id="pseudo"
-                                required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class="col-form-label">Mot de passe</label>
-                            <input type="password" class="form-control border" placeholder="********" name="password" id="password"
-                                required="">
-                        </div>
-                        <div class="right-w3l">
-                            <input type="submit" class="form-control border text-white bg-theme" value="Se connecter">
-                        </div>
 
-                        <div class="row sub-w3l my-3">
-                            <div class="col forgot-w3l text-right text-secondary">
-                                <a href="#" class="text-white">Mot de passe oublié?</a>
-                            </div>
-                        </div>
-                        <p class="text-center text-secondary">Pas de compte?
-                            <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark font-weight-bold">
-                                Créez-en un!</a>
-                        </p>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //Login modal -->
-    <!-- Register modal -->
-    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header  bg-theme2">
-                    <h5 class="modal-title" id="exampleModalLabel1">S'enregister</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <label for="pseudo" class="col-form-label">Pseudo</label>
-                            <input type="text" class="form-control border" placeholder="Enes88" name="pseudo" id="pseudo"
-                                   required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="nomuser" class="col-form-label">Nom</label>
-                            <input type="text" class="form-control border" placeholder="Ayata" name="nomuser" id="nomuser"
-                                required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="prenomuser" class="col-form-label">Prénom</label>
-                            <input type="text" class="form-control border" placeholder="Enes" name="prenomuser" id="prenomuser"
-                                   required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="emailuser" class="col-form-label">Email</label>
-                            <input type="email" class="form-control border" placeholder="username@email.com" name="emailuser"
-                                id="emailuser" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="telephone" class="col-form-label">Numéro de tél.</label>
-                            <input type="tel" class="form-control border" placeholder="0123456789" name="telephone"
-                                   id="telephone" >
-                        </div>
-                        <div class="form-group">
-                            <label for="dnaissance" class="col-form-label">Date de naissance</label>
-                            <input type="date" class="form-control border" placeholder="********" name="dnaissance"
-                                   id="dnaissance" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="adresse" class="col-form-label">Adresse</label>
-                            <input type="text" class="form-control border" placeholder="19 rue des cerisiers" name="adresse"
-                                   id="adresse" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="cpville" class="col-form-label">CP </label>
-                            <input type="text" class="form-control border" placeholder="54000" name="cpville"
-                                   id="cpville" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="ville" class="col-form-label">Ville</label>
-                            <input type="text" class="form-control border" placeholder="Nancy" name="ville"
-                                   id="ville" required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="sexe" class="col-form-label">Sexe:</label>
-
-                            <select name="sexe" id="sexe" class="form-control border">
-                                <option value="NF">Non défini</option>
-                                <option value="M">M</option>
-                                <option value="M">F</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password1" class="col-form-label">Mot de passe</label>
-                            <input type="password" class="form-control border" placeholder="********" name="password1" id="password1"
-                                   required="">
-                        </div>
-                        <div class="form-group">
-                            <label for="password2" class="col-form-label">Confirmer le mot de passe</label>
-                            <input type="password" class="form-control border" placeholder="********" name="password2"
-                                   id="password2" required="">
-                        </div>
-                        <div class="right-w3l">
-                            <input type="submit" class="form-control bg-theme text-white" value="Valider">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- // Register modal -->
     <!-- js -->
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
