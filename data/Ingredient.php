@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo $_GET['nom'];?></title>
+    <title><?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Aliment";}?></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
         let resRec = Array();
@@ -91,7 +91,7 @@
         }
         $(document).ajaxStop( function() {
             for (let i = 0; i < resRec.length; i++) {
-                document.getElementById('listeRecettes').innerHTML += resRec[i] + '<br/>';
+                document.getElementById('listeRecettes').innerHTML += '<a href="Recette.php?nom='+ resRec[i] + '">' + resRec[i] + '</a><br/>';
             }
             for (let i = 0; i < resSubIng.length; i++) {
                 document.getElementById('sousIng').innerHTML +='<a href="?nom=' + resSubIng[i] + '">' + resSubIng[i] + '</a><br/>';
@@ -102,8 +102,8 @@
         });
     </script>
 </head>
-<body onload="load('<?php echo $_GET['nom'];?>')">
-    <h1>Listes des recettes dans lesquelles est utilisé le/la <?php echo $_GET['nom'];?></h1>
+<body onload="load('<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Aliment";}?>')">
+    <h1>Listes des recettes dans lesquelles est utilisé le/la <?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Aliment";}?></h1>
     <p id="listeRecettes"></p>
     <h1>Liste des sous-ingrédients</h1>
     <p id="sousIng"></p>
