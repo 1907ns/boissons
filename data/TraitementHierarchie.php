@@ -5,6 +5,11 @@
 //print_r(getSousCategories("Agrume"));
 //echo "<br/><br/>";
 //print_r(getSurCategories("Jus de tomates"));
+//echo "<br/><br/>";
+//echo getIngredientMatchNom("jus");
+//echo "<br/><br/>";
+//echo getIngredientMatchNom("Black velvet");
+
 
 if (isset($_POST['func'])){
     $fail = true;
@@ -31,6 +36,11 @@ if (isset($_POST['func'])){
                 $fail=false;
             }
             break;
+        case 'matchNom':
+            if(isset($_POST['var'])){
+                getIngredientMatchNom($_POST['var']);
+                $fail = false;
+            }
     }
     if($fail){
         $res = '{"fail":"true"}';
@@ -106,6 +116,29 @@ function getSupCategories($nomSource){
         $res = $res.'"none"';
     }
     $res = $res . ']}';
+    //return $res;
+    echo json_encode($res);
+}
+
+function getIngredientMatchNom($match){
+    $Hierarchie = array();
+    include "Donnees.inc.php";
+    $res = '{"fail":"false", "nom":[';
+    $exp = '/.*?'.$match.'.*?/i';
+    $isEmpty = true;
+    $cles = array_keys($Hierarchie);
+    foreach ($cles as $cle) {
+        if (preg_match($exp, $cle)) {
+            $res = $res.'"'.$cle.'",';
+            $isEmpty = false;
+        }
+    }
+    if($isEmpty){
+        $res = $res.'"none"';
+    }else {
+        $res = substr_replace($res, "", -1);
+    }
+    $res = $res.']}';
     //return $res;
     echo json_encode($res);
 }
