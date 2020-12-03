@@ -15,7 +15,7 @@
                     success:function(retRec){
                         let liste = JSON.parse(retRec);
                         for(let i = 0; i < liste.titre.length; i++) {
-                            document.getElementById("liste").innerHTML += liste.titre[i] + "<br/>";
+                            document.getElementById("liste").innerHTML += '<a href="?nom=' +liste.titre[i] + '">' + liste.titre[i] + '</a><br/>';
                         }
                     }
                 })
