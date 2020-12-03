@@ -60,14 +60,14 @@
                 traitementRecettes(match, function (recs){
                     if (recs.titre[0] != "none") {
                         for (let i = 0; i < recs.titre.length; i++) {
-                            document.getElementById("listeResults").innerHTML += '<li href="Recettes.php?nom=' + recs.titre[i] + '" style="overflow: visible">Recette : ' + recs.titre[i] + '</li>';
+                            document.getElementById("listeResults").innerHTML += '<li style="overflow: visible"><a href="Recette.php?nom=' + recs.titre[i] + '">Recette : ' + recs.titre[i] + '</a></li>';
                         }
                     }
                 });
                 traitementIngredients(match, function (ings) {
                     if (ings.nom[0] != "none") {
                         for (let i = 0; i < ings.nom.length; i++) {
-                            document.getElementById("listeResults").innerHTML += '<li href="Ingredients.php?nom=' + ings.nom[i] + '" style="overflow: visible"/>Ingrédient : ' + ings.nom[i] + '</li>';
+                            document.getElementById("listeResults").innerHTML += '<li style="overflow: visible"/><a href="Ingredient.php?nom=' + ings.nom[i] + '"> Ingrédient : ' + ings.nom[i] + '</a></li>';
                         }
                     }
                 });
