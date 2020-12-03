@@ -33,7 +33,7 @@ if (isset($_POST['func'])){
             break;
     }
     if($fail){
-        $res = array('fail');
+        $res = '{"fail":"true"}';
         echo json_encode($res);
     }
 }
@@ -41,16 +41,18 @@ if (isset($_POST['func'])){
 //Fonction permettant de récupérer la/les base.s de l'arborescence des ingrédients
 function getBaseArbo(){
     $Hierarchie = array();
-    $res = array();
+    $res = '{"fail":"false","nom":[';
     include 'Donnees.inc.php';
     foreach ($Hierarchie as $nom) {
         if (!isset($nom['super-categorie'])) {
             $cles = array_keys($Hierarchie, $nom, true);
             foreach ($cles as $cle) {
-                array_push($res, $cle);
+                $res = $res.'"'.$cle.'",';
             }
         }
     }
+    $res = substr_replace($res ,"", -1);
+    $res = $res.']}';
     //print_r($res);
     echo json_encode($res);
 }
@@ -60,10 +62,16 @@ function getBaseArbo(){
 function getSousCategories($nomSource){
     $Hierarchie = array();
     include 'Donnees.inc.php';
-    if (isset($Hierarchie[$nomSource]['sous-categorie']))
-        $res = $Hierarchie[$nomSource]['sous-categorie'];
-    else
-        $res = array('false');
+    $res = '{"fail":"false","nom":[';
+    if (isset($Hierarchie[$nomSource]['sous-categorie'])) {
+        foreach ($Hierarchie[$nomSource]['sous-categorie'] as $value) {
+            $res = $res . '"' . $value . '",';
+        }
+        $res = substr_replace($res, "", -1);
+    }else {
+        $res = $res.'"none"';
+    }
+    $res = $res . ']}';
     //return $res;
     echo json_encode($res);
 }
@@ -74,12 +82,13 @@ function getSousCategories($nomSource){
 function getSurCategories($nomSource){
     $Hierarchie = array();
     include 'Donnees.inc.php';
-    $res = array();
-    array_push($res, $nomSource);
-    while(isset($Hierarchie[$nomSource]['super-categorie'])){
+    $res = '{"fail":"false", "nom":["'.$nomSource.'",';
+    while(isset($Hierarchie[$nomSource]['super-categorie'])) {
         $nomSource = $Hierarchie[$nomSource]['super-categorie'][0];
-        array_push($res, $nomSource);
+        $res = $res . '"' . $nomSource . '",';
     }
+    $res = substr_replace($res, "", -1);
+    $res = $res . ']}';
     //return $res;
     echo json_encode($res);
 }
@@ -87,11 +96,16 @@ function getSurCategories($nomSource){
 function getSupCategories($nomSource){
     $Hierarchie = array();
     include 'Donnees.inc.php';
-    $res = array();
-    if(isset($Hierarchie[$nomSource]['super-categorie']))
-        $res = $Hierarchie[$nomSource]['super-categorie'];
-    else
-        $res = array('false');
+    $res = '{"fail":"true", "nom":[';
+    if(isset($Hierarchie[$nomSource]['super-categorie'])) {
+        foreach ($Hierarchie[$nomSource]['super-categorie'] as $value) {
+            $res = $res.'"'.$value.'",';
+        }
+        $res = substr_replace($res, "", -1);
+    }else {
+        $res = $res.'"none"';
+    }
+    $res = $res . ']}';
     //return $res;
     echo json_encode($res);
 }

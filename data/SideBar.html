@@ -16,78 +16,84 @@
     <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
+        let resLoad = "";
+        let resSM = "";
+        let isSM = false;
+        let nomSM = "";
         function load(){
-            let res = "";
             $.ajax({
                 type:"POST",
                 url:"TraitementHierarchie.php",
                 data:{func:'base'},
+                dataType:'JSON',
                 success: function(ret){
-                    if(ret.includes('fail')){
+                    result = JSON.parse(ret);
+                    if(result.fail == "true"){
                         alert("Erreur de chargement de la sidebar")
                     }else{
-                        ret = ret.replaceAll('"', '');
-                        ret = ret.replaceAll('[', '');
-                        ret = ret.replaceAll(']', '');
-                        let base = ret.split(',');
-                        for (let i = 0; i < base.length; i++) {
-                            res += '<li value="false" class="text-center" style="cursor: pointer"><span id = "' + base[i] + '"onclick="sousMenu(\'' + base[i] + '\')">' + base[i] + '</span></li>';
+                        for (let i = 0; i < result.nom.length; i++) {
+                            resLoad += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
                         }
-                        document.getElementById('sidebar').innerHTML = res;
                     }
                 }
             })
         }
         function sousMenu(nom){
-            let res="";
+            resSM = "";
+            isSM = true;
+            nomSM = nom;
             if(document.getElementById(nom).parentElement.value){
-                document.getElementById(nom).parentElement.innerHTML = '<li value="false"  ><span id = "' + nom + '"onclick="sousMenu(\'' + nom + '\')" value="false">' + nom + '</span></li>';
+                document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'Ingredient.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
             }else {
+                document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'Ingredient.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/rewind.png" style="max-width:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
                 $.ajax({
                     type: "POST",
                     url: "TraitementHierarchie.php",
                     data: {func: 'sub', var: nom},
+                    dataType:'JSON',
                     success: function (ret) {
-                        if (ret.includes('fail')) {
+                        result = JSON.parse(ret);
+                        if (result.fail == "true") {
                             alert("Erreur de chargement de sous-menu")
                         } else {
-                            ret = ret.replaceAll('"', '');
-                            ret = ret.replaceAll('[', '');
-                            ret = ret.replaceAll(']', '');
-                            ret = ret.replaceAll('{', '');
-                            ret = ret.replaceAll('}', '');
-                            ret = ret.replaceAll(':', '');
-                            ret = ret.replaceAll('0', '');
-                            ret = ret.replaceAll('1', '');
-                            ret = ret.replaceAll('2', '');
-                            ret = ret.replaceAll('3', '');
-                            ret = ret.replaceAll('4', '');
-                            ret = ret.replaceAll('5', '');
-                            ret = ret.replaceAll('6', '');
-                            ret = ret.replaceAll('7', '');
-                            ret = ret.replaceAll('8', '');
-                            ret = ret.replaceAll('9', '');
-                            //ret = ret.replace("/[^a-zA-Z,]/gm", ""); //ne fonctionne pas
-                            //alert(ret);
-                            if (!ret.includes('false')) {
-                                let sub = ret.split(',');
-                                for (let i = 0; i < sub.length; i++) {
-                                    res += '<li value="false" class=" text-center" style="cursor: pointer"><span id = "' + sub[i] + '"onclick="sousMenu(\'' + sub[i] + '\')" value="false">' + sub[i] + '</span></li>';
-                                }
-                                document.getElementById(nom).parentElement.value = true;
-                                document.getElementById(nom).parentElement.innerHTML += res;
-                            }else{
-                                alert("Changement de page ici");
+                            for (let i = 0; i < result.nom.length; i++) {
+                                hasNext(result.nom[i],function(ret){
+                                    resultat = JSON.parse(ret);
+                                    retour = true;
+                                    if(resultat.nom[0] == "none") {
+                                        retour = false;
+                                    }
+                                    if(retour){
+                                        resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
+                                    }else{
+                                        resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '</span></li>';
+                                    }
+                                });
                             }
                         }
                     }
                 })
             }
         }
-
-
-
-
+        function hasNext(nom, traitement){
+            $.ajax({
+                type:'POST',
+                url: "TraitementHierarchie.php",
+                data: {func: 'sub', var: nom},
+                dataType:'JSON',
+                success:function(ret){
+                    traitement(ret);
+                }
+            })
+        }
+        $(document).ajaxStop(function(){
+            if(!isSM) {
+                document.getElementById('sidebar').innerHTML = resLoad;
+            }else{
+                document.getElementById(nomSM).parentElement.value = true;
+                document.getElementById(nomSM).parentElement.innerHTML += resSM;
+            }
+        })
     </script>
 </head>
 <body onload="load()">

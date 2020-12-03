@@ -42,14 +42,22 @@ if (isset($_POST['func'])){
 function getRecettesFromIndex($index){
     $Recettes=array();
     include 'Donnees.inc.php';
-    $res = array();
+    $res = '{"fail":"false", "index":[';
+    $existe = false;
     foreach ($Recettes as $type){
         if(in_array($index, $type['index'])){
+            $existe = true;
             $cles = array_keys($Recettes, $type, true);
             foreach ($cles as $cle) {
-                array_push($res, $cle);
+                $res = $res.'"'.$cle.'",';
             }
         }
+    }
+    if($existe){
+        $res = substr_replace($res ,"", -1);
+        $res = $res.']}';
+    }else{
+        $res = $res.'"none"]}';
     }
     //return $res;
     echo json_encode($res);

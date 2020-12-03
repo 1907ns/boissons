@@ -8,88 +8,79 @@
         let resRec = Array();
         let resSubIng = Array();
         let resSupIng = Array();
+        let resSurIng = Array();
         function load(nomIng){
+            $.ajax({
+                type:'POST',
+                url:'TraitementHierarchie.php',
+                data:{func:'sur', var:nomIng},
+                dataType:'JSON',
+                success: function (retSurIng){
+                    nomSur = JSON.parse(retSurIng);
+                    for(let i = nomSur.nom.length-1; i >= 0; i--){
+                        resSurIng.push(nomSur.nom[i]);
+                    }
+                }
+            })
             $.ajax({
                 type:'POST',
                 url:'TraitementRecettes.php',
                 data:{func:'recInd', var:nomIng},
+                dataType: 'JSON',
                 success: function(retRec){
-                    retRec = retRec.replaceAll('[', '');
-                    retRec = retRec.replaceAll(']', '');
-                    let idRec = retRec.split(',');
-                    for (let i = 0; i < idRec.length; i++){
-                        $.ajax({
-                            type:'POST',
-                            url:'TraitementRecettes.php',
-                            data:{func: 'recNum', var: idRec[i]},
-                            dataType: 'JSON',
-                            success: function(recs){
-                                resRec.push(recs.titre);
-                            }
-                        })
+                    idRec = JSON.parse(retRec);
+                    if(idRec.index[0] != "none"){
+                        for (let i = 0; i < idRec.index.length; i++) {
+                            $.ajax({
+                                type: 'POST',
+                                url: 'TraitementRecettes.php',
+                                data: {func: 'recNum', var: idRec.index[i]},
+                                dataType: 'JSON',
+                                success: function (recs) {
+                                    resRec.push(recs.titre);
+                                }
+                            })
+                        }
                     }
                 }
-            });
+            })
             $.ajax({
                 type:'POST',
                 url:'TraitementHierarchie.php',
                 data:{func:'sub', var:nomIng},
+                dataType:'JSON',
                 success: function (retSubIng){
-                    retSubIng = retSubIng.replaceAll('"', '');
-                    retSubIng = retSubIng.replaceAll('[', '');
-                    retSubIng = retSubIng.replaceAll(']', '');
-                    retSubIng = retSubIng.replaceAll('{', '');
-                    retSubIng = retSubIng.replaceAll('}', '');
-                    retSubIng = retSubIng.replaceAll(':', '');
-                    retSubIng = retSubIng.replaceAll('0', '');
-                    retSubIng = retSubIng.replaceAll('1', '');
-                    retSubIng = retSubIng.replaceAll('2', '');
-                    retSubIng = retSubIng.replaceAll('3', '');
-                    retSubIng = retSubIng.replaceAll('4', '');
-                    retSubIng = retSubIng.replaceAll('5', '');
-                    retSubIng = retSubIng.replaceAll('6', '');
-                    retSubIng = retSubIng.replaceAll('7', '');
-                    retSubIng = retSubIng.replaceAll('8', '');
-                    retSubIng = retSubIng.replaceAll('9', '');
-                    if(!retSubIng.includes('false')){
-                        let sub = retSubIng.split(',');
-                        for(let i=0; i<sub.length; i++) {
-                            resSubIng.push(sub[i]);
+                    subs = JSON.parse(retSubIng);
+                    if(subs.nom[0] != "none"){
+                        for(let i=0; i<subs.nom.length; i++) {
+                            resSubIng.push(subs.nom[i]);
                         }
                     }
                 }
-            });
+            })
             $.ajax({
                 type:'POST',
                 url:'TraitementHierarchie.php',
                 data:{func:'sup', var:nomIng},
+                dataType:'JSON',
                 success: function (retSupIng){
-                    retSupIng = retSupIng.replaceAll('"', '');
-                    retSupIng = retSupIng.replaceAll('[', '');
-                    retSupIng = retSupIng.replaceAll(']', '');
-                    retSupIng = retSupIng.replaceAll('{', '');
-                    retSupIng = retSupIng.replaceAll('}', '');
-                    retSupIng = retSupIng.replaceAll(':', '');
-                    retSupIng = retSupIng.replaceAll('0', '');
-                    retSupIng = retSupIng.replaceAll('1', '');
-                    retSupIng = retSupIng.replaceAll('2', '');
-                    retSupIng = retSupIng.replaceAll('3', '');
-                    retSupIng = retSupIng.replaceAll('4', '');
-                    retSupIng = retSupIng.replaceAll('5', '');
-                    retSupIng = retSupIng.replaceAll('6', '');
-                    retSupIng = retSupIng.replaceAll('7', '');
-                    retSupIng = retSupIng.replaceAll('8', '');
-                    retSupIng = retSupIng.replaceAll('9', '');
-                    if(!retSupIng.includes('false')){
-                        let sup = retSupIng.split(',');
-                        for(let i=0; i<sup.length; i++) {
-                            resSupIng.push(sup[i]);
+                    sups = JSON.parse(retSupIng);
+                    if(sups.nom[0] != "none"){
+                        for(let i=0; i<sups.nom.length; i++) {
+                            resSupIng.push(sups.nom[i]);
                         }
                     }
                 }
-            });
+            })
         }
         $(document).ajaxStop( function() {
+            for (let i = 0; i < resSurIng.length; i++) {
+                if(i != resSurIng.length-1){
+                    document.getElementById('surIng').innerHTML += '<a href="?nom=' + resSurIng[i] + '">' + resSurIng[i] + '</a>&nbsp;&nbsp;&nbsp;<img style="max-height: 10px;" src="../images/next.png"/>&nbsp;&nbsp;&nbsp;';
+                }else{
+                    document.getElementById('surIng').innerHTML += resSurIng[i];
+                }
+            }
             for (let i = 0; i < resRec.length; i++) {
                 document.getElementById('listeRecettes').innerHTML += '<a href="Recette.php?nom='+ resRec[i] + '">' + resRec[i] + '</a><br/>';
             }
@@ -103,6 +94,8 @@
     </script>
 </head>
 <body onload="load('<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Aliment";}?>')">
+    <h1>Liste hiérarchie</h1>
+    <p id="surIng"></p>
     <h1>Listes des recettes dans lesquelles est utilisé le/la <?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Aliment";}?></h1>
     <p id="listeRecettes"></p>
     <h1>Liste des sous-ingrédients</h1>
