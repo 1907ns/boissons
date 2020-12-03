@@ -1,6 +1,7 @@
 <?php
 // Include config file
 require "../data/config.php";
+session_start();
 
 
 // Definition des variables
@@ -52,18 +53,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $password = trim($_POST["password"]);
     }
 
-
+    //Autres parametres
+    $nomuser=trim($_POST["nomuser"]);
+    $prenomuser=trim($_POST["prenomuser"]);
+    $emailuser=trim($_POST["emailuser"]);
+    $dnaissance=trim($_POST["dnaissance"]);
+    $telephone=trim($_POST["telephone"]);
+    $adresse=trim($_POST["adresse"]);
+    $cpville=trim($_POST["cpville"]);
+    $ville=trim($_POST["ville"]);
+    $sexe=trim($_POST["sexe"]);
 
 
     // Verifier s'il n'y a pas d'erreurs
     if(empty($username_err) && empty($password_err)){
 
         // Insertion du nouvelle utilisateur dans la BDD
-        $sql = "INSERT INTO users (pseudo, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (pseudo, password,nom,prenom,mail,birthdate,phone,adresse,cpville,ville,sexe) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables 
-            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "sssssssssss", $param_username, $param_password, $nomuser, $prenomuser, $emailuser, $dnaissance, $telephone, $adresse, $cpville, $ville, $sexe);
 
             // Set parametres
             $param_username = $username;
@@ -72,6 +82,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
+                $_SESSION["nomuser"]=$nomuser;
+                $_SESSION["prenomuser"]=$prenomuser;
+                $_SESSION["emailuser"]=$emailuser;
+                $_SESSION["dnaissance"]=$dnaissance;
+                $_SESSION["telephone"]=$telephone;
+                $_SESSION["adresse"]=$adresse;
+                $_SESSION["cpville"]=$cpville;
+                $_SESSION["ville"]=$ville;
+                $_SESSION["sexe"]=$sexe;
+
                 header("location: ../connexion/index.php");
             } else{
                 echo "Something went wrong. Please try again later.";
@@ -247,9 +267,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <label for="sexe" class="col-form-label">Sexe:</label>
 
                         <select name="sexe" id="sexe" class="form-control border">
-                            <option value="NF">Non défini</option>
+                            <option value="Non défini">Non défini</option>
                             <option value="M">M</option>
-                            <option value="M">F</option>
+                            <option value="F">F</option>
                         </select>
                     </div>
 

@@ -46,8 +46,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validation des infos récupérées
     if(empty($username_err) && empty($password_err)){
         // Requête SQL pour choisir le bon utilisateur
-        $sql = "SELECT id, pseudo, password FROM users WHERE pseudo = ?";
+        $sql = "SELECT id, pseudo, password, nom, prenom, mail, phone, birthdate, adresse, cpville, ville, sexe FROM users WHERE pseudo = ?";
         $hashed_password= "SELECT password FROM users WHERE pseudo = ?";
+        $nom="SELECT password FROM users WHERE pseudo = ?";
         $stmt = mysqli_prepare($link, $sql);
         if($stmt){
             // Bind les variables
@@ -65,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(mysqli_stmt_num_rows($stmt) == 1){
 
                     // Bind les variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password,$nom, $prenom, $mail, $phone, $birthdate, $adresse, $cpville, $ville, $sexe);
                     if(mysqli_stmt_fetch($stmt)){
 
                         //Vérifier sue le mot de passe saisie correspons au hash
@@ -78,13 +79,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["pseudo"] = $username;
+                            $_SESSION["nomuser"]=$nom;
+                            $_SESSION["prenomuser"]=$prenom;
+                            $_SESSION["emailuser"]=$mail;
+                            $_SESSION["dnaissance"]=$birthdate;
+                            $_SESSION["telephone"]=$phone;
+                            $_SESSION["adresse"]=$adresse;
+                            $_SESSION["cpville"]=$cpville;
+                            $_SESSION["ville"]=$ville;
+                            $_SESSION["sexe"]=$sexe;
 
                             // Redirection de l'utilisateur vers l'accueil
                             header("location: ../index.php");
                         } else{
                         // Si le mot de passe n'est pas bon: erreur
                             $password_err = "The password you entered was not valid.";
-                            echo $hashed_password; echo '<br>'; echo $password;
+
                         }
                     }
                 } else{
@@ -242,7 +252,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                     </div>
                     <p class="text-center text-secondary">Pas de compte?
-                        <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-dark font-weight-bold">
+                        <a href="../creation_compte/index.php" data-toggle="modal" data-target="#exampleModal1" class="text-dark font-weight-bold">
                             Créez-en un!</a>
                     </p>
                 </form>

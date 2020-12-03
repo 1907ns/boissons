@@ -2,6 +2,8 @@
 
 
 session_start();
+require "../data/config.php";
+mysqli_report(MYSQLI_REPORT_ALL);
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
@@ -50,7 +52,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     }
 
     if(isset($_SESSION["dnaissance"])){
-        $dnaissance=$_SESSION["pseudo"];
+        $dnaissance=$_SESSION["dnaissance"];
     }else{
         $dnaissance='Non renseigné';
     }
@@ -79,6 +81,101 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         $sexe='Non renseigné';
     }
 
+
+    /********
+     * PARTIE MODIFICATION DES DONNEES
+     */
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+
+        // Validation du pseudo
+        if(empty(trim($_POST["pseudo"]))){
+            $username_err = "Please enter a username.";
+        } else{
+            // Requête SQL
+            $sql = "SELECT pseudo FROM users WHERE pseudo = ?";
+
+            if($stmt = mysqli_prepare($link, $sql)){
+                // Bind variables
+                mysqli_stmt_bind_param($stmt, "s", $param_username);
+
+                // Set les paramètres
+                $param_username = trim($_POST["pseudo"]);
+
+
+                if(mysqli_stmt_execute($stmt)){
+                    /* enregistrement du résultat  */
+                    mysqli_stmt_store_result($stmt);
+
+                    if(mysqli_stmt_num_rows($stmt) == 1 && $_SESSION["pseudo"] != trim($_POST["pseudo"])){
+                        $username_err = "This username is already taken.";
+                    } else{
+                        $username = trim($_POST["pseudo"]);
+                    }
+                } else{
+                    echo "Oops! Something went wrong. Please try again later.";
+                }
+
+                // Close statement
+                mysqli_stmt_close($stmt);
+            }
+        }
+
+        // Vaidation du mot de passe
+        if(empty(trim($_POST["password"]))){
+            $password_err = "Please enter a password.";
+        } elseif(strlen(trim($_POST["password"])) < 6){
+            $password_err = "Password must have atleast 6 characters.";
+        } else{
+            $password = trim($_POST["password"]);
+        }
+
+        //Autres parametres
+        $nomuser=trim($_POST["nomuser"]);
+        $prenomuser=trim($_POST["prenomuser"]);
+        $emailuser=trim($_POST["emailuser"]);
+        $dnaissance=trim($_POST["dnaissance"]);
+        $telephone=trim($_POST["telephone"]);
+        $adresse=trim($_POST["adresse"]);
+        $cpville=trim($_POST["cpville"]);
+        $ville=trim($_POST["ville"]);
+        $sexe=trim($_POST["sexe"]);
+
+
+        // Verifier s'il n'y a pas d'erreurs
+        if(empty($username_err) && empty($password_err)){
+            echo 'no error';
+            // Update de la BDD
+
+            $sql= "UPDATE users SET pseudo =?, password = ?, nom=?, prenom=?, mail=?, birthdate=?, phone=?, adresse=?, cpville=?, ville=?, sexe=? WHERE id = ?";
+            if($stmt = mysqli_prepare($link, $sql)){
+                // Bind variables
+                mysqli_stmt_bind_param($stmt, "sssssssssssi", $param_username, $param_password,$nomuser, $prenomuser, $emailuser, $dnaissance, $telephone, $adresse, $cpville, $ville, $sexe, $param_id);
+
+                // Set parametres
+                $param_username = $username;
+                $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+                $param_id=$_SESSION["id"];
+
+                if(mysqli_stmt_execute($stmt)){
+
+                    session_destroy();
+                    header("location: ../connexion/index.php");
+                    exit();
+                } else{
+                    echo "Something went wrong. Please try again later.";
+                }
+
+                // Close statement
+                mysqli_stmt_close($stmt);
+            }
+        }else{
+            echo $username_err. ' '. $password_err;
+        }
+
+        // Close connection
+        mysqli_close($link);
+    }
+    
 
 } ?>
 
@@ -198,64 +295,64 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             <div class="modal-body">
                 <form action="#" method="post">
                     <div class="form-group">
-                        <label for="new_pseudo" class="col-form-label">Pseudo</label>
-                        <input type="text" class="form-control border" value="<?php echo $pseudo ?>" name="new_pseudo" id="new_pseudo"
+                        <label for="pseudo" class="col-form-label">Pseudo</label>
+                        <input type="text" class="form-control border" value="<?php echo $pseudo ?>" name="pseudo" id="pseudo"
                                required="">
                     </div>
                     <div class="form-group">
-                        <label for="new_nomuser" class="col-form-label">Nom</label>
-                        <input type="text" class="form-control border" value="<?php echo $nom ?>" name="new_nomuser" id="new_nomuser"
+                        <label for="nomuser" class="col-form-label">Nom</label>
+                        <input type="text" class="form-control border" value="<?php echo $nom ?>" name="nomuser" id="nomuser"
                                required="">
                     </div>
                     <div class="form-group">
-                        <label for="new_prenomuser" class="col-form-label">Prénom</label>
-                        <input type="text" class="form-control border" value="<?php echo $prenom ?>" name="new_prenomuser" id="new_prenomuser"
+                        <label for="prenomuser" class="col-form-label">Prénom</label>
+                        <input type="text" class="form-control border" value="<?php echo $prenom ?>" name="prenomuser" id="prenomuser"
                                required="">
                     </div>
                     <div class="form-group">
-                        <label for="new_emailuser" class="col-form-label">Email</label>
-                        <input type="email" class="form-control border" value="<?php echo $email ?>" name="new_emailuser"
-                               id="new_emailuser" required="">
+                        <label for="emailuser" class="col-form-label">Email</label>
+                        <input type="email" class="form-control border" value="<?php echo $email ?>" name="emailuser"
+                               id="emailuser" required="">
                     </div>
                     <div class="form-group">
-                        <label for="new_telephone" class="col-form-label">Numéro de tél.</label>
-                        <input type="tel" class="form-control border" value="<?php echo $tel ?>" name="new_telephone"
-                               id="new_telephone" >
+                        <label for="telephone" class="col-form-label">Numéro de tél.</label>
+                        <input type="tel" class="form-control border" value="<?php echo $tel ?>" name="telephone"
+                               id="telephone" >
                     </div>
                     <div class="form-group">
-                        <label for="new_dnaissance" class="col-form-label">Date de naissance</label>
-                        <input type="text" class="form-control border" value="<?php echo $tel ?>" name="new_dnaissance"
-                               id="new_dnaissance" required="">
+                        <label for="dnaissance" class="col-form-label">Date de naissance</label>
+                        <input type="text" class="form-control border" value="<?php echo $dnaissance ?>" name="dnaissance"
+                               id="dnaissance" required="">
                     </div>
                     <div class="form-group">
-                        <label for="new_adresse" class="col-form-label">Adresse</label>
-                        <input type="text" class="form-control border" value="<?php echo $adresse ?>" name="new_adresse"
-                               id="new_adresse" required="">
+                        <label for="adresse" class="col-form-label">Adresse</label>
+                        <input type="text" class="form-control border" value="<?php echo $adresse ?>" name="adresse"
+                               id="adresse" required="">
                     </div>
                     <div class="form-group">
-                        <label for="new_cpville" class="col-form-label">CP </label>
-                        <input type="text" class="form-control border" value="<?php echo $cpville ?>" name="new_cpville"
-                               id="new_cpville" required="">
+                        <label for="cpville" class="col-form-label">CP </label>
+                        <input type="text" class="form-control border" value="<?php echo $cpville ?>" name="cpville"
+                               id="cpville" required="">
                     </div>
                     <div class="form-group">
-                        <label for="new_ville" class="col-form-label">Ville</label>
-                        <input type="text" class="form-control border" value="<?php echo $ville ?>" name="new_ville"
-                               id="new_ville" required="">
+                        <label for="ville" class="col-form-label">Ville</label>
+                        <input type="text" class="form-control border" value="<?php echo $ville ?>" name="ville"
+                               id="ville" required="">
                     </div>
                     <div class="form-group">
-                        <label for="new_sexe" class="col-form-label">Sexe:</label>
+                        <label for="sexe" class="col-form-label">Sexe:</label>
 
-                        <select name="new_sexe" id="new_sexe" class="form-control border">
-                            <option value="current"><?php echo $sexe ?></option>
-                            <option value="NF">Non défini</option>
+                        <select name="sexe" id="sexe" class="form-control border">
+                            <option value="<?php echo $sexe ?>"><?php echo $sexe ?></option>
+                            <option value="Non défini">Non défini</option>
                             <option value="M">M</option>
-                            <option value="M">F</option>
+                            <option value="F">F</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="new_password" class="col-form-label">Mot de passe</label>
-                        <input type="password" class="form-control border" placeholder="********" name="new_password" id="new_password"
+                        <label for="password" class="col-form-label">Choisissez un nouveau mot de passe, ou entrez l'actuel</label>
+                        <input type="password" class="form-control border" placeholder="********" name="password" id="password"
                                required="">
                     </div>
                     <div class="right-w3l">
