@@ -258,7 +258,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                                         </a>
                                     </li>
                                     <li class="nav-item   mr-lg-3">
-                                        <a class="nav-link scroll" href="#">Tous nos cocktails</a>
+                                        <a class="nav-link scroll" href="../recettes/index.php">Tous nos cocktails</a>
                                     </li>
                                     <li class="nav-item   mr-lg-3">
                                         <a class="nav-link scroll" href="#">Mes cocktails préférés</a>

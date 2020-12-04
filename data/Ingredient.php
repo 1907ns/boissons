@@ -82,7 +82,7 @@
                 }
             }
             for (let i = 0; i < resRec.length; i++) {
-                document.getElementById('listeRecettes').innerHTML += '<a href="Recette.php?nom='+ resRec[i] + '">' + resRec[i] + '</a><br/>';
+                document.getElementById('listeRecettes').innerHTML += '<a href="../recettes/index.php?nom='+ resRec[i] + '">' + resRec[i] + '</a><br/>';
             }
             for (let i = 0; i < resSubIng.length; i++) {
                 document.getElementById('sousIng').innerHTML +='<a href="?nom=' + resSubIng[i] + '">' + resSubIng[i] + '</a><br/>';

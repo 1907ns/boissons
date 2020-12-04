@@ -81,7 +81,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             </a>
                                         </li>
                                         <li class="nav-item   mr-lg-3">
-                                            <a class="nav-link scroll" href="#about">Tous nos cocktails</a>
+                                            <a class="nav-link scroll" href="recettes/index.php">Tous nos cocktails</a>
                                         </li>
                                         <li class="nav-item   mr-lg-3">
                                             <a class="nav-link scroll" href="#why">Mes cocktails préférés</a>
