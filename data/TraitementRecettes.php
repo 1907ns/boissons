@@ -2,6 +2,8 @@
 
 //print_r(getRecettesFromIndex('Curacao'));
 //echo "<br/>";
+//echo getRecetteFromIngredient('Jus de mangue');
+//echo "<br/>;
 //print_r(getRecetteFromNum(51));
 //echo "<br/>";
 //echo getAllRecettes();
@@ -16,6 +18,12 @@ if (isset($_POST['func'])){
         case 'recInd':
             if (isset($_POST['var'])){
                 getRecettesFromIndex($_POST['var']);
+                $fail=false;
+            }
+            break;
+        case 'recIng':
+            if (isset($_POST['var'])){
+                getRecetteFromIngredient($_POST['var']);
                 $fail=false;
             }
             break;
@@ -59,6 +67,27 @@ function getRecettesFromIndex($index){
             foreach ($cles as $cle) {
                 $res = $res.'"'.$cle.'",';
             }
+        }
+    }
+    if($existe){
+        $res = substr_replace($res ,"", -1);
+        $res = $res.']}';
+    }else{
+        $res = $res.'"none"]}';
+    }
+    //return $res;
+    echo json_encode($res);
+}
+
+function getRecetteFromIngredient($ingredient){
+    $Recettes=array();
+    include 'Donnees.inc.php';
+    $res = '{"fail":"false", "titre":[';
+    $existe = false;
+    foreach ($Recettes as $recette) {
+        if(in_array($ingredient, $recette['index'])){
+            $existe = true;
+            $res = $res.'"'.$recette['titre'].'",';
         }
     }
     if($existe){
