@@ -178,7 +178,7 @@
         </div>
     </div>
 </header>
-<body onload="load('<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Aliment";}?>');  sidebar();">
+<body onload="load('<?php if(isset($_GET['nom'])){echo preg_replace('/\'/', '\\\'', $_GET['nom']);}else{echo "Aliment";}?>');  sidebar();">
 
 
 

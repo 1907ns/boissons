@@ -98,7 +98,7 @@
 
     </script>
 </head>
-<body onload="load('<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "index";}?>'); sidebar();">
+<body onload="load('<?php if(isset($_GET['nom'])){echo preg_replace('/\'/', '\\\'', $_GET['nom']);}else{echo "index";}?>'); sidebar();">
 
 
 <!-- header -->
