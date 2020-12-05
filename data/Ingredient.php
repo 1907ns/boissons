@@ -93,7 +93,7 @@
         });
     </script>
 </head>
-<body onload="load('<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Aliment";}?>')">
+<body onload="load('<?php if(isset($_GET['nom'])){echo preg_replace('/\'/', '\\\'', $_GET['nom']);}else{echo "Aliment";}?>')">
     <h1>Liste hiérarchie</h1>
     <p id="surIng"></p>
     <h1>Listes des recettes dans lesquelles est utilisé le/la <?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Aliment";}?></h1>

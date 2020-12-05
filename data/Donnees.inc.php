@@ -15,8 +15,8 @@
   1 => 
   array (
     'titre' => 'Aperol Spritz : Boisson italien pétillant',
-    'ingredients' => '1 verre d aperol|3 verres de vin blanc pétillant type prosecco|5 glaçons|1 orange sanguine|2 verres d eau pétillante',
-    'preparation' => 'Préparer la quantité de Boisson souhaitée en respectant les proportions ! Garnir de glaçons et d un morceau d orange (sanguine si possible). Santé !',
+    'ingredients' => '1 verre d\'aperol|3 verres de vin blanc pétillant type prosecco|5 glaçons|1 orange sanguine|2 verres d\'eau pétillante',
+    'preparation' => 'Préparer la quantité de Boisson souhaitée en respectant les proportions ! Garnir de glaçons et d\'un morceau d\'orange (sanguine si possible). Santé !',
     'index' => 
     array (
       0 => 'Aperol',
@@ -30,7 +30,7 @@
   array (
     'titre' => 'Aquarium',
     'ingredients' => '1/5 de curaçao|1/5 de rhum blanc|1/5 de tequila|1/5 de martini dry|1/5 de sirop de sucre de canne',
-    'preparation' => 'Préparer le mélange dans un récipient transparent, ressemblant le plus possible à un aquarium, si vous n en avez pas! Mélanger. Ajouter des glaçons, et placer le tout au frigo. Décorer votre récipient, en y incorporant les éléments de déco. L effet aquarium doit être surprenant!Les proportions sont à adapter en fonction du nombre de personnes. Ce Boisson se boit normalement à la paille.',
+    'preparation' => 'Préparer le mélange dans un récipient transparent, ressemblant le plus possible à un aquarium, si vous n\'en avez pas! Mélanger. Ajouter des glaçons, et placer le tout au frigo. Décorer votre récipient, en y incorporant les éléments de déco. L\'effet aquarium doit être surprenant!Les proportions sont à adapter en fonction du nombre de personnes. Ce Boisson se boit normalement à la paille.',
     'index' => 
     array (
       0 => 'Curaçao',
@@ -70,11 +70,11 @@
   5 => 
   array (
     'titre' => 'Bora bora',
-    'ingredients' => '10 cl de jus d ananas|6 cl de jus de fruits de la passion|2 cl de sirop de grenadine|1 cl de jus de citrons|3 glaçons',
-    'preparation' => 'Réaliser cette recette au shaker. Servir dans un verre contenant des glaçons avec une rondelle d orange.',
+    'ingredients' => '10 cl de jus d\'ananas|6 cl de jus de fruits de la passion|2 cl de sirop de grenadine|1 cl de jus de citrons|3 glaçons',
+    'preparation' => 'Réaliser cette recette au shaker. Servir dans un verre contenant des glaçons avec une rondelle d\'orange.',
     'index' => 
     array (
-      0 => 'Jus d ananas',
+      0 => 'Jus d\'ananas',
       1 => 'Jus de fruits de la passion',
       2 => 'Sirop de grenadine',
       3 => 'Jus de citron',
@@ -85,7 +85,7 @@
   array (
     'titre' => 'Builder',
     'ingredients' => '1 concombre|1 citron|1 cuillère à soupe de sucre|3 glaçons',
-    'preparation' => 'Mixer le concombre dans la centrifugeuse, ajouter le jus du citron, le sucre et les glaçons. Servir dans un verre décoré d une tranche de citron.',
+    'preparation' => 'Mixer le concombre dans la centrifugeuse, ajouter le jus du citron, le sucre et les glaçons. Servir dans un verre décoré d\'une tranche de citron.',
     'index' => 
     array (
       0 => 'Concombre',
@@ -98,7 +98,7 @@
   array (
     'titre' => 'Caïpirinha',
     'ingredients' => '4 cl de cachaça|1/2 citron vert|1 cuillère à soupe de sucre en poudre|glaçons',
-    'preparation' => 'Couper le citron vert en deux, puis en quartier en enlevant la partie blanche centrale, responsable de l amertume. Mettre le citron découpé et le sucre dans un verre et piler. Ajouter la glace et la cachaça. Mélanger à la cuillère.',
+    'preparation' => 'Couper le citron vert en deux, puis en quartier en enlevant la partie blanche centrale, responsable de l\'amertume. Mettre le citron découpé et le sucre dans un verre et piler. Ajouter la glace et la cachaça. Mélanger à la cuillère.',
     'index' => 
     array (
       0 => 'Cachaça',
@@ -110,8 +110,8 @@
   8 => 
   array (
     'titre' => 'Champagne en Boisson',
-    'ingredients' => '1 morceau de sucre roux|3 traits d angostura|1 cl de cognac|c 8 cl de champagne',
-    'preparation' => 'Placer les ingrédients directement dans un verre de type flûte à champagne dans l ordre suivant : Imbiber le morceau de sucre d angostura, puis le mettre au fond d une flûte à champagne. Verser doucement le cognac (il doit recouvrir le morceau de sucre). Compléter avec du champagne bien frais.',
+    'ingredients' => '1 morceau de sucre roux|3 traits d\'angostura|1 cl de cognac|c 8 cl de champagne',
+    'preparation' => 'Placer les ingrédients directement dans un verre de type flûte à champagne dans l\'ordre suivant : Imbiber le morceau de sucre d\'angostura, puis le mettre au fond d\'une flûte à champagne. Verser doucement le cognac (il doit recouvrir le morceau de sucre). Compléter avec du champagne bien frais.',
     'index' => 
     array (
       0 => 'Sucre roux',
@@ -124,7 +124,7 @@
   array (
     'titre' => 'Citrouillette (Boisson au champagne)',
     'ingredients' => 'noilly prat|champagne',
-    'preparation' => 'Verser 1/3 de Nouilly Prat dans un verre puis 2/3 de Champagne bien frais. Déguster, c est excellent.',
+    'preparation' => 'Verser 1/3 de Nouilly Prat dans un verre puis 2/3 de Champagne bien frais. Déguster, c\'est excellent.',
     'index' => 
     array (
       0 => 'Noilly Prat',
@@ -197,7 +197,7 @@
   15 => 
   array (
     'titre' => 'Boisson Eau de mer',
-    'ingredients' => '6 bouteilles de mousseux|20 cl de curaçao|70 cl de triple sec|35 cl de sirop de citrons|35 cl de sirop d oranges|25 cl de sucre de canne',
+    'ingredients' => '6 bouteilles de mousseux|20 cl de curaçao|70 cl de triple sec|35 cl de sirop de citrons|35 cl de sirop d\'oranges|25 cl de sucre de canne',
     'preparation' => 'Dans un grand récipient mélanger le triple sec, le curacao, le pulco citron, le pulco orange et le sucre de canne. Ensuite, ajouter les bouteilles de mousseux bien fraîches. Servir aussitôt.',
     'index' => 
     array (
@@ -205,19 +205,19 @@
       1 => 'Curaçao',
       2 => 'Triple sec',
       3 => 'Sirop de citrons',
-      4 => 'Sirop d oranges',
+      4 => 'Sirop d\'oranges',
       5 => 'Sucre de canne en poudre',
     ),
   ),
   16 => 
   array (
     'titre' => 'Boisson Fraisalia (sans alcool)',
-    'ingredients' => '500 g de fraises|50 cl de jus d orange|10 cl de sirop de fraise|2 l de limonade|10 glaçons',
-    'preparation' => ' Placer dans un saladier les fraises coupées en morceaux, le jus d orange et le sirop de fraise. Laisser reposer au frais au moins 2 heures. Au moment de servir, ajouter le limonade et les glaçons. ',
+    'ingredients' => '500 g de fraises|50 cl de jus d\'orange|10 cl de sirop de fraise|2 l de limonade|10 glaçons',
+    'preparation' => ' Placer dans un saladier les fraises coupées en morceaux, le jus d\'orange et le sirop de fraise. Laisser reposer au frais au moins 2 heures. Au moment de servir, ajouter le limonade et les glaçons. ',
     'index' => 
     array (
       0 => 'Fraise',
-      1 => 'Jus d orange',
+      1 => 'Jus d\'orange',
       2 => 'Sirop de fraises',
       3 => 'Limonade',
       4 => 'Glaçon',
@@ -226,12 +226,12 @@
   17 => 
   array (
     'titre' => 'Boisson Grand Paradis',
-    'ingredients' => '1 cl de cognac|c 5 cl de jus d abricot|10 cl environ de champagne',
-    'preparation' => 'Mélanger au shaker le cognac et le jus d abricot. Verser dans un verre (type verre tulipe) et remplir de champagne.',
+    'ingredients' => '1 cl de cognac|c 5 cl de jus d\'abricot|10 cl environ de champagne',
+    'preparation' => 'Mélanger au shaker le cognac et le jus d\'abricot. Verser dans un verre (type verre tulipe) et remplir de champagne.',
     'index' => 
     array (
       0 => 'Cognac',
-      1 => 'Jus d abricots',
+      1 => 'Jus d\'abricots',
       2 => 'Champagne',
     ),
   ),
@@ -252,8 +252,8 @@
   19 => 
   array (
     'titre' => 'Boisson MAP',
-    'ingredients' => '1/3 de martini blanc|1 trait d angostura|2/3 de jus de pamplemousse',
-    'preparation' => 'Mettre les flûtes au congélateur. Presser le pamplemousse ou ouvrir la bouteille ou le berlingot... Verser 1/3 martini, 2/3 jus de pamplemousse et 1 trait d angustura. Pour la déco : poser sur chaque verre une torsade de pain aux graines de pavot et sucre dorée au four mais pétrie d amour et à la MAP of course...',
+    'ingredients' => '1/3 de martini blanc|1 trait d\'angostura|2/3 de jus de pamplemousse',
+    'preparation' => 'Mettre les flûtes au congélateur. Presser le pamplemousse ou ouvrir la bouteille ou le berlingot... Verser 1/3 martini, 2/3 jus de pamplemousse et 1 trait d\'angustura. Pour la déco : poser sur chaque verre une torsade de pain aux graines de pavot et sucre dorée au four mais pétrie d\'amour et à la MAP of course...',
     'index' => 
     array (
       0 => 'Martini blanc',
@@ -277,11 +277,11 @@
   21 => 
   array (
     'titre' => 'Boisson Madras',
-    'ingredients' => '40 cl jus d orange|20 cl de vin blanc|sirop de grenadine',
-    'preparation' => 'Mélanger le jus d orange avec le vin blanc. Verser le mélange dans des verres. Ajouter un filet de sirop de grenadine.',
+    'ingredients' => '40 cl jus d\'orange|20 cl de vin blanc|sirop de grenadine',
+    'preparation' => 'Mélanger le jus d\'orange avec le vin blanc. Verser le mélange dans des verres. Ajouter un filet de sirop de grenadine.',
     'index' => 
     array (
-      0 => 'Jus d orange',
+      0 => 'Jus d\'orange',
       1 => 'Vin blanc',
       2 => 'Sirop de grenadine',
     ),
@@ -289,13 +289,13 @@
   22 => 
   array (
     'titre' => 'Boisson Mexicain à ma façon',
-    'ingredients' => '40 cl de tequila|1 l de jus de goyave|1 l de jus d ananas|30 cl de jus de pomme|1 sachet de sucre vanillé|3 ou 4 feuilles de menthe',
-    'preparation' => 'Mélanger les jus de goyave et d ananas. Ajouter la téquila et le jus de pomme. Mélanger. Ajouter le sucre vanillé et secouer jusqu à ce que le sucre soit fondu. Ciseler les feuilles de menthe et les incorporer au Boisson. Réserver au frigo pendant 12 à 24 heures. Attention, l alcool de la téquila s évanouit vite. On ne le sent presque plus au bout de 48 heures, ne le préparer donc pas trop tôt. Filtrer le mélange et servir bien frais.',
+    'ingredients' => '40 cl de tequila|1 l de jus de goyave|1 l de jus d\'ananas|30 cl de jus de pomme|1 sachet de sucre vanillé|3 ou 4 feuilles de menthe',
+    'preparation' => 'Mélanger les jus de goyave et d\'ananas. Ajouter la téquila et le jus de pomme. Mélanger. Ajouter le sucre vanillé et secouer jusqu\'à ce que le sucre soit fondu. Ciseler les feuilles de menthe et les incorporer au Boisson. Réserver au frigo pendant 12 à 24 heures. Attention, l\'alcool de la téquila s\'évanouit vite. On ne le sent presque plus au bout de 48 heures, ne le préparer donc pas trop tôt. Filtrer le mélange et servir bien frais.',
     'index' => 
     array (
       0 => 'Tequila',
       1 => 'Jus de goyave',
-      2 => 'Jus d ananas',
+      2 => 'Jus d\'ananas',
       3 => 'Jus de pommes',
       4 => 'Sucre vanillé',
       5 => 'Menthe',
@@ -304,11 +304,11 @@
   23 => 
   array (
     'titre' => 'Boisson Pomabricotine',
-    'ingredients' => '45 cl de jus d abricots|45 cl de jus de pommes|35 cl d eau gazeuse|2.5 cl de liqueur|5 cl de sirop de grenadine',
-    'preparation' => 'Mélanger tous les ingrédients, mettre au frais et ajouter l eau gazeuse fraîche au dernier moment pour conserver le pétillant.',
+    'ingredients' => '45 cl de jus d\'abricots|45 cl de jus de pommes|35 cl d\'eau gazeuse|2.5 cl de liqueur|5 cl de sirop de grenadine',
+    'preparation' => 'Mélanger tous les ingrédients, mettre au frais et ajouter l\'eau gazeuse fraîche au dernier moment pour conserver le pétillant.',
     'index' => 
     array (
-      0 => 'Jus d abricots',
+      0 => 'Jus d\'abricots',
       1 => 'Jus de pommes',
       2 => 'Eau gazeuse',
       3 => 'Liqueur',
@@ -318,12 +318,12 @@
   24 => 
   array (
     'titre' => 'Boisson Pomenas',
-    'ingredients' => '20 cl de jus de pamplemousse|20 cl de jus d ananas|20 cl de jus de pommes|quelques framboises|des glaçons',
+    'ingredients' => '20 cl de jus de pamplemousse|20 cl de jus d\'ananas|20 cl de jus de pommes|quelques framboises|des glaçons',
     'preparation' => 'Verser les jus dans une cruche, ajouter les framboises pour donner la couleur et des glaçons pour la fraîcheur. Servir frais.',
     'index' => 
     array (
       0 => 'Jus de pamplemousse',
-      1 => 'Jus d ananas',
+      1 => 'Jus d\'ananas',
       2 => 'Jus de pommes',
       3 => 'Framboise',
       4 => 'Glaçon',
@@ -343,13 +343,13 @@
   26 => 
   array (
     'titre' => 'Boisson anapomise',
-    'ingredients' => '25 cl de jus de cerises|25 cl de jus de pommes|25 cl de jus d ananas|2,5 cl d alcool de prune|2,5 cl de sirop de sucre de canne',
+    'ingredients' => '25 cl de jus de cerises|25 cl de jus de pommes|25 cl de jus d\'ananas|2,5 cl d\'alcool de prune|2,5 cl de sirop de sucre de canne',
     'preparation' => 'Mélangez tous les ingrédients et servir bien frais.',
     'index' => 
     array (
       0 => 'Jus de cerises',
       1 => 'Jus de pommes',
-      2 => 'Jus d ananas',
+      2 => 'Jus d\'ananas',
       3 => 'Alcool de prune',
       4 => 'Sirop de sucre de canne',
     ),
@@ -386,7 +386,7 @@
   array (
     'titre' => 'Boisson au Martini',
     'ingredients' => '1 l de martini blanc|1.5 l de schweppes aux agrumes|1 citron',
-    'preparation' => 'Mélanger les liquides. Couper le citron en gros morceaux et l ajouter. Servir très frais avec des glaçons.',
+    'preparation' => 'Mélanger les liquides. Couper le citron en gros morceaux et l\'ajouter. Servir très frais avec des glaçons.',
     'index' => 
     array (
       0 => 'Martini',
@@ -409,8 +409,8 @@
   31 => 
   array (
     'titre' => 'Boisson au kumquat et au litchi',
-    'ingredients' => '5 kumquats|5 litchis|1 clémentine|1/2 orange|1/2 l d eau|1 l de limonade',
-    'preparation' => ' Mixer au mixeur tous les fruits ainsi que l eau jusqu à obtenir un mélange homogène. Ajouter le litre de limonade. Mettre au réfrigérateur 1 h. ',
+    'ingredients' => '5 kumquats|5 litchis|1 clémentine|1/2 orange|1/2 l d\'eau|1 l de limonade',
+    'preparation' => ' Mixer au mixeur tous les fruits ainsi que l\'eau jusqu\'à obtenir un mélange homogène. Ajouter le litre de limonade. Mettre au réfrigérateur 1 h. ',
     'index' => 
     array (
       0 => 'Kumquat',
@@ -425,7 +425,7 @@
   array (
     'titre' => 'Boisson au limoncello',
     'ingredients' => '2 oranges|5 cl de rhum ambré|1 trait de limoncello|glaçons',
-    'preparation' => 'Verser le rhum ambré dans le verre. Presser les 2 oranges, puis ajouter le jus au rhum. Ajouter ensuite le trait de Limoncello, remuer et ajouter quelques glaçons. C est prêt !',
+    'preparation' => 'Verser le rhum ambré dans le verre. Presser les 2 oranges, puis ajouter le jus au rhum. Ajouter ensuite le trait de Limoncello, remuer et ajouter quelques glaçons. C\'est prêt !',
     'index' => 
     array (
       0 => 'Orange',
@@ -437,11 +437,11 @@
   33 => 
   array (
     'titre' => 'Boisson aux agrumes sans alcool',
-    'ingredients' => '6 cl jus d orange|4.5 cl jus de citron jaune|2 cuillères à café de sirop de grenadine ou de fraise',
-    'preparation' => ' Mesurer chacun des ingrédients et les verser dans un shaker. Bien secouer. Verser le tout dans un verre à Boisson ou une flûte à champagne. Réitérer l opération pour chaque personne. ',
+    'ingredients' => '6 cl jus d\'orange|4.5 cl jus de citron jaune|2 cuillères à café de sirop de grenadine ou de fraise',
+    'preparation' => ' Mesurer chacun des ingrédients et les verser dans un shaker. Bien secouer. Verser le tout dans un verre à Boisson ou une flûte à champagne. Réitérer l\'opération pour chaque personne. ',
     'index' => 
     array (
-      0 => 'Jus d orange',
+      0 => 'Jus d\'orange',
       1 => 'Jus de citron',
       2 => 'Fraise',
     ),
@@ -479,7 +479,7 @@
   array (
     'titre' => 'Boisson café au lait',
     'ingredients' => '4 à 6 cl de liqueur de café|4 à 6 cl de whisky|30 cl de lait|2 à 6 cl de sucre de canne|4 glaçons',
-    'preparation' => 'Dans un shaker, verser tous les ingrédients + 2 glaçons. (répartir les autres glaçons dans le verre). Agiter le shaker jusqu à ce que les glaçons soient quasimment fondus. Verser dans un verre large voire évasé afin d obtenir une mousse onctueuse.',
+    'preparation' => 'Dans un shaker, verser tous les ingrédients + 2 glaçons. (répartir les autres glaçons dans le verre). Agiter le shaker jusqu\'à ce que les glaçons soient quasimment fondus. Verser dans un verre large voire évasé afin d\'obtenir une mousse onctueuse.',
     'index' => 
     array (
       0 => 'Liqueur de café',
@@ -520,7 +520,7 @@
   array (
     'titre' => 'Boisson champanisé',
     'ingredients' => '4 bouteilles de mousseux|1/2 bouteille cointreau|10 citrons pressés avec pulpe|2 verres de sirop de sucre de canne|des glaçons',
-    'preparation' => 'Dans un grand récipient, verser le Cointreau, le jus des citrons avec leur pulpe et le sirop de sucre de canne. Verser le mousseux en dernier. Ajouter des glaçons. Servez dans des verres frais (l idéal est de les placer au réfrigérateur avant).',
+    'preparation' => 'Dans un grand récipient, verser le Cointreau, le jus des citrons avec leur pulpe et le sirop de sucre de canne. Verser le mousseux en dernier. Ajouter des glaçons. Servez dans des verres frais (l\'idéal est de les placer au réfrigérateur avant).',
     'index' => 
     array (
       0 => 'Vin effervescent',
@@ -534,7 +534,7 @@
   array (
     'titre' => 'Boisson citron-menthe (sans alcool)',
     'ingredients' => '4 cl de sirop de menthe|1 trait de sirop de sucre de canne|2 cl de jus de citron vert|3 cl de jus de citron jaune|1 branche de menthe fraîche|1 tranche de citron',
-    'preparation' => 'Mettre dans un shaker, avec de la glace, le sirop de menthe, le sirop de sucre et les jus de citron. Bien agiter. Verser dans un verre, décorer d une branche de menthe et d une tranche de citron.',
+    'preparation' => 'Mettre dans un shaker, avec de la glace, le sirop de menthe, le sirop de sucre et les jus de citron. Bien agiter. Verser dans un verre, décorer d\'une branche de menthe et d\'une tranche de citron.',
     'index' => 
     array (
       0 => 'Sirop à la menthe',
@@ -564,7 +564,7 @@
   array (
     'titre' => 'Boisson coco des amoureux',
     'ingredients' => '1 noix de coco|rhum blanc',
-    'preparation' => 'Percer la noix de coco en 3 endroits sur le dessus, et vider l eau à l intérieur. Remplir entièrement de rhum blanc. Boucher les trous en retaillant un bouchon de liège, et fermer hermétiquement en faisant couler de la cire de bougie dessus.Ranger debout, au frigo, pendant 3 semaines.',
+    'preparation' => 'Percer la noix de coco en 3 endroits sur le dessus, et vider l\'eau à l\'intérieur. Remplir entièrement de rhum blanc. Boucher les trous en retaillant un bouchon de liège, et fermer hermétiquement en faisant couler de la cire de bougie dessus.Ranger debout, au frigo, pendant 3 semaines.',
     'index' => 
     array (
       0 => 'Noix de coco',
@@ -575,7 +575,7 @@
   array (
     'titre' => 'Boisson crème de coco et banane',
     'ingredients' => 'crème de coco|jus de banane|sirop de fraise|citron vert',
-    'preparation' => 'Dans le fond d un verre verser 3 cuillères à café de crème de coco. Diluer avec du jus de banane jusqu a ce que le liquide ait un aspect uniforme. Ajouter un peu de sirop de cassis et quelques gouttes de jus de citron vert. Servir très frais.',
+    'preparation' => 'Dans le fond d\'un verre verser 3 cuillères à café de crème de coco. Diluer avec du jus de banane jusqu\'a ce que le liquide ait un aspect uniforme. Ajouter un peu de sirop de cassis et quelques gouttes de jus de citron vert. Servir très frais.',
     'index' => 
     array (
       0 => 'Crème de noix de coco',
@@ -587,8 +587,8 @@
   44 => 
   array (
     'titre' => 'Boisson de fruits',
-    'ingredients' => '1 banane|1 pomme|2 kiwis|1 petit bol d eau|1 sachet de sucre vanillé|3 cuillères à soupe de cassonade',
-    'preparation' => ' Peler et couper les fruits en morceaux. Les mettre dans le blender (ou tout autre récipient à Boisson), puis mixer le tout, en rajoutant peu à peu l eau, jusqu à obtention de la consistance voulue (moi j aime bien quand c est un peu épais). Rajouter ensuite le sucre vanillé et la cassonade, selon le goût. Mixer une dernière fois pour que le sucre s intègre bien au mélange. Mettre au frais pendant une petite heure et déguster ! ',
+    'ingredients' => '1 banane|1 pomme|2 kiwis|1 petit bol d\'eau|1 sachet de sucre vanillé|3 cuillères à soupe de cassonade',
+    'preparation' => ' Peler et couper les fruits en morceaux. Les mettre dans le blender (ou tout autre récipient à Boisson), puis mixer le tout, en rajoutant peu à peu l\'eau, jusqu\'à obtention de la consistance voulue (moi j\'aime bien quand c\'est un peu épais). Rajouter ensuite le sucre vanillé et la cassonade, selon le goût. Mixer une dernière fois pour que le sucre s\'intègre bien au mélange. Mettre au frais pendant une petite heure et déguster ! ',
     'index' => 
     array (
       0 => 'Banane',
@@ -616,11 +616,11 @@
   46 => 
   array (
     'titre' => 'Boisson de jus de fruits pour les enfants',
-    'ingredients' => '5 cuillères à soupe de jus d ananas|3 cuillère à soupe de jus de pommes|2 glaçons|1 rondelle d ananas|1 rondelle de pomme|1 cuillère à café de sucre en poudre',
-    'preparation' => 'Mettre le jus de pomme et le jus d ananas dans un grand verre, puis mélanger. Ajouter le sucre et remuer à nouveau, puis ajouter les glaçons. Mettre 5 min au frigo. Au moment de servir, mettre les rondelles d ananas et de pommes sur le bord du verre pour la déco.',
+    'ingredients' => '5 cuillères à soupe de jus d\'ananas|3 cuillère à soupe de jus de pommes|2 glaçons|1 rondelle d\'ananas|1 rondelle de pomme|1 cuillère à café de sucre en poudre',
+    'preparation' => 'Mettre le jus de pomme et le jus d\'ananas dans un grand verre, puis mélanger. Ajouter le sucre et remuer à nouveau, puis ajouter les glaçons. Mettre 5 min au frigo. Au moment de servir, mettre les rondelles d\'ananas et de pommes sur le bord du verre pour la déco.',
     'index' => 
     array (
-      0 => 'Jus d ananas',
+      0 => 'Jus d\'ananas',
       1 => 'Jus de pommes',
       2 => 'Glaçon',
       3 => 'Ananas',
@@ -631,8 +631,8 @@
   47 => 
   array (
     'titre' => 'Boisson de pomme ambrée',
-    'ingredients' => '1 pomme|1 citron|6 glaçons|10 cl de jus de pomme|5 cl de calvados|10 cl de crème de cassis|champagne|un peu de cassis|morceaux de pommes|morceaux d ananas',
-    'preparation' => 'Taillez une pomme en fines tranches et arrosez-les avec le jus d un citron. Réservez. Mettez 6 glaçons dans votre shaker, versez 10 cl de jus de pomme, 5 cl de calvados et 10 cl de crème de cassis. Agitez pendant 10 secondes. Répartissez dans 4 verres à Boisson, puis remplissez de champagne. Décorez de cassis, pomme et ananas.',
+    'ingredients' => '1 pomme|1 citron|6 glaçons|10 cl de jus de pomme|5 cl de calvados|10 cl de crème de cassis|champagne|un peu de cassis|morceaux de pommes|morceaux d\'ananas',
+    'preparation' => 'Taillez une pomme en fines tranches et arrosez-les avec le jus d\'un citron. Réservez. Mettez 6 glaçons dans votre shaker, versez 10 cl de jus de pomme, 5 cl de calvados et 10 cl de crème de cassis. Agitez pendant 10 secondes. Répartissez dans 4 verres à Boisson, puis remplissez de champagne. Décorez de cassis, pomme et ananas.',
     'index' => 
     array (
       0 => 'Pomme',
@@ -651,7 +651,7 @@
   array (
     'titre' => 'Boisson des dimanches de neige',
     'ingredients' => 'une poignée de framboises|2 cuillères à café de sirop de gratte-cul|1/2 pamplemousse|1 orange',
-    'preparation' => ' Mettre au fond d un joli verre, les framboises et le sirop. Ajouter le jus d orange et de pamplemousse pressés. Servir bien frais et regarder la neige par la fenêtre en se demandant si, vraiment, on va sortir aujourd hui. ',
+    'preparation' => ' Mettre au fond d\'un joli verre, les framboises et le sirop. Ajouter le jus d\'orange et de pamplemousse pressés. Servir bien frais et regarder la neige par la fenêtre en se demandant si, vraiment, on va sortir aujourd\'hui. ',
     'index' => 
     array (
       0 => 'Framboise',
@@ -663,12 +663,12 @@
   49 => 
   array (
     'titre' => 'Boisson des îles Praslin',
-    'ingredients' => '40 cl de jus de mangue|30 cl de jus d ananas|20 cl de jus de fruit de la passion|10 cl de jus de citron vert|1 cuillère à soupe de sucre',
+    'ingredients' => '40 cl de jus de mangue|30 cl de jus d\'ananas|20 cl de jus de fruit de la passion|10 cl de jus de citron vert|1 cuillère à soupe de sucre',
     'preparation' => 'On mélange le tout dans une bouteille. On secoue bien pendant 20 secondes environ et on met au frigo pour que ça soit bien frais au moment de servir. A servir dans des grands verres à Boisson et avec des jolies pailles colorées.',
     'index' => 
     array (
       0 => 'Jus de mangue',
-      1 => 'Jus d ananas',
+      1 => 'Jus d\'ananas',
       2 => 'Jus de fruit de la passion',
       3 => 'Jus de citrons verts',
       4 => 'Sucre',
@@ -677,11 +677,11 @@
   50 => 
   array (
     'titre' => 'Boisson du verger',
-    'ingredients' => '4 cl de liqueur d abricot|5 cl de liqueur de pomme|12 cl de jus de poire|3 glaçons',
-    'preparation' => 'Dans un grand verre à Boisson, installer les 3 glacons. Verser chaque ingrédient dans l ordre énoncé ci-dessus. Bien mélanger et déguster !!',
+    'ingredients' => '4 cl de liqueur d\'abricot|5 cl de liqueur de pomme|12 cl de jus de poire|3 glaçons',
+    'preparation' => 'Dans un grand verre à Boisson, installer les 3 glacons. Verser chaque ingrédient dans l\'ordre énoncé ci-dessus. Bien mélanger et déguster !!',
     'index' => 
     array (
-      0 => 'Liqueur d abricot',
+      0 => 'Liqueur d\'abricot',
       1 => 'Liqueur de pommes',
       2 => 'Jus de poires',
       3 => 'Glaçon',
@@ -705,7 +705,7 @@
   array (
     'titre' => 'Boisson glacé tropical',
     'ingredients' => '10 cl du jus de citron vert|10 cl de jus de mangue|1/2 banane|100 g de glace à la mangue|coulis de framboise',
-    'preparation' => 'Mixez tous les ingrédients (sauf le coulis) jusqu à ce que le mélange soit bien onctueux. Décorez votre verre d un peu de coulis, et versez votre préparation dans ce même verre.',
+    'preparation' => 'Mixez tous les ingrédients (sauf le coulis) jusqu\'à ce que le mélange soit bien onctueux. Décorez votre verre d\'un peu de coulis, et versez votre préparation dans ce même verre.',
     'index' => 
     array (
       0 => 'Jus de citrons verts',
@@ -732,13 +732,13 @@
   54 => 
   array (
     'titre' => 'Boisson la variante (à base de rosé)',
-    'ingredients' => '5,33l de vin rosé|0,66l de sirop d agrumes|4l de jus d orange',
+    'ingredients' => '5,33l de vin rosé|0,66l de sirop d\'agrumes|4l de jus d\'orange',
     'preparation' => 'mélangez le tout Boire très frais &quot;à consommer avec modération&quot;',
     'index' => 
     array (
       0 => 'Vin rosé',
-      1 => 'Sirop d agrumes',
-      2 => 'Jus d orange',
+      1 => 'Sirop d\'agrumes',
+      2 => 'Jus d\'orange',
     ),
   ),
   55 => 
@@ -756,8 +756,8 @@
   56 => 
   array (
     'titre' => 'Boisson léger au martini',
-    'ingredients' => '1 bouteille de martini rosé|1 bouteille d eau minérale gazeuse|2 citrons verts|une poignée de feuilles de menthe fraîche|2 cuillères à soupe de sucre',
-    'preparation' => 'Verser le martini dans un grand pichet, ajouter le sucre et faire fondre.Ajouter ensuite les citrons coupés en morceaux et la menthe. Mélanger et mettre au frais au moins 4 heures (une nuit c est mieux). Au moment de servir, verser la bouteille d eau gazeuse.',
+    'ingredients' => '1 bouteille de martini rosé|1 bouteille d\'eau minérale gazeuse|2 citrons verts|une poignée de feuilles de menthe fraîche|2 cuillères à soupe de sucre',
+    'preparation' => 'Verser le martini dans un grand pichet, ajouter le sucre et faire fondre.Ajouter ensuite les citrons coupés en morceaux et la menthe. Mélanger et mettre au frais au moins 4 heures (une nuit c\'est mieux). Au moment de servir, verser la bouteille d\'eau gazeuse.',
     'index' => 
     array (
       0 => 'Martini rosé',
@@ -770,12 +770,12 @@
   57 => 
   array (
     'titre' => 'Boisson mexicanos',
-    'ingredients' => '12 cl de bière &quot;desperados&quot;|12 cl de jus d ananas|1 trait de sirop de fraises',
-    'preparation' => 'Dans un verre à bière, verser un trait de sirop de fraise. Compléter avec la bière, en penchant le verre pour éviter de faire trop de mousse, et verser ensuite le jus d ananas. Boire très frais.',
+    'ingredients' => '12 cl de bière &quot;desperados&quot;|12 cl de jus d\'ananas|1 trait de sirop de fraises',
+    'preparation' => 'Dans un verre à bière, verser un trait de sirop de fraise. Compléter avec la bière, en penchant le verre pour éviter de faire trop de mousse, et verser ensuite le jus d\'ananas. Boire très frais.',
     'index' => 
     array (
       0 => 'Bière',
-      1 => 'Jus d ananas',
+      1 => 'Jus d\'ananas',
       2 => 'Sirop de fraises',
     ),
   ),
@@ -783,7 +783,7 @@
   array (
     'titre' => 'Boisson mousseux fraise citron vert (sans alcool)',
     'ingredients' => '400 g de fraises|2 c.à s.de sucre|10 cl de jus de citron vert|30 cl de limonade',
-    'preparation' => 'Laver, équeuter les fraises.Les mettre dans un mixer.Ajouter le jus des citrons verts et le sucre.Mixer.Verser la limonade et mixer de nouveau.Réserver au frais jusqu au moment de servir. Voilà c est terminé !!! Bonne dégustation !!',
+    'preparation' => 'Laver, équeuter les fraises.Les mettre dans un mixer.Ajouter le jus des citrons verts et le sucre.Mixer.Verser la limonade et mixer de nouveau.Réserver au frais jusqu\'au moment de servir. Voilà c\'est terminé !!! Bonne dégustation !!',
     'index' => 
     array (
       0 => 'Fraise',
@@ -823,11 +823,11 @@
   61 => 
   array (
     'titre' => 'Boisson paradise',
-    'ingredients' => '10 cl de jus d orange|4 cl de vodka|2 cl de pisang ambon|2 cl de sucre de canne',
+    'ingredients' => '10 cl de jus d\'orange|4 cl de vodka|2 cl de pisang ambon|2 cl de sucre de canne',
     'preparation' => 'Réunir les ingrédients, hormis le Pisang, dans un shaker. Frapper. Verser dans un verre à Boisson, puis ajouter le Pisang. Servir frais.',
     'index' => 
     array (
-      0 => 'Jus d orange',
+      0 => 'Jus d\'orange',
       1 => 'Vodka',
       2 => 'Pisang Ambon',
       3 => 'Sucre de canne en poudre',
@@ -836,11 +836,11 @@
   62 => 
   array (
     'titre' => 'Boisson pour les amoureux',
-    'ingredients' => '12 cl de jus d oranges|18 cl de cointreau|10 cl de cognac|3 traits de grenadine|10 cl de champagne|quelques framboises',
-    'preparation' => 'Mélanger tous les ingrédients (si possible préalablement mis au frigo) à la cuillère ou au shaker. Ajouter uniquement avant de servir les framboises (pour qu elles gardent leur consistance) ou une heure avant si vous les souhaitées bien imbibées.',
+    'ingredients' => '12 cl de jus d\'oranges|18 cl de cointreau|10 cl de cognac|3 traits de grenadine|10 cl de champagne|quelques framboises',
+    'preparation' => 'Mélanger tous les ingrédients (si possible préalablement mis au frigo) à la cuillère ou au shaker. Ajouter uniquement avant de servir les framboises (pour qu\'elles gardent leur consistance) ou une heure avant si vous les souhaitées bien imbibées.',
     'index' => 
     array (
-      0 => 'Jus d orange',
+      0 => 'Jus d\'orange',
       1 => 'Cointreau',
       2 => 'Cognac',
       3 => 'Grenadine',
@@ -852,7 +852,7 @@
   array (
     'titre' => 'Boisson rose au whisky',
     'ingredients' => '400 g de framboises|6 brins de coriandre fraîche|5 cl de whisky|15 cl de crème fraîche|3 cuillères à soupe de pistaches non salées concassées',
-    'preparation' => '1. Mixez les framboises avec la crème et 15 cl d eau glacée.Répartissez le mélange obtenu dans des verres. 2. Ajoutez un trait de whisky et parsemez de pistaches concassées.Décorez d une tige de coriandre et réservez au frais jusqu au moment de servir.',
+    'preparation' => '1. Mixez les framboises avec la crème et 15 cl d\'eau glacée.Répartissez le mélange obtenu dans des verres. 2. Ajoutez un trait de whisky et parsemez de pistaches concassées.Décorez d\'une tige de coriandre et réservez au frais jusqu\'au moment de servir.',
     'index' => 
     array (
       0 => 'Framboise',
@@ -877,15 +877,15 @@
   65 => 
   array (
     'titre' => 'Boisson rose sucré',
-    'ingredients' => '150 g de framboises|1 citron|8 glaçons|10 cl de jus de raisin|15 cl de jus d orange|schweppes|fruits des bois, baie',
-    'preparation' => 'Versez dans le bol d un mixeur les framboises et le jus du citron. Mixez pour obtenir un fin coulis. Refroidissez un shaker avec 6 glaçons. Jetez l eau puis remettez 2 glaçons, le coulis de framboise filtré, le jus de raisin et le jus d orange. Ajoutez 10 secondes puis versez dans 4 verres hauts. Complétez avec le schweppes. Décorez de fruits des bois.',
+    'ingredients' => '150 g de framboises|1 citron|8 glaçons|10 cl de jus de raisin|15 cl de jus d\'orange|schweppes|fruits des bois, baie',
+    'preparation' => 'Versez dans le bol d\'un mixeur les framboises et le jus du citron. Mixez pour obtenir un fin coulis. Refroidissez un shaker avec 6 glaçons. Jetez l\'eau puis remettez 2 glaçons, le coulis de framboise filtré, le jus de raisin et le jus d\'orange. Ajoutez 10 secondes puis versez dans 4 verres hauts. Complétez avec le schweppes. Décorez de fruits des bois.',
     'index' => 
     array (
       0 => 'Framboise',
       1 => 'Citron',
       2 => 'Glaçon',
       3 => 'Jus de raisins',
-      4 => 'Jus d orange',
+      4 => 'Jus d\'orange',
       5 => 'Schweppes',
       6 => 'Baie',
     ),
@@ -893,24 +893,24 @@
   66 => 
   array (
     'titre' => 'Boisson rouge',
-    'ingredients' => 'liqueur de litchi|liqueur de fraise|jus d orange',
-    'preparation' => 'Mélanger dans un verre les proportions suivantes: 40% de liqueur de litchi 20% de liqueur de fraise 40% de jus d orange. Et vive l apéro!',
+    'ingredients' => 'liqueur de litchi|liqueur de fraise|jus d\'orange',
+    'preparation' => 'Mélanger dans un verre les proportions suivantes: 40% de liqueur de litchi 20% de liqueur de fraise 40% de jus d\'orange. Et vive l\'apéro!',
     'index' => 
     array (
       0 => 'Liqueur de litchi',
       1 => 'Liqueur de fraises',
-      2 => 'Jus d orange',
+      2 => 'Jus d\'orange',
     ),
   ),
   67 => 
   array (
     'titre' => 'Boisson sans alcool Cranberry-orange',
-    'ingredients' => '25 cl de jus de cranberry|10 cl de jus d orange|150 g de framboises|2 rondelles de citron ou d orange|1 cuillère à soupe de jus de citron',
-    'preparation' => 'Mélanger les deux jus. Ajouter les framboises et le jus de citron. Mixer le tout en purée. Servir frappé ou avec quelques glaçons. Décorer vos verres d une rondelle de citron ou d orange. A votre santé !',
+    'ingredients' => '25 cl de jus de cranberry|10 cl de jus d\'orange|150 g de framboises|2 rondelles de citron ou d\'orange|1 cuillère à soupe de jus de citron',
+    'preparation' => 'Mélanger les deux jus. Ajouter les framboises et le jus de citron. Mixer le tout en purée. Servir frappé ou avec quelques glaçons. Décorer vos verres d\'une rondelle de citron ou d\'orange. A votre santé !',
     'index' => 
     array (
       0 => 'Jus de canneberge',
-      1 => 'Jus d orange',
+      1 => 'Jus d\'orange',
       2 => 'Framboise',
       3 => 'Citron',
       4 => 'Jus de citron',
@@ -934,26 +934,26 @@
   69 => 
   array (
     'titre' => 'Boisson sans alcool Sweet Melon',
-    'ingredients' => '1 melon vert ovale|2 citrons verts|1 litre de jus d oranges|1 litre de jus d ananas|1/2 litre d eau pétillante',
-    'preparation' => 'Couper la chair du melon en dès. Presser les citrons verts. Verser tous les jus de fruits dans un saladier. Ajouter les dès de melon et laisser reposer au frais pendant 2 heures. Ajouter l eau pétillante juste avant de servir.',
+    'ingredients' => '1 melon vert ovale|2 citrons verts|1 litre de jus d\'oranges|1 litre de jus d\'ananas|1/2 litre d\'eau pétillante',
+    'preparation' => 'Couper la chair du melon en dès. Presser les citrons verts. Verser tous les jus de fruits dans un saladier. Ajouter les dès de melon et laisser reposer au frais pendant 2 heures. Ajouter l\'eau pétillante juste avant de servir.',
     'index' => 
     array (
       0 => 'Melon vert',
       1 => 'Citron vert',
-      2 => 'Jus d orange',
-      3 => 'Jus d ananas',
+      2 => 'Jus d\'orange',
+      3 => 'Jus d\'ananas',
       4 => 'Eau gazeuse',
     ),
   ),
   70 => 
   array (
     'titre' => 'Boisson sans alcool Tropical Sunshine',
-    'ingredients' => '10 cl de jus d ananas|5 cl de jus d oranges|2 cl de sirop de cassis|1 cuillère à café de noix de coco râpée|glaçons',
+    'ingredients' => '10 cl de jus d\'ananas|5 cl de jus d\'oranges|2 cl de sirop de cassis|1 cuillère à café de noix de coco râpée|glaçons',
     'preparation' => 'Verser les jus de fruits bien frais et le sirop de cassis dans un verre large. Ajouter quelques glaçons et parsemer de noix de coco râpée.',
     'index' => 
     array (
-      0 => 'Jus d ananas',
-      1 => 'Jus d orange',
+      0 => 'Jus d\'ananas',
+      1 => 'Jus d\'orange',
       2 => 'Sirop de cassis',
       3 => 'Noix de coco',
       4 => 'Glaçon',
@@ -962,13 +962,13 @@
   71 => 
   array (
     'titre' => 'Boisson tropical délicieux',
-    'ingredients' => '1/4 de l de jus d orange|1/4 de litre de jus de pamplemousse|1/4 de litre de jus d ananas|1 gros citron|20 cl de malibu|sirop de grenadine',
-    'preparation' => 'Pour 1 verre : verser 5 cl de malibu, ajouter ensuite 1/3 de pamplemousse, 1/3 d orange et 1/3 d ananas ; ajouter ensuite un zeste de jus de citron et 1 trait de grenadine pour la déco.',
+    'ingredients' => '1/4 de l de jus d\'orange|1/4 de litre de jus de pamplemousse|1/4 de litre de jus d\'ananas|1 gros citron|20 cl de malibu|sirop de grenadine',
+    'preparation' => 'Pour 1 verre : verser 5 cl de malibu, ajouter ensuite 1/3 de pamplemousse, 1/3 d\'orange et 1/3 d\'ananas ; ajouter ensuite un zeste de jus de citron et 1 trait de grenadine pour la déco.',
     'index' => 
     array (
-      0 => 'Jus d orange',
+      0 => 'Jus d\'orange',
       1 => 'Jus de pamplemousse',
-      2 => 'Jus d ananas',
+      2 => 'Jus d\'ananas',
       3 => 'Citron',
       4 => 'Malibu',
       5 => 'Sirop de grenadine',
@@ -990,12 +990,12 @@
   73 => 
   array (
     'titre' => 'Coconut kiss',
-    'ingredients' => '3 cl de jus d ananas|4 cl de jus d oranges|2 cl de sirop de noix de coco|3 cl de crème fraîche|1 tranche d ananas|1 morceau d orange',
-    'preparation' => 'Mélangez les ingrédients dans un shaker. Servir dans un verre décoré d un morceau d orange et un tranche d ananas',
+    'ingredients' => '3 cl de jus d\'ananas|4 cl de jus d\'oranges|2 cl de sirop de noix de coco|3 cl de crème fraîche|1 tranche d\'ananas|1 morceau d\'orange',
+    'preparation' => 'Mélangez les ingrédients dans un shaker. Servir dans un verre décoré d\'un morceau d\'orange et un tranche d\'ananas',
     'index' => 
     array (
-      0 => 'Jus d ananas',
-      1 => 'Jus d orange',
+      0 => 'Jus d\'ananas',
+      1 => 'Jus d\'orange',
       2 => 'Sirop de noix de coco',
       3 => 'Crème fraiche',
       4 => 'Ananas',
@@ -1032,7 +1032,7 @@
   array (
     'titre' => 'Frosty lime',
     'ingredients' => '1 boule de sorbet citron vert|2 cl de jus de pamplemousse|2 cl de sirop à la menthe|menthe fraîche',
-    'preparation' => 'Mixer les ingrédients et servir le mélange dans un verre à coupe décoré d une feuille de menthe.',
+    'preparation' => 'Mixer les ingrédients et servir le mélange dans un verre à coupe décoré d\'une feuille de menthe.',
     'index' => 
     array (
       0 => 'Sorbet citron vert',
@@ -1045,7 +1045,7 @@
   array (
     'titre' => 'Gin fizz facile',
     'ingredients' => '6 cl de gin|1/2 citron vert|1 cuillère à café de sirop de sucre de canne|eau gazeuse',
-    'preparation' => 'Mettez tous les ingrédients dans un shaker puis agitez énergiquement jusqu à ce que les parois du shaker se couvrent de buée. Versez le contenu du shaker dans les deux verres puis allongez d eau gazeuse. Servez frais avec de la glace pilée, une paille et une rondelle de citron vert.',
+    'preparation' => 'Mettez tous les ingrédients dans un shaker puis agitez énergiquement jusqu\'à ce que les parois du shaker se couvrent de buée. Versez le contenu du shaker dans les deux verres puis allongez d\'eau gazeuse. Servez frais avec de la glace pilée, une paille et une rondelle de citron vert.',
     'index' => 
     array (
       0 => 'Gin',
@@ -1095,7 +1095,7 @@
   array (
     'titre' => 'Le baiser de la Schtroumpfette',
     'ingredients' => '2cl de vodka|2cl de curaçao|5cl de limonade|5cl de jus de banane',
-    'preparation' => 'Verser tous les ingrédients dans l ordre dans un verre à martini ou à Boisson et servir très très frais!',
+    'preparation' => 'Verser tous les ingrédients dans l\'ordre dans un verre à martini ou à Boisson et servir très très frais!',
     'index' => 
     array (
       0 => 'Vodka',
@@ -1107,12 +1107,12 @@
   82 => 
   array (
     'titre' => 'Le vandetta',
-    'ingredients' => '15 cl de jus d ananas|2 cl de sirop d orgeat|2 cl de sirop de fraises|5 fraises',
+    'ingredients' => '15 cl de jus d\'ananas|2 cl de sirop d\'orgeat|2 cl de sirop de fraises|5 fraises',
     'preparation' => 'Lavez et équeutez les fraises. Mixer tous les ingrédients et servez dans un verre rapidement.',
     'index' => 
     array (
-      0 => 'Jus d ananas',
-      1 => 'Sirop d orgeat',
+      0 => 'Jus d\'ananas',
+      1 => 'Sirop d\'orgeat',
       2 => 'Sirop de fraises',
       3 => 'Fraise',
     ),
@@ -1149,7 +1149,7 @@
   array (
     'titre' => 'Mojito',
     'ingredients' => '6 cl de rhum cubain|1/2 citron vert|8 feuilles de menthe|eau gazeuse|2 cuillères à café de sucre',
-    'preparation' => 'Mettre dans un verre, les feuilles de menthe le sucre et le citron vert coupé en cubes Piler. Ajouter le rhum, de la glce pilé ou des glaçons, l eau gazeuse et mélanger.',
+    'preparation' => 'Mettre dans un verre, les feuilles de menthe le sucre et le citron vert coupé en cubes Piler. Ajouter le rhum, de la glce pilé ou des glaçons, l\'eau gazeuse et mélanger.',
     'index' => 
     array (
       0 => 'Rhum',
@@ -1163,7 +1163,7 @@
   array (
     'titre' => 'Mojito au Basilic',
     'ingredients' => '5 cl de rhum blanc|eau gazeuse|5 cl de sirop de sucre de canne|1/2 cuillère de sucre roux|1/2 citron vert|feuilles de basilic|glace pilée ou glaçons',
-    'preparation' => 'Couper une rondelle de Citron Vert et la déposer au fond du verre à Boisson.Mettre des glaçons dans un torchon propre, et les piler avec un marteau.Couper les feuilles de basilic en petits morceaux et les mélanger à la glace pilée.Remplir le verre de glace pilée/basilic aux 2 tiers.Ajouter les 5 cl de rhum, 5 cl de sucre de canne liquide et le jus du reste de citron vert, puis compléter avec l eau gazeuse.Saupoudrer de sucre roux.',
+    'preparation' => 'Couper une rondelle de Citron Vert et la déposer au fond du verre à Boisson.Mettre des glaçons dans un torchon propre, et les piler avec un marteau.Couper les feuilles de basilic en petits morceaux et les mélanger à la glace pilée.Remplir le verre de glace pilée/basilic aux 2 tiers.Ajouter les 5 cl de rhum, 5 cl de sucre de canne liquide et le jus du reste de citron vert, puis compléter avec l\'eau gazeuse.Saupoudrer de sucre roux.',
     'index' => 
     array (
       0 => 'Rhum blanc',
@@ -1179,7 +1179,7 @@
   array (
     'titre' => 'Mojito cubain',
     'ingredients' => '3 cuillères à café de sucre de canne en poudre|1/2 citron vert|1 branche de menthe bien fournie|eau gazeuse|rhum|glaçons',
-    'preparation' => 'Dans un verre de taille moyenne (contenance 40 cl environ), mettez 3 cuillères à café de sucre de canne. Ajoutez-y le jus d 1/2 citron vert. Coupez en 3 ou 4 votre branche de menthe et mettez-la dans le verre (le fait de la couper permet à la saveur de la menthe de mieux se diffuser). Ajoutez un peu d eau gazeuse (environ 3 cl) puis avec une cuillère à café, remuez bien le tout et écrasez la menthe (insistez sur les branches plus que sur les feuilles, sinon il y aura pleins de petits bouts de menthe assez désagréables au moment de déguster votre Boisson!). Ajoutez 5 glaçons environ. Ensuite versez 6 cl de rhum (en versant à débit moyen). Pour la dose plutôt chargée, comptez jusqu à 5; pour la dose légère jusqu à 4. Enfin, complétez avec de l eau gazeuse.',
+    'preparation' => 'Dans un verre de taille moyenne (contenance 40 cl environ), mettez 3 cuillères à café de sucre de canne. Ajoutez-y le jus d\'1/2 citron vert. Coupez en 3 ou 4 votre branche de menthe et mettez-la dans le verre (le fait de la couper permet à la saveur de la menthe de mieux se diffuser). Ajoutez un peu d\'eau gazeuse (environ 3 cl) puis avec une cuillère à café, remuez bien le tout et écrasez la menthe (insistez sur les branches plus que sur les feuilles, sinon il y aura pleins de petits bouts de menthe assez désagréables au moment de déguster votre Boisson!). Ajoutez 5 glaçons environ. Ensuite versez 6 cl de rhum (en versant à débit moyen). Pour la dose plutôt chargée, comptez jusqu\'à 5; pour la dose légère jusqu\'à 4. Enfin, complétez avec de l\'eau gazeuse.',
     'index' => 
     array (
       0 => 'Sucre de canne en poudre',
@@ -1193,7 +1193,7 @@
   88 => 
   array (
     'titre' => 'Negroni Boisson',
-    'ingredients' => '3 volumes de campari|3 volumes de martini rouge|3 volumes de gin|3 gouttes d angostura|1 soda|glace pilée|1 rondelle d orange pour décorer',
+    'ingredients' => '3 volumes de campari|3 volumes de martini rouge|3 volumes de gin|3 gouttes d\'angostura|1 soda|glace pilée|1 rondelle d\'orange pour décorer',
     'preparation' => 'Mélanger les ingrédients dans un verre à whisky (tumbler) et servir.',
     'index' => 
     array (
@@ -1225,26 +1225,26 @@
   90 => 
   array (
     'titre' => 'Piña Colada',
-    'ingredients' => '4 cl de rhum blanc|2 cl de rhum ambré|12 cl de jus d ananas|4 cl de lait de coco',
-    'preparation' => 'Mélanger tous les ingrédients directement dans un verre, ou dans un blender pour les mixer. C est prêt !',
+    'ingredients' => '4 cl de rhum blanc|2 cl de rhum ambré|12 cl de jus d\'ananas|4 cl de lait de coco',
+    'preparation' => 'Mélanger tous les ingrédients directement dans un verre, ou dans un blender pour les mixer. C\'est prêt !',
     'index' => 
     array (
       0 => 'Rhum blanc',
       1 => 'Rhum ambré',
-      2 => 'Jus d ananas',
+      2 => 'Jus d\'ananas',
       3 => 'Lait de coco',
     ),
   ),
   91 => 
   array (
     'titre' => 'Piña Colada (Boisson)',
-    'ingredients' => '125 g de crème liquide|150 g de crème de noix de coco|20 cl de jus d ananas non sucré|20 cl de rhum blanc|glaçons',
+    'ingredients' => '125 g de crème liquide|150 g de crème de noix de coco|20 cl de jus d\'ananas non sucré|20 cl de rhum blanc|glaçons',
     'preparation' => 'Mettre tous les ingrédients, sauf les glaçons, dans un mixer et faire tourner à très grande vitesse pendant 30 sec environ. Mettre les glaçons dans les verres et verser par-dessus la crème obtenue.',
     'index' => 
     array (
       0 => 'Crème liquide',
       1 => 'Crème de noix de coco',
-      2 => 'Jus d ananas',
+      2 => 'Jus d\'ananas',
       3 => 'Rhum blanc',
       4 => 'Glaçon',
     ),
@@ -1253,7 +1253,7 @@
   array (
     'titre' => 'Porto Flip',
     'ingredients' => '4 cl de porto|2 cl de cognac|1 oeuf|cannelle|sirop de canne|noix de muscade|glaçons',
-    'preparation' => 'Dans un shaker, mettre les alcools et le sirop de canne. Ensuite ajouter les épices. Melanger avec une longue cuillère. Rajouter un oeuf et les glacons. Fermer le shaker et mixer. Servir dans un verre a Boisson, saupodrer d un peu de cannelle. On peut le faire uniquement avec du porto aussi.',
+    'preparation' => 'Dans un shaker, mettre les alcools et le sirop de canne. Ensuite ajouter les épices. Melanger avec une longue cuillère. Rajouter un oeuf et les glacons. Fermer le shaker et mixer. Servir dans un verre a Boisson, saupodrer d\'un peu de cannelle. On peut le faire uniquement avec du porto aussi.',
     'index' => 
     array (
       0 => 'Porto',
@@ -1299,11 +1299,11 @@
   95 => 
   array (
     'titre' => 'Rainbow',
-    'ingredients' => '10 cl de jus d orange|3 cl de vodka|3 cl de sirop de grenadine|2 cl de curaçao bleu',
-    'preparation' => 'Recette pour 10 verres. versez la grenadine dans le shaker, remplissez le shaker de glaçons aux 2/3, versez la vodka, versez le jus d orange. Finissez de remplir le shaker de glaçons. Versez délicatement le curaçao, de mélangez pas, versez en filtrant dans tous les verres alignés sans vous arrêter. Servir dans des verres de type &quot;shooter&quot;. La couleur du contenu de chaque verre sera différente en créant un très bel effet visuel dégradé de type arc-en-ciel d un verre à l autre. Appelé aussi Rainbow Shot, ou Double Rainbow.',
+    'ingredients' => '10 cl de jus d\'orange|3 cl de vodka|3 cl de sirop de grenadine|2 cl de curaçao bleu',
+    'preparation' => 'Recette pour 10 verres. versez la grenadine dans le shaker, remplissez le shaker de glaçons aux 2/3, versez la vodka, versez le jus d\'orange. Finissez de remplir le shaker de glaçons. Versez délicatement le curaçao, de mélangez pas, versez en filtrant dans tous les verres alignés sans vous arrêter. Servir dans des verres de type &quot;shooter&quot;. La couleur du contenu de chaque verre sera différente en créant un très bel effet visuel dégradé de type arc-en-ciel d\'un verre à l\'autre. Appelé aussi Rainbow Shot, ou Double Rainbow.',
     'index' => 
     array (
-      0 => 'Jus d orange',
+      0 => 'Jus d\'orange',
       1 => 'Vodka',
       2 => 'Sirop de grenadine',
       3 => 'Curaçao bleu',
@@ -1340,7 +1340,7 @@
   array (
     'titre' => 'Rince-gouttes (Boisson)',
     'ingredients' => '1,5 l de cidre|25 cl de cognac|25 cl de crème de cassis|glaçons',
-    'preparation' => 'Dans un grand saladier, commencer par mettre la crème de cassis, ensuite ajoutez le cognac et finalement la bouteille de cidre. Ajoutez en dernier lieu les glaçons pour que l apéro reste frais.',
+    'preparation' => 'Dans un grand saladier, commencer par mettre la crème de cassis, ensuite ajoutez le cognac et finalement la bouteille de cidre. Ajoutez en dernier lieu les glaçons pour que l\'apéro reste frais.',
     'index' => 
     array (
       0 => 'Cidre de pommes',
@@ -1352,13 +1352,13 @@
   99 => 
   array (
     'titre' => 'Sangria sans alcool',
-    'ingredients' => '8 cl de sirop de sangria|100 cl de jus de raisins|20 cl de jus d oranges|10 cl de jus de citrons|fruits de saisons',
+    'ingredients' => '8 cl de sirop de sangria|100 cl de jus de raisins|20 cl de jus d\'oranges|10 cl de jus de citrons|fruits de saisons',
     'preparation' => 'Mélangez le sirop et les jus dans un grand récipient. Ajoutez ensuite les fruits de saisons coupés en petits morceaux. Mettez le tout au réfrigérateur pendant 4h avant de servir.',
     'index' => 
     array (
       0 => 'Sirop de sangria',
       1 => 'Jus de raisins',
-      2 => 'Jus d orange',
+      2 => 'Jus d\'orange',
       3 => 'Jus de citron',
       4 => 'Fruit',
     ),
@@ -1366,31 +1366,31 @@
   100 => 
   array (
     'titre' => 'Screwdriver',
-    'ingredients' => '4 cl de vodka|12 cl de jus d orange',
-    'preparation' => 'Dans un verre, mélanger la vodka et le jus d orange.',
+    'ingredients' => '4 cl de vodka|12 cl de jus d\'orange',
+    'preparation' => 'Dans un verre, mélanger la vodka et le jus d\'orange.',
     'index' => 
     array (
       0 => 'Vodka',
-      1 => 'Jus d orange',
+      1 => 'Jus d\'orange',
     ),
   ),
   101 => 
   array (
     'titre' => 'Shoot up',
-    'ingredients' => '1 cl de mangalore|eau gazeuse|3 cl de sirop d abricot',
-    'preparation' => 'Versez le mangalore et le sirop d abricot dans un verre et finissez par l eau gazeuse bien fraiche.',
+    'ingredients' => '1 cl de mangalore|eau gazeuse|3 cl de sirop d\'abricot',
+    'preparation' => 'Versez le mangalore et le sirop d\'abricot dans un verre et finissez par l\'eau gazeuse bien fraiche.',
     'index' => 
     array (
       0 => 'Mangalore',
       1 => 'Eau gazeuse',
-      2 => 'Sirop d abricot',
+      2 => 'Sirop d\'abricot',
     ),
   ),
   102 => 
   array (
     'titre' => 'Shot piquant',
     'ingredients' => 'sirop de grenadine|tabasco|vodka',
-    'preparation' => ' Dans un petit verre (environ 4 cm de diamètre et 5 cm de hauteur), versez 3 mm de sirop de grenadine. Ajoutez 4-6 gouttes de tabasco, puis versez très lentement 2-3 cm de vodka (froide, de préférence), pour ne pas mélanger les ingrédients. Ce Boisson se boit \"cul-sec\". On sent relativement peu l alcool au départ, car la grenadine est au fond du verre. Après quelques secondes, on ressent le piquant du tabasco. ',
+    'preparation' => ' Dans un petit verre (environ 4 cm de diamètre et 5 cm de hauteur), versez 3 mm de sirop de grenadine. Ajoutez 4-6 gouttes de tabasco, puis versez très lentement 2-3 cm de vodka (froide, de préférence), pour ne pas mélanger les ingrédients. Ce Boisson se boit "cul-sec". On sent relativement peu l\'alcool au départ, car la grenadine est au fond du verre. Après quelques secondes, on ressent le piquant du tabasco. ',
     'index' => 
     array (
       0 => 'Sirop de grenadine',
@@ -1415,18 +1415,18 @@
   104 => 
   array (
     'titre' => 'Tequila sunrise',
-    'ingredients' => '6 cl de tequila|12 cl de jus d orange|2 cl de sirop de grenadine',
-    'preparation' => 'Verser la tequila sur des glaçons dans le verre. Compléter avec le jus d orange et remuer. Verser doucement le sirop de grenadine dans le verre pour qu il tombe au fond.',
+    'ingredients' => '6 cl de tequila|12 cl de jus d\'orange|2 cl de sirop de grenadine',
+    'preparation' => 'Verser la tequila sur des glaçons dans le verre. Compléter avec le jus d\'orange et remuer. Verser doucement le sirop de grenadine dans le verre pour qu\'il tombe au fond.',
     'index' => 
     array (
       0 => 'Tequila',
-      1 => 'Jus d orange',
+      1 => 'Jus d\'orange',
       2 => 'Sirop de grenadine',
     ),
   ),
   105 => 
   array (
-    'titre' => 'Ti punch',
+    'titre' => 'Ti\'punch',
     'ingredients' => '6 cl de rhum blanc|2 cl de sirop de sucre de canne|citron vert|glace pilée',
     'preparation' => 'Couper les extrémités du citron vert et couper le en demi-rondelles. Mettre 4 demi-rondelles dans un verre et écraser avec un pilon ou une cuillère. Ajouter le rhum et le sirop de sucre de canne. Ajouter de la glace pilée et mélanger.',
     'index' => 
@@ -1454,13 +1454,13 @@
   107 => 
   array (
     'titre' => 'Virevoltage',
-    'ingredients' => '1 cl de malibu|1 cl de liqueur de litchi|jus d ananas|jus de pomme|sirop de fraise',
-    'preparation' => 'Dans un verre à Boisson rempli de glaçons, mettre le Malibu et le Soho. Remplir la moitié du verre de jus d ananas et l autre moitié de jus de pomme, ajouter une goutte de sirop de fraise ou grenadine. Servir très frais. Bon cokctail à tous!',
+    'ingredients' => '1 cl de malibu|1 cl de liqueur de litchi|jus d\'ananas|jus de pomme|sirop de fraise',
+    'preparation' => 'Dans un verre à Boisson rempli de glaçons, mettre le Malibu et le Soho. Remplir la moitié du verre de jus d\'ananas et l\'autre moitié de jus de pomme, ajouter une goutte de sirop de fraise ou grenadine. Servir très frais. Bon cokctail à tous!',
     'index' => 
     array (
       0 => 'Malibu',
       1 => 'Liqueur de litchi',
-      2 => 'Jus d ananas',
+      2 => 'Jus d\'ananas',
       3 => 'Jus de pommes',
       4 => 'Sirop de fraises',
     ),
@@ -1575,7 +1575,7 @@
       4 => 'Mandarine',
       5 => 'Orange',
       6 => 'Pamplemousse',
-      7 => 'Partie d agrumes',
+      7 => 'Partie d\'agrumes',
     ),
   ),
   'Assaisonnement' => 
@@ -1664,7 +1664,7 @@
     array (
       0 => 'Amer',
       1 => 'Boisson gazeuse alcoolisée',
-      2 => 'Jus d ananas',
+      2 => 'Jus d\'ananas',
       3 => 'Liqueur',
       4 => 'Vin',
     ),
@@ -1941,7 +1941,7 @@
       0 => 'Autre sirop',
       6 => 'Sirop aux fruits',
       7 => 'Sirop à la menthe',
-      9 => 'Sirop d orgeat',
+      9 => 'Sirop d\'orgeat',
       14 => 'Sirop de sangria',
       15 => 'Sirop de sucre de canne',
     ),
@@ -1987,15 +1987,15 @@
       0 => 'Gingembre',
     ),
   ),
-  'Partie d orange' => 
+  'Partie d\'orange' => 
   array (
     'sous-categorie' => 
     array (
-      1 => 'Jus d orange',
+      1 => 'Jus d\'orange',
     ),
     'super-categorie' => 
     array (
-      0 => 'Partie d agrumes',
+      0 => 'Partie d\'agrumes',
     ),
   ),
   'Partie de citron' => 
@@ -2009,7 +2009,7 @@
     'super-categorie' => 
     array (
       0 => 'Citron',
-      1 => 'Partie d agrumes',
+      1 => 'Partie d\'agrumes',
     ),
   ),
   'Rhum blanc' => 
@@ -2371,7 +2371,7 @@
     ),
     'super-categorie' => 
     array (
-      0 => 'Liqueur d orange',
+      0 => 'Liqueur d\'orange',
     ),
   ),
   'Cointreau' => 
@@ -2476,9 +2476,9 @@
     array (
       0 => 'Crème de cassis',
       1 => 'Grenadine',
-      4 => 'Sirop d abricot',
-      5 => 'Sirop d agrumes',
-      6 => 'Sirop d oranges',
+      4 => 'Sirop d\'abricot',
+      5 => 'Sirop d\'agrumes',
+      6 => 'Sirop d\'oranges',
       7 => 'Sirop de baies',
       8 => 'Sirop de citrons',
       9 => 'Sirop de fruit de la passion',
@@ -2553,7 +2553,7 @@
       0 => 'Vin effervescent',
     ),
   ),
-  'Liqueur d orange' => 
+  'Liqueur d\'orange' => 
   array (
     'sous-categorie' => 
     array (
@@ -2563,14 +2563,14 @@
     ),
     'super-categorie' => 
     array (
-      0 => 'Liqueur d agrume',
+      0 => 'Liqueur d\'agrume',
     ),
   ),
   'Curaçao' => 
   array (
     'super-categorie' => 
     array (
-      0 => 'Liqueur d orange',
+      0 => 'Liqueur d\'orange',
     ),
     'sous-categorie' => 
     array (
@@ -2740,7 +2740,7 @@
   array (
     'super-categorie' => 
     array (
-      0 => 'Liqueur d orange',
+      0 => 'Liqueur d\'orange',
     ),
   ),
   'Grenadine' => 
@@ -2785,9 +2785,9 @@
   array (
     'sous-categorie' => 
     array (
-      0 => 'Jus d abricots',
-      1 => 'Jus d agrumes',
-      2 => 'Jus d ananas',
+      0 => 'Jus d\'abricots',
+      1 => 'Jus d\'agrumes',
+      2 => 'Jus d\'ananas',
       3 => 'Jus de baies',
       4 => 'Jus de bananes',
       5 => 'Jus de canneberge',
@@ -2809,14 +2809,14 @@
       0 => 'Jus',
     ),
   ),
-  'Jus d abricots' => 
+  'Jus d\'abricots' => 
   array (
     'super-categorie' => 
     array (
       0 => 'Jus de fruits',
     ),
   ),
-  'Jus d agrumes' => 
+  'Jus d\'agrumes' => 
   array (
     'super-categorie' => 
     array (
@@ -2824,7 +2824,7 @@
     ),
     'sous-categorie' => 
     array (
-      0 => 'Jus d orange',
+      0 => 'Jus d\'orange',
       1 => 'Jus de citron',
       2 => 'Jus de citrons verts',
       3 => 'Jus de pamplemousse',
@@ -2842,7 +2842,7 @@
       1 => 'Légume',
     ),
   ),
-  'Jus d ananas' => 
+  'Jus d\'ananas' => 
   array (
     'super-categorie' => 
     array (
@@ -2850,12 +2850,12 @@
       1 => 'Jus de fruits',
     ),
   ),
-  'Jus d orange' => 
+  'Jus d\'orange' => 
   array (
     'super-categorie' => 
     array (
-      0 => 'Partie d orange',
-      1 => 'Jus d agrumes',
+      0 => 'Partie d\'orange',
+      1 => 'Jus d\'agrumes',
     ),
   ),
   'Jus de baies' => 
@@ -2895,7 +2895,7 @@
     'super-categorie' => 
     array (
       0 => 'Partie de citron',
-      1 => 'Jus d agrumes',
+      1 => 'Jus d\'agrumes',
     ),
   ),
   'Partie de citron vert' => 
@@ -2908,7 +2908,7 @@
     'super-categorie' => 
     array (
       0 => 'Citron vert',
-      1 => 'Partie d agrumes',
+      1 => 'Partie d\'agrumes',
     ),
   ),
   'Jus de citrons verts' => 
@@ -2916,7 +2916,7 @@
     'super-categorie' => 
     array (
       0 => 'Partie de citron vert',
-      1 => 'Jus d agrumes',
+      1 => 'Jus d\'agrumes',
     ),
   ),
   'Jus de framboises' => 
@@ -2970,7 +2970,7 @@
     'super-categorie' => 
     array (
       0 => 'Pamplemousse',
-      1 => 'Partie d agrumes',
+      1 => 'Partie d\'agrumes',
     ),
   ),
   'Jus de pamplemousse' => 
@@ -2978,7 +2978,7 @@
     'super-categorie' => 
     array (
       0 => 'Partie de paplemousse',
-      1 => 'Jus d agrumes',
+      1 => 'Jus d\'agrumes',
     ),
   ),
   'Jus de pêches' => 
@@ -3090,7 +3090,7 @@
     ),
     'super-categorie' => 
     array (
-      0 => 'Liqueur d agrume',
+      0 => 'Liqueur d\'agrume',
     ),
   ),
   'Limoncello' => 
@@ -3104,8 +3104,8 @@
   array (
     'sous-categorie' => 
     array (
-      0 => 'Liqueur d abricot',
-      1 => 'Liqueur d agrume',
+      0 => 'Liqueur d\'abricot',
+      1 => 'Liqueur d\'agrume',
       3 => 'Liqueur de fraises',
       5 => 'Liqueur de litchi',
       7 => 'Liqueur de poire',
@@ -3117,14 +3117,14 @@
       0 => 'Liqueur',
     ),
   ),
-  'Liqueur d abricot' => 
+  'Liqueur d\'abricot' => 
   array (
     'super-categorie' => 
     array (
       0 => 'Liqueur de fruit',
     ),
   ),
-  'Liqueur d agrume' => 
+  'Liqueur d\'agrume' => 
   array (
     'super-categorie' => 
     array (
@@ -3132,7 +3132,7 @@
     ),
     'sous-categorie' => 
     array (
-      0 => 'Liqueur d orange',
+      0 => 'Liqueur d\'orange',
       1 => 'Liqueur de citron',
     ),
   ),
@@ -3319,7 +3319,7 @@
       0 => 'Partie de paplemousse',
     ),
   ),
-  'Partie d agrumes' => 
+  'Partie d\'agrumes' => 
   array (
     'super-categorie' => 
     array (
@@ -3327,7 +3327,7 @@
     ),
     'sous-categorie' => 
     array (
-      0 => 'Partie d orange',
+      0 => 'Partie d\'orange',
       1 => 'Partie de citron',
       2 => 'Partie de citron vert',
       3 => 'Partie de paplemousse',
@@ -3484,28 +3484,28 @@
       0 => 'Sirop',
     ),
   ),
-  'Sirop d abricot' => 
+  'Sirop d\'abricot' => 
   array (
     'super-categorie' => 
     array (
       0 => 'Sirop aux fruits',
     ),
   ),
-  'Sirop d agrumes' => 
+  'Sirop d\'agrumes' => 
   array (
     'super-categorie' => 
     array (
       0 => 'Sirop aux fruits',
     ),
   ),
-  'Sirop d oranges' => 
+  'Sirop d\'oranges' => 
   array (
     'super-categorie' => 
     array (
       0 => 'Sirop aux fruits',
     ),
   ),
-  'Sirop d orgeat' => 
+  'Sirop d\'orgeat' => 
   array (
     'super-categorie' => 
     array (

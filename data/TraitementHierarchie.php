@@ -2,7 +2,7 @@
 //Tests des fonctions
 //print_r(getBaseArbo());
 //echo "<br/><br/>";
-//print_r(getSousCategories("Agrume"));
+//getSousCategories("Partie d'agrumes");
 //echo "<br/><br/>";
 //print_r(getSurCategories("Jus de tomates"));
 //echo "<br/><br/>";
@@ -57,6 +57,7 @@ function getBaseArbo(){
         if (!isset($nom['super-categorie'])) {
             $cles = array_keys($Hierarchie, $nom, true);
             foreach ($cles as $cle) {
+                preg_replace('/\'/', '\\\'', $cle);
                 $res = $res.'"'.$cle.'",';
             }
         }
@@ -70,11 +71,13 @@ function getBaseArbo(){
 //Fonction permettant de récupérer la/les sous-catégorie.s d'un ingrédient
 // ** paramètre nomSource = nom de l'ingrédient dont on veut connaître la/les sous-catégorie.s
 function getSousCategories($nomSource){
+    //preg_replace('/\'/', $nomSource, '\\\'');
     $Hierarchie = array();
     include 'Donnees.inc.php';
     $res = '{"fail":"false","nom":[';
     if (isset($Hierarchie[$nomSource]['sous-categorie'])) {
         foreach ($Hierarchie[$nomSource]['sous-categorie'] as $value) {
+            preg_replace('/\'/', '\\\'', $value);
             $res = $res . '"' . $value . '",';
         }
         $res = substr_replace($res, "", -1);
@@ -90,12 +93,15 @@ function getSousCategories($nomSource){
 // ** paramètre nomSource = nom de l'ingrédient dont on veut connaître les super-catégories
 // ***  à modifier si le chemin doit être défini par des paramètres extérieurs
 function getSurCategories($nomSource){
+    //preg_replace('/\'/', $nomSource, '\\\'');
     $Hierarchie = array();
     include 'Donnees.inc.php';
     $res = '{"fail":"false", "nom":["'.$nomSource.'",';
     while(isset($Hierarchie[$nomSource]['super-categorie'])) {
         $nomSource = $Hierarchie[$nomSource]['super-categorie'][0];
-        $res = $res . '"' . $nomSource . '",';
+        $nomEnreg = $nomSource;
+        preg_replace('/\'/', '\\\'', $nomEnreg);
+        $res = $res . '"' . $nomEnreg . '",';
     }
     $res = substr_replace($res, "", -1);
     $res = $res . ']}';
@@ -104,11 +110,13 @@ function getSurCategories($nomSource){
 }
 
 function getSupCategories($nomSource){
+    //preg_replace('/\'/', $nomSource, '\\\'');
     $Hierarchie = array();
     include 'Donnees.inc.php';
     $res = '{"fail":"true", "nom":[';
     if(isset($Hierarchie[$nomSource]['super-categorie'])) {
         foreach ($Hierarchie[$nomSource]['super-categorie'] as $value) {
+            preg_replace('/\'/', '\\\'', $value);
             $res = $res.'"'.$value.'",';
         }
         $res = substr_replace($res, "", -1);
@@ -121,6 +129,7 @@ function getSupCategories($nomSource){
 }
 
 function getIngredientMatchNom($match){
+    preg_replace('/\'/', $match, '\\\'');
     $Hierarchie = array();
     include "Donnees.inc.php";
     $res = '{"fail":"false", "nom":[';
@@ -129,6 +138,7 @@ function getIngredientMatchNom($match){
     $cles = array_keys($Hierarchie);
     foreach ($cles as $cle) {
         if (preg_match($exp, $cle)) {
+            preg_replace('/\'/', '\\\'', $cle);
             $res = $res.'"'.$cle.'",';
             $isEmpty = false;
         }

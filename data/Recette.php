@@ -41,7 +41,7 @@
         }
     </script>
 </head>
-<body onload="load('<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "index";}?>')">
+<body onload="load('<?php if(isset($_GET['nom'])){echo preg_replace('/\'/', '\\\'', $_GET['nom']);}else{echo "index";}?>')">
 <h1><?php if(isset($_GET['nom'])){echo "Recette du/de la ".$_GET['nom'];}else{echo "Index des recettes";}?></h1>
 <?php
     if(isset($_GET['nom'])){

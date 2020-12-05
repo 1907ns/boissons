@@ -75,11 +75,12 @@ function getNumRecettesFromIndex($index){
     }else{
         $res = $res.'"none"]}';
     }
-    return $res;
+    //return $res;
     echo json_encode($res);
 }
 
 function getRecetteFromIngredient($ingredient){
+    //preg_replace('/\'/', $ingredient, '\\\'');
     $Recettes=array();
     include 'Donnees.inc.php';
     $res = '{"fail":"false", "titre":[';
@@ -87,7 +88,70 @@ function getRecetteFromIngredient($ingredient){
     foreach ($Recettes as $recette) {
         if(in_array($ingredient, $recette['index'])){
             $existe = true;
-            $res = $res.'"'.$recette['titre'].'",';
+            $titre = $recette['titre'];
+            preg_replace('/\'/', '\\\'', $titre);
+            $res = $res.'"'.$titre.'",';
+        }
+    }
+    if($existe){
+        $res = substr_replace($res ,"", -1);
+        $res = $res.']}';
+    }else{
+        $res = $res.'"none"]}';
+    }
+    return $res;
+    //echo json_encode($res);
+}
+
+function getRecetteFromNum($index){
+    $Recettes=array();
+    include 'Donnees.inc.php';
+    $res = $Recettes[$index];
+    preg_replace('/\'/', '\\\'', $res['titre']);
+    preg_replace('/\'/', '\\\'', $res['ingredients']);
+    preg_replace('/\'/', '\\\'', $res['preparation']);
+    for($i = 0; $i < count($res['index']); $i++){
+        preg_replace('/\'/', '\\\'', $res['index'][$i]);
+    }
+    //return $res;
+    echo json_encode($res);
+}
+
+function getAllRecettes(){
+    $Recettes=array();
+    include 'Donnees.inc.php';
+    $res='{"fail":"false", "titre":[';
+    foreach ($Recettes as $type){
+        $titre = $type['titre'];
+        preg_replace('/\'/', '\\\'', $titre);
+        $res = $res.'"'.$titre.'",';
+    }
+    $res = substr_replace($res ,"", -1);
+    $res = $res.']}';
+    //return $res;
+    echo json_encode($res);
+}
+
+function getRecetteFromNom($nom){
+    //preg_replace('/\'/', $nom, '\\\'');
+    $Recettes = array();
+    include 'Donnees.inc.php';
+    $res = '{"fail":"false", "titre":"';
+    $existe = false;
+    foreach ($Recettes as $type) {
+        if($type['titre'] == $nom){
+            $existe = true;
+            $titre = $type['titre'];
+            preg_replace('/\'/', '\\\'', $titre);
+            $ingredients = $type['ingredients'];
+            preg_replace('/\'/', '\\\'', $ingredients);
+            $preparation = $type['preparation'];
+            preg_replace('/\'/', '\\\'', $preparation);
+            $res = $res.$titre.'","ingredients":"'.$ingredients.'","preparation":"'.$preparation.'","index":[';
+            foreach ($type['index'] as $index){
+                preg_replace('/\'/', $index, '\\\'');
+                $res = $res.'"'.$index.'",';
+            }
         }
     }
     if($existe){
@@ -100,52 +164,8 @@ function getRecetteFromIngredient($ingredient){
     echo json_encode($res);
 }
 
-function getRecetteFromNum($index){
-    $Recettes=array();
-    include 'Donnees.inc.php';
-    $res = $Recettes[$index];
-    preg_replace('/\'/', $res['titre'], '\\\'');
-    preg_replace('/\'/', $res['ingredients'], '\\\'');
-    preg_replace('/\'/', $res['preparation'], '\\\'');
-    for($i = 0; $i < count($res['index']); $i++){
-        preg_replace('/\'/', $res['index'][$i], '\\\'');
-    }
-    //return $res;
-    echo json_encode($res);
-}
-
-function getAllRecettes(){
-    $Recettes=array();
-    include 'Donnees.inc.php';
-    $res='{"fail":"false", "titre":[';
-    foreach ($Recettes as $type){
-        $res = $res.'"'.$type['titre'].'"'.',';
-    }
-    $res = substr_replace($res ,"", -1);
-    $res = $res.']}';
-    //return $res;
-    echo json_encode($res);
-}
-
-function getRecetteFromNom($nom){
-    $Recettes = array();
-    include 'Donnees.inc.php';
-    $res = '{"fail":"false", "titre":"';
-    foreach ($Recettes as $type) {
-        if($type['titre'] == $nom){
-            $res = $res.$type['titre'].'","ingredients":"'.$type['ingredients'].'","preparation":"'.$type['preparation'].'","index":[';
-            foreach ($type['index'] as $index){
-                $res = $res.'"'.$index.'",';
-            }
-            $res = substr_replace($res ,"", -1);
-            $res = $res.']}';
-        }
-    }
-    //return $res;
-    echo json_encode($res);
-}
-
 function getRecetteMatchNom($match){
+    //preg_replace('/\'/', $match, '\\\'');
     $Recettes = array();
     include "Donnees.inc.php";
     $res = '{"fail":"false", "titre":[';
@@ -153,7 +173,9 @@ function getRecetteMatchNom($match){
     $isEmpty = true;
     foreach ($Recettes as $item){
         if(preg_match($exp, $item['titre'])) {
-            $res = $res . '"' . $item['titre'] . '",';
+            $titre = $item['titre'];
+            preg_replace('/\'/', '\\\'', $titre);
+            $res = $res.'"'.$titre.'",';
             $isEmpty = false;
         }
     }
