@@ -30,6 +30,86 @@
     <title><?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Toutes nos recettes";}?></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
+        let resLoad = "";
+        let resSM = "";
+        let isSM = false;
+        let nomSM = "";
+        function sidebar(){
+            $.ajax({
+                type:"POST",
+                url:"../data/TraitementHierarchie.php",
+                data:{func:'base'},
+                dataType:'JSON',
+                success: function(ret){
+                    result = JSON.parse(ret);
+                    if(result.fail == "true"){
+                        alert("Erreur de chargement de la sidebar")
+                    }else{
+                        for (let i = 0; i < result.nom.length; i++) {
+                            resLoad += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../data/Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
+                        }
+                    }
+                }
+            })
+        }
+        function sousMenu(nom){
+            resSM = "";
+            isSM = true;
+            nomSM = nom;
+            if(document.getElementById(nom).parentElement.value){
+                document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'../data/Ingredient.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
+            }else {
+                document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'../data.Ingredient.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/rewind.png" style="max-width:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
+                $.ajax({
+                    type: "POST",
+                    url: "../data/TraitementHierarchie.php",
+                    data: {func: 'sub', var: nom},
+                    dataType:'JSON',
+                    success: function (ret) {
+                        result = JSON.parse(ret);
+                        if (result.fail == "true") {
+                            alert("Erreur de chargement de sous-menu")
+                        } else {
+                            for (let i = 0; i < result.nom.length; i++) {
+                                hasNext(result.nom[i],function(ret){
+                                    resultat = JSON.parse(ret);
+                                    retour = true;
+                                    if(resultat.nom[0] == "none") {
+                                        retour = false;
+                                    }
+                                    if(retour){
+                                        resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../data/Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
+                                    }else{
+                                        resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../data/Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '</span></li>';
+                                    }
+                                });
+                            }
+                        }
+                    }
+                })
+            }
+        }
+        function hasNext(nom, traitement){
+            $.ajax({
+                type:'POST',
+                url: "../data/TraitementHierarchie.php",
+                data: {func: 'sub', var: nom},
+                dataType:'JSON',
+                success:function(ret){
+                    traitement(ret);
+                }
+            })
+        }
+        $(document).ajaxStop(function(){
+            if(!isSM) {
+                document.getElementById('sidebar').innerHTML = resLoad;
+            }else{
+                document.getElementById(nomSM).parentElement.value = true;
+                document.getElementById(nomSM).parentElement.innerHTML += resSM;
+            }
+        })
+    </script>
+    <script type="text/javascript">
         function load(nomRec){
             if(nomRec == "index"){
                 $.ajax({
@@ -85,9 +165,15 @@
                 })
             }
         }
+
+        /** FONCTION START POUR LA SIDEBAR ET LES COCKTAILS */
+        function start(){
+            load(<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo 'index';}?>);
+            sidebar();
+        }
     </script>
 </head>
-<body onload="load('<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "index";}?>')">
+<body onload="start()">
 
 
 <!-- header -->
@@ -189,10 +275,14 @@
             echo "<br>";
         ?> </div> <?php }else {
         ?>
+
         <div class="row" id="cocktails">
 
-                <?php echo "<div class='col-lg-9' id = 'liste'></div>"; }?>
-
+                <?php echo "<div class='col-lg-3 border-left'>
+                                <ul id = 'sidebar' class='text-center' style='background-color: #ede1f1; cursor: pointer; '></ul>
+                            </div>
+                            <div class='col-lg-9' id = 'liste'></div>";
+                }?>
         </div>
     </div>
 </section>
