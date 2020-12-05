@@ -179,11 +179,9 @@
 </head>
 <body>
     <div>
-        <form onsubmit="afficherResultats()">
-            <input style="width: 500px;" list="liste" type="text" name="rechercheBoissons" placeholder="Rechercher.." id="search" oninput="liste()">
-            <button onclick="afficherResultats()"><img style="max-height: 15px" src="../images/search.webp"></button>
-            <datalist id="liste"></datalist>
-        </form>
+        <input style="width: 500px;" list="liste" type="text" name="rechercheBoissons" placeholder="Rechercher.." id="search" oninput="liste()">
+        <button onclick="afficherResultats()"><img style="max-height: 15px" src="../images/search.webp"></button>
+        <datalist id="liste"></datalist>
     </div>
     <div id="ResSearch"></div>
 </body>

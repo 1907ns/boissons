@@ -1,6 +1,6 @@
 <?php
 
-//print_r(getRecettesFromIndex('Curacao'));
+//echo(getNumRecettesFromIndex('Limonade'));
 //echo "<br/>";
 //echo getRecetteFromIngredient('Jus de mangue');
 //echo "<br/>;
@@ -17,7 +17,7 @@ if (isset($_POST['func'])){
     switch ($_POST['func']){
         case 'recInd':
             if (isset($_POST['var'])){
-                getRecettesFromIndex($_POST['var']);
+                getNumRecettesFromIndex($_POST['var']);
                 $fail=false;
             }
             break;
@@ -55,7 +55,7 @@ if (isset($_POST['func'])){
     }
 }
 
-function getRecettesFromIndex($index){
+function getNumRecettesFromIndex($index){
     $Recettes=array();
     include 'Donnees.inc.php';
     $res = '{"fail":"false", "index":[';
@@ -75,7 +75,7 @@ function getRecettesFromIndex($index){
     }else{
         $res = $res.'"none"]}';
     }
-    //return $res;
+    return $res;
     echo json_encode($res);
 }
 
@@ -103,8 +103,15 @@ function getRecetteFromIngredient($ingredient){
 function getRecetteFromNum($index){
     $Recettes=array();
     include 'Donnees.inc.php';
-    //return $Recettes[$index];
-    echo json_encode($Recettes[$index]);
+    $res = $Recettes[$index];
+    preg_replace('/\'/', $res['titre'], '\\\'');
+    preg_replace('/\'/', $res['ingredients'], '\\\'');
+    preg_replace('/\'/', $res['preparation'], '\\\'');
+    for($i = 0; $i < count($res['index']); $i++){
+        preg_replace('/\'/', $res['index'][$i], '\\\'');
+    }
+    //return $res;
+    echo json_encode($res);
 }
 
 function getAllRecettes(){
