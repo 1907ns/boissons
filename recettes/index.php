@@ -29,85 +29,7 @@
     </script>
     <title><?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Toutes nos recettes";}?></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        let resLoad = "";
-        let resSM = "";
-        let isSM = false;
-        let nomSM = "";
-        function sidebar(){
-            $.ajax({
-                type:"POST",
-                url:"../data/TraitementHierarchie.php",
-                data:{func:'base'},
-                dataType:'JSON',
-                success: function(ret){
-                    result = JSON.parse(ret);
-                    if(result.fail == "true"){
-                        alert("Erreur de chargement de la sidebar")
-                    }else{
-                        for (let i = 0; i < result.nom.length; i++) {
-                            resLoad += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../data/Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
-                        }
-                    }
-                }
-            })
-        }
-        function sousMenu(nom){
-            resSM = "";
-            isSM = true;
-            nomSM = nom;
-            if(document.getElementById(nom).parentElement.value){
-                document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'../data/Ingredient.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
-            }else {
-                document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'../data.Ingredient.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/rewind.png" style="max-width:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
-                $.ajax({
-                    type: "POST",
-                    url: "../data/TraitementHierarchie.php",
-                    data: {func: 'sub', var: nom},
-                    dataType:'JSON',
-                    success: function (ret) {
-                        result = JSON.parse(ret);
-                        if (result.fail == "true") {
-                            alert("Erreur de chargement de sous-menu")
-                        } else {
-                            for (let i = 0; i < result.nom.length; i++) {
-                                hasNext(result.nom[i],function(ret){
-                                    resultat = JSON.parse(ret);
-                                    retour = true;
-                                    if(resultat.nom[0] == "none") {
-                                        retour = false;
-                                    }
-                                    if(retour){
-                                        resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../data/Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
-                                    }else{
-                                        resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../data/Ingredient.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '</span></li>';
-                                    }
-                                });
-                            }
-                        }
-                    }
-                })
-            }
-        }
-        function hasNext(nom, traitement){
-            $.ajax({
-                type:'POST',
-                url: "../data/TraitementHierarchie.php",
-                data: {func: 'sub', var: nom},
-                dataType:'JSON',
-                success:function(ret){
-                    traitement(ret);
-                }
-            })
-        }
-        $(document).ajaxStop(function(){
-            if(!isSM) {
-                document.getElementById('sidebar').innerHTML = resLoad;
-            }else{
-                document.getElementById(nomSM).parentElement.value = true;
-                document.getElementById(nomSM).parentElement.innerHTML += resSM;
-            }
-        })
+    <script src="../data/sidebar.js">
     </script>
     <script type="text/javascript">
         function load(nomRec){
@@ -120,10 +42,17 @@
                     success:function(retRec){
                         let liste = JSON.parse(retRec);
                         var cocktails = document.getElementById('cocktails');
+                        var sidebar  = document.createElement('div');
+                        sidebar.className = 'col-lg-3 border-left';
+                        var sidebarhtml = ' <ul id = \'sidebar\' class=\'text-center\' style=\'background-color: mediumpurple; cursor: pointer; border-radius: 10px  \'></ul>\n'
+                        sidebar.innerHTML= sidebarhtml.trim();
+                        var divcocktail = document.createElement('div');
+                        divcocktail.className='row col-lg-9';
+                        cocktails.appendChild(sidebar);
+                        cocktails.appendChild(divcocktail);
                         for(let i = 0; i < liste.titre.length; i++) {
                             var div = document.createElement('div');
-                            div.className = 'col-lg-4';
-
+                            div.className = 'col-lg-6';
                             var onecocktail =
                                 '                    <div class="img-grid">' +
                                 '                        <div class="Portfolio-grid1">' +
@@ -138,7 +67,8 @@
                             div.innerHTML = onecocktail.trim();
                             //document.getElementById("liste").innerHTML += '<a href="?nom=' +liste.titre[i] + '">' + liste.titre[i] + '</a><br/>';
                             //document.getElementById("liste").innerHTML +=
-                            cocktails.appendChild(div);
+
+                            divcocktail.appendChild(div);
                         }
                     }
                 })
@@ -159,21 +89,16 @@
                         }
                         document.getElementById("recette").innerHTML = recette.preparation;
                         for(let i = 0; i < recette.index.length; i++){
-                            document.getElementById("ingredients").innerHTML += '<a href="../data/Ingredient.php?nom=' + recette.index[i] + '">' + recette.index[i] + "</a><br/>";
+                            document.getElementById("ingredients").innerHTML += '<a href="../ingredients/index.php?nom=' + recette.index[i] + '">' + recette.index[i] + "</a><br/>";
                         }
                     }
                 })
             }
         }
 
-        /** FONCTION START POUR LA SIDEBAR ET LES COCKTAILS */
-        function start(){
-            load(<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo 'index';}?>);
-            sidebar();
-        }
     </script>
 </head>
-<body onload="start()">
+<body onload="load('<?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "index";}?>'); sidebar();">
 
 
 <!-- header -->
@@ -218,7 +143,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item   mr-lg-3">
-                                    <a class="nav-link scroll" href="#">Tous nos cocktails</a>
+                                    <a class="nav-link scroll" href="index.php">Tous nos cocktails</a>
                                 </li>
                                 <li class="nav-item   mr-lg-3">
                                     <a class="nav-link scroll" href="#">Mes cocktails préférés</a>
@@ -252,36 +177,42 @@
 <section class="portfolio-wthree align-w3" id="populaires">
     <div class="container-fluid">
         <div class="title-w3ls text-center">
-            <h4 class="w3pvt-title"><?php if(isset($_GET['nom'])){echo "Recette du/de la ".$_GET['nom'];}else{echo "Toutes nos recettes";}?></h4>
+            <h4 class="w3pvt-title"><?php if(isset($_GET['nom'])){echo "";}else{echo "Toutes nos recettes";}?></h4>
         </div>
         <?php
 
         if(isset($_GET['nom'])){ ?>
-        <div class="align-content-center col-lg-12" >
-        <?php   echo "<h2 class='text-center'>Ingrédients nécéssaires :</h2>";
-            echo "<p id='ingredientsPrep' class='card-text text-center'></p>";
-        echo "<br>";
-            echo "<h2 class='text-center'>Préparation :</h2>";
-            echo "<div class='row' >";
-            echo "<div class='col-3 justify-content-center' ></div>";
-            echo "<div class='col-6 justify-content-center' >";
-            echo "<p id='recette' class='text-center'></p>";
-            echo "</div>";
-            echo "<div class='col-3 justify-content-center' ></div>";
-            echo "</div>";
-            echo "<br>";
-            echo "<h2 class='text-center'>Liste des ingrédients :</h2>";
-            echo "<p id='ingredients' class='card-text text-center'></p>";
-            echo "<br>";
-        ?> </div> <?php }else {
-        ?>
+                <div class="row">
+                    <div class="col-lg-3 border-left">
+                        <ul id = 'sidebar' class='text-center' style='background-color: mediumpurple; cursor: pointer; border-radius: 10px '></ul>
+                    </div>
+                    <div class="align-content-center col-lg-9" >
+                    <?php
+                        echo "<h1 class='text-center' style='color: #5341b4'> Recette de le/ la ". $_GET['nom'] . "</h1>";
+                        echo "<br>";
+                        echo "<h3 class='text-center'>Ingrédients nécéssaires :</h3>";
+                        echo "<p id='ingredientsPrep' class='card-text text-center'></p>";
+                        echo "<br>";
+                        echo "<h2 class='text-center'>Préparation :</h2>";
+                        echo "<div class='row' >";
+                        echo "<div class='col-3 justify-content-center' ></div>";
+                        echo "<div class='col-6 justify-content-center' >";
+                        echo "<p id='recette' class='text-center'></p>";
+                        echo "</div>";
+                        echo "<div class='col-3 justify-content-center' ></div>";
+                        echo "</div>";
+                        echo "<br>";
+                        echo "<h2 class='text-center'>Liste des ingrédients :</h2>";
+                        echo "<p id='ingredients' class='card-text text-center'></p>";
+                        echo "<br>";
+                    ?> </div> </div><?php }else {
+                    ?>
 
         <div class="row" id="cocktails">
 
-                <?php echo "<div class='col-lg-3 border-left'>
-                                <ul id = 'sidebar' class='text-center' style='background-color: #ede1f1; cursor: pointer; '></ul>
-                            </div>
-                            <div class='col-lg-9' id = 'liste'></div>";
+                <?php echo "
+                            <div  id = 'liste'></div>
+                            ";
                 }?>
         </div>
     </div>
