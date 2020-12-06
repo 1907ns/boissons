@@ -23,6 +23,8 @@ session_start();
     <!-- online-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script  src="../data/liste.js"></script>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -159,9 +161,10 @@ session_start();
                                     </li>
                                 <?php } ?>
                                 <li class="nav-item mr-lg-3 ">
-                                    <form action="" class="nav-link scroll">
-                                        <input type="text" placeholder="Jus d'orange.." class="form-control border" name="search">
-                                        <button type="submit" href="#"><i class="fa fa-search"></i></button>
+                                    <form action="../recherche/index.php" method="get" class="nav-link scroll" >
+                                        <input type="text" placeholder="Jus d'orange.." class="form-control border" name="name" id="search" list="liste" oninput="liste('../data/TraitementRecettes.php', '../data/TraitementHierarchie.php')">
+                                        <datalist id="liste"></datalist>
+                                        <button type="submit" onclick="window.location='recherche/index.php'"><i class="fa fa-search"></i></button>
                                     </form>
                                 </li>
                             </ul>

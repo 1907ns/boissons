@@ -1,3 +1,8 @@
+<?php
+//Initialisation de la session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -8,7 +13,7 @@
     <meta name="keywords" content="Cafe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
 
-    <script src="../data/liste.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script  src="../data/liste.js"></script>
     <script>let usedSearch = false;
@@ -20,14 +25,14 @@
             let dernierIng = false;
             //On récupère la valeur qu'on essaiera de faire "matcher" pour retrouver différents résultats
             //let match = document.getElementById('search').value;
-            document.getElementById("ResSearch").innerHTML = '<h1>Liste des résultats pour "' + match +'"</h1><ul id="listeResults" style="overflow: auto; width: 750px">';
+            document.getElementById("ResSearch").innerHTML = '<h2 class="text-center"  style=\'color: #5341b4\'>Liste des résultats pour "' + match +'"</h><p id="listeResults" style="justify-content: center">';
             if(match != "") {
                 //On appelle la fonction traitementIngredients pour récupérer les différents ingrédients correspondant au match et les traiter de façon asynchrone
                 traitementIngredients(match,'../data/TraitementHierarchie.php', function (ings) {
                     //On ne fait rien si aucun argument ne correspond à la recherche
                     if (ings.nom[0] != "none") {
                         for (let i = 0; i < ings.nom.length; i++) {
-                            document.getElementById("listeResults").innerHTML += '<li style="overflow: visible"/><a href="../ingredients/index.php?nom=' + ings.nom[i] + '"> Ingrédient : ' + ings.nom[i] + '</a></li>';
+                            document.getElementById("listeResults").innerHTML += '<li style="overflow: visible; font-size: medium"/><a href="../ingredients/index.php?nom=' + ings.nom[i] + '"> Ingrédient : ' + ings.nom[i] + '</a></li>';
                             if (!allIngs.includes(ings.nom[i])) {
                                 allIngs.push(ings.nom[i]);
                             }
@@ -39,7 +44,7 @@
                             traitementSousCateg(ings.nom[i], '../data/TraitementHierarchie.php', function (subs) {
                                 if (subs.nom[0] != "none") {
                                     for (let i = 0; i < subs.nom.length; i++) {
-                                        document.getElementById("listeResults").innerHTML += '<li style="overflow: visible"/><a href="../ingredients/index.php?nom=' + subs.nom[i] + '"> Sous-ingrédient : ' + subs.nom[i] + '</a></li>';
+                                        document.getElementById("listeResults").innerHTML += '<li style="overflow: visible; font-size: medium"/><a href="../ingredients/index.php?nom=' + subs.nom[i] + '"> Sous-ingrédient : ' + subs.nom[i] + '</a></li>';
                                         if (!allIngs.includes(subs.nom[i])) {
                                             allIngs.push(subs.nom[i]);
                                         }
@@ -59,12 +64,12 @@
                         for (let i = 0; i < recs.titre.length; i++) {
                             //On on ajoute cette recette dans les recettes affichées à l'écran
                             recAff.push(recs.titre[i]);
-                            document.getElementById("listeResults").innerHTML += '<li style="overflow: visible"><a href="../recettes/index.php?nom=' + recs.titre[i] + '">Recette : ' + recs.titre[i] + '</a></li>';
+                            document.getElementById("listeResults").innerHTML += '<li style="overflow: visible; font-size: medium"><a href="../recettes/index.php?nom=' + recs.titre[i] + '">Recette : ' + recs.titre[i] + '</a></li>';
                         }
                     }
                 });
             }
-            document.getElementById("ResSearch").innerHTML += "</ul>";
+            document.getElementById("ResSearch").innerHTML += "</p>";
         }
 
         //la fontion afficherRecettesContenant permet d'afficher les recettes contenant une liste d'ingrédients donnée
@@ -90,9 +95,9 @@
             //Si une recherche a été efféctuée
             if(usedSearch) {
                 //Si le résultat de la recherche est vide on affiche un message indiquant que rien n'a été trouvé
-                if (document.getElementById("listeResults").childElementCount == 0) {
+                if (document.getElementById("listeResults").childElementCount === 0) {
                     document.getElementById("listeResults").style.visibility = "hidden";
-                    document.getElementById("ResSearch").innerHTML = '<h1>Liste des résultats pour "' + match + '"</h1><h2>Aucun résultat trouvé pour cette recherche.</h2>';
+                    document.getElementById("ResSearch").innerHTML = '<h2 class="text-center"  style="color: #5341b4">Liste des résultats pour "' + match + '"</h2><h4 class="text-center">Aucun résultat trouvé pour cette recherche.</h4>';
                 }
             }
         })</script>
@@ -168,11 +173,11 @@
                                     <a class="nav-link scroll" href="#">Mes cocktails préférés</a>
                                 </li>
                                 <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){ ?>
-                                    <li class="nav-item active  mr-lg-3">
+                                    <li class="nav-item   mr-lg-3">
                                         <a class="nav-link scroll" href="../compte/index.php">Mon Compte</a>
                                     </li>
                                 <?php } ?>
-                                <li class="nav-item mr-lg-3 ">
+                                <li class="nav-item mr-lg-3 active">
                                     <form action="index.php" method="get" class="nav-link scroll" >
                                         <input type="text" placeholder="Jus d'orange.." class="form-control border" name="name" id="search" list="liste" oninput="liste('../data/TraitementRecettes.php', '../data/TraitementHierarchie.php')">
                                         <datalist id="liste"></datalist>
@@ -188,7 +193,7 @@
     </div>
 </header>
 
-<div id="ResSearch"></div>
+<div class="justify-content-center" id="ResSearch"></div>
 </body>
 </html>
 <!-- //header -->

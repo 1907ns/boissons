@@ -192,6 +192,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <meta charset="utf-8" />
     <meta name="keywords" content="Cafe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script  src="../data/liste.js"></script>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -268,10 +270,11 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                                             <a class="nav-link scroll" href="../compte/index.php">Mon Compte</a>
                                         </li>
                                     <?php } ?>
-                                    <li class="nav-item   mr-lg-3 ">
-                                        <form action="" class="nav-link">
-                                            <input type="text" placeholder="Jus d'orange.." class="form-control border" name="search">
-                                            <button type="submit" href="#"><i class="fa fa-search"></i></button>
+                                    <li class="nav-item mr-lg-3 ">
+                                        <form action="../recherche/index.php" method="get" class="nav-link scroll" >
+                                            <input type="text" placeholder="Jus d'orange.." class="form-control border" name="name" id="search" list="liste" oninput="liste('../data/TraitementRecettes.php', '../data/TraitementHierarchie.php')">
+                                            <datalist id="liste"></datalist>
+                                            <button type="submit" onclick="window.location='recherche/index.php'"><i class="fa fa-search"></i></button>
                                         </form>
                                     </li>
                                 </ul>
