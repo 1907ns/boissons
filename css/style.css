@@ -18,6 +18,7 @@ body a,
     -ms-transition: 0.5s all;
     text-decoration: none;
     outline: none;
+    width: 400px; height: 400px;
 }
 
 h1,
@@ -392,7 +393,7 @@ p.count-text {
 
 ul.img-grid-list li {
     display: inline-block;
-    position: relative;
+    position: absolute;
 }
 
 ul.img-grid-list li span {
@@ -419,7 +420,7 @@ ul.img-grid-list li h5 sup {
 ul.img-grid-list li:after {
     content: '>>';
     position: absolute;
-    right: -10px;
+    margin-right: -10px;
     top: 33%;
     color: #000;
     font-weight: bold;

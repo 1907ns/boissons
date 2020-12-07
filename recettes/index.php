@@ -1,6 +1,7 @@
 <?php
 //Initialisation de la session
 session_start();
+include '../data/nom_image.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +26,7 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script  src="../data/liste.js"></script>
+    <script  src="../data/nom_image.js"></script>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -59,11 +61,18 @@ session_start();
                         cocktails.appendChild(divcocktail);
                         for(let i = 0; i < liste.titre.length; i++) {
                             var div = document.createElement('div');
+                            var nom_im = name_str(liste.titre[i]);
+
+                            /** Vérifier si la photo existe */
+                            if(!doesFileExist('../Projet/Photos/'+nom_im+'.jpg')){
+                                nom_im="Raifortissimo";
+                            }
+                            console.log(nom_im);
                             div.className = 'col-lg-6';
                             var onecocktail =
-                                '                    <div class="img-grid">' +
+                                '                    <div class="img-grid" >' +
                                 '                        <div class="Portfolio-grid1">' +
-                                '                            <img src="../Projet/Photos/Raifortissimo.jpg" alt=" " class="img-fluid" />' +
+                                '                            <img style="width: 50%; height: 50%;" src="../Projet/Photos/' +nom_im + '.jpg" alt=" " class="img-fluid" />' +
                                 '                        </div>' +
                                 '                        <div class="port-desc text-center">' +
                                 '                            <h6 class="main-title-w3pvt text-center">'+ liste.titre[i] +'</h6>' +
@@ -196,8 +205,21 @@ session_start();
                     </div>
                     <div class="align-content-center col-lg-9" >
                     <?php
+                        $img = name_image($_GET['nom']); //nom de l'image sans espaces et caractères spéciaux
                         echo "<h1 class='text-center' style='color: #5341b4'> Recette de le/ la ". $_GET['nom'] . "</h1>";
                         echo "<br>";
+
+                        //on affiche l'image si elle existe
+                        if(file_exists("../Projet/Photos/" . $img . ".jpg")) {
+
+                            echo "<div class='row' >";
+                            echo "<div class='col-3 justify-content-center' ></div>";
+                            echo "<div class='col-6 justify-content-center' >";
+                            echo '<img class="align-self-center col-lg-6" src="../Projet/Photos/' . $img. '.jpg">';
+                            echo "</div>";
+                            echo "<div class='col-3 justify-content-center' ></div>";
+                            echo "</div>";
+                        }
                         echo "<h3 class='text-center'>Ingrédients nécéssaires :</h3>";
                         echo "<p id='ingredientsPrep' class='card-text text-center'></p>";
                         echo "<br>";
