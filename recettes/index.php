@@ -118,6 +118,7 @@ include '../data/nom_image.php';
 
 
 <!-- header -->
+
 <header class="main-header">
     <div class="container">
         <div class="row">
@@ -185,9 +186,6 @@ include '../data/nom_image.php';
     </div>
 </header>
 <!-- //header -->
-<h1></h1>
-
-
 
 
 <!-- populaires -->
@@ -235,6 +233,12 @@ include '../data/nom_image.php';
                         echo "<h2 class='text-center'>Liste des ingrédients :</h2>";
                         echo "<p id='ingredients' class='card-text text-center'></p>";
                         echo "<br>";
+                        echo "<div class='row' >";
+                        echo "<div class='col-3 justify-content-center' ></div>";
+                        echo "<div class='col-6 justify-content-center' >";
+                        echo '<a href="#" class="align-content-center scroll text-capitalize serv_link btn bg-theme2">AJOUTER AUX FAVORIS</a>';
+                        echo '</div>';
+                        echo "<div class='col-3 justify-content-center' ></div>";
                     ?> </div> </div><?php }else {
                     ?>
 

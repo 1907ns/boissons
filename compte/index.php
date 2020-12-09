@@ -89,7 +89,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
         // Validation du pseudo
         if(empty(trim($_POST["pseudo"]))){
-            $username_err = "Please enter a username.";
+            $username_err = "Entrez un pseudo SVP.";
         } else{
             // Requête SQL
             $sql = "SELECT pseudo FROM users WHERE pseudo = ?";
@@ -107,12 +107,12 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     mysqli_stmt_store_result($stmt);
 
                     if(mysqli_stmt_num_rows($stmt) == 1 && $_SESSION["pseudo"] != trim($_POST["pseudo"])){
-                        $username_err = "This username is already taken.";
+                        $username_err = "Ce pseudo est déjà utilisé.";
                     } else{
                         $username = trim($_POST["pseudo"]);
                     }
                 } else{
-                    echo "Oops! Something went wrong. Please try again later.";
+                    echo "Erreur. Essayez ultérieurement.";
                 }
 
                 // Close statement
@@ -122,9 +122,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
         // Vaidation du mot de passe
         if(empty(trim($_POST["password"]))){
-            $password_err = "Please enter a password.";
+            $password_err = "Entrez un mot de passe SVP.";
         } elseif(strlen(trim($_POST["password"])) < 6){
-            $password_err = "Password must have atleast 6 characters.";
+            $password_err = "Le mot de passe doit contenir au moins 6 caractères.";
         } else{
             $password = trim($_POST["password"]);
         }
@@ -143,7 +143,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
         // Verifier s'il n'y a pas d'erreurs
         if(empty($username_err) && empty($password_err)){
-            echo 'no error';
+
             // Update de la BDD
 
             $sql= "UPDATE users SET pseudo =?, password = ?, nom=?, prenom=?, mail=?, birthdate=?, phone=?, adresse=?, cpville=?, ville=?, sexe=? WHERE id = ?";
@@ -162,17 +162,17 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     header("location: ../connexion/index.php");
                     exit();
                 } else{
-                    echo "Something went wrong. Please try again later.";
+                    echo "Erreur. Essayez ultérieurement.";
                 }
 
-                // Close statement
+                // Fermeture statement
                 mysqli_stmt_close($stmt);
             }
         }else{
             echo $username_err. ' '. $password_err;
         }
 
-        // Close connection
+        // Fermeture connexion
         mysqli_close($link);
     }
     
@@ -393,32 +393,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         });
     </script>
     <!-- //testimonials  Responsiveslides -->
-    <!-- Portfolio -->
-    <script src="../js/jquery.picEyes.js"></script>
-    <script>
-        $(function () {
-            //picturesEyes($('.demo li'));
-            $('.demo li').picEyes();
-        });
-    </script>
-    <!-- //Portfolio -->
-    <!-- script for password match -->
-    <script>
-        window.onload = function () {
-            document.getElementById("password1").onchange = validatePassword;
-            document.getElementById("password2").onchange = validatePassword;
-        }
-        function validatePassword() {
-            var pass2 = document.getElementById("password2").value;
-            var pass1 = document.getElementById("password1").value;
-            if (pass1 != pass2)
-                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-            else
-                document.getElementById("password2").setCustomValidity('');
-            //empty string means no validation error
-        }
-    </script>
-    <!-- script for password match -->
+
+
     <script src="../js/counter.js"></script>
     <!-- start-smooth-scrolling -->
     <script src="../js/move-top.js"></script>

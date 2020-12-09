@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validation du pseudo
     if(empty(trim($_POST["pseudo"]))){
-        $username_err = "Please enter a username.";
+        $username_err = "Entrez un pseudo SVP.";
     } else{
         // Requête SQL
         $sql = "SELECT pseudo FROM users WHERE pseudo = ?";
@@ -31,12 +31,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
 
                 if(mysqli_stmt_num_rows($stmt) == 1){
-                    $username_err = "This username is already taken.";
+                    $username_err = "Ce pseudo est déjà utilisé.";
                 } else{
                     $username = trim($_POST["pseudo"]);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Erreur. Essayez ultérieurement.";
             }
 
             // Close statement
@@ -46,9 +46,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Vaidation du mot de passe
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter a password.";
+        $password_err = "Entrez un mot de passe SVP.";
     } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Password must have atleast 6 characters.";
+        $password_err = "Le mot de passe doit contenir au moins 6 caractères.";
     } else{
         $password = trim($_POST["password"]);
     }
@@ -94,15 +94,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                 header("location: ../connexion/index.php");
             } else{
-                echo "Something went wrong. Please try again later.";
+                echo "Erreur. Essayez ultérieurement.";
             }
 
-            // Close statement
+            // Fermeture statement
             mysqli_stmt_close($stmt);
         }
     }
 
-    // Close connection
+    // Fermeture connexion
     mysqli_close($link);
 }
 ?>

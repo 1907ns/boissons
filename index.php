@@ -47,7 +47,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="row">
                     <div class="col-lg-3 d-flex align-items-center justify-content-center">
                         <h1>
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" href="#">
                                 Cocktailand
                             </a>
                         </h1>
@@ -86,7 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <a class="nav-link scroll" href="recettes/index.php">Tous nos cocktails</a>
                                         </li>
                                         <li class="nav-item   mr-lg-3">
-                                            <a class="nav-link scroll" href="#why">Mes cocktails préférés</a>
+                                            <a class="nav-link scroll" href="#">Mes cocktails préférés</a>
                                         </li>
                                         <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){ ?>
                                             <li class="nav-item   mr-lg-3">
@@ -134,66 +134,66 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <li class="col-lg-4">
                         <div class="img-grid">
                             <div class="Portfolio-grid1">
-                                <img src="Projet/Photos/Raifortissimo.jpg" alt=" " class="img-fluid" />
+                                <img style="width: 50%; height: 50%;" src="Projet/Photos/Raifortissimo.jpg" alt=" " class="img-fluid" />
                             </div>
                             <div class="port-desc text-center">
-                                <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                                <a href="#" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
+                                <h6 class="main-title-w3pvt text-center">RAIFOTISSIMO</h6>
+                                <a href="./recettes/index.php?nom=Raifortissimo" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
                             </div>
                         </div>
                     </li>
                     <li class="col-lg-4">
                         <div class="img-grid">
                             <div class="Portfolio-grid1">
-                                <img src="Projet/Photos/Raifortissimo.jpg" alt=" " class="img-fluid" />
+                                <img style="width: 50%; height: 50%;" src="Projet/Photos/Bora_bora.jpg" alt=" " class="img-fluid" />
                             </div>
                             <div class="port-desc text-center">
-                                <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                                <a href="#" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
+                                <h6 class="main-title-w3pvt text-center">BORA BORA</h6>
+                                <a href="./recettes/index.php?nom=Bora bora" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
                             </div>
                         </div>
                     </li>
                     <li class="col-lg-4">
                         <div class="img-grid">
                             <div class="Portfolio-grid1">
-                                <img src="Projet/Photos/Raifortissimo.jpg" alt=" " class="img-fluid" />
+                                <img style="width: 50%; height: 50%;" src="Projet/Photos/Builder.jpg" alt=" " class="img-fluid" />
                             </div>
                             <div class="port-desc text-center">
-                                <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                                <a href="#" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
+                                <h6 class="main-title-w3pvt text-center">BUILDER</h6>
+                                <a href="./recettes/index.php?nom=Builder" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
                             </div>
                         </div>
                     </li>
                     <li class="col-lg-4">
                         <div class="img-grid">
                             <div class="Portfolio-grid1">
-                                <img src="Projet/Photos/Raifortissimo.jpg" alt=" " class="img-fluid" />
+                                <img style="width: 50%; height: 50%;" src="Projet/Photos/Screwdriver.jpg" alt=" " class="img-fluid" />
                             </div>
                             <div class="port-desc text-center">
-                                <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                                <a href="#" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
+                                <h6 class="main-title-w3pvt text-center">SCREWDRIVER</h6>
+                                <a href="./recettes/index.php?nom=Screwdriver" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
                             </div>
                         </div>
                     </li>
                     <li class="col-lg-4">
                         <div class="img-grid">
                             <div class="Portfolio-grid1">
-                                <img src="Projet/Photos/Raifortissimo.jpg" alt=" " class="img-fluid" />
+                                <img style="width: 50%; height: 50%;" src="Projet/Photos/Le_vandetta.jpg" alt=" " class="img-fluid" />
                             </div>
                             <div class="port-desc text-center">
-                                <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                                <a href="#" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
+                                <h6 class="main-title-w3pvt text-center">LE VANDETTA</h6>
+                                <a href="./recettes/index.php?nom=Le vandetta" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
                             </div>
                         </div>
                     </li>
                     <li class="col-lg-4">
                         <div class="img-grid">
                             <div class="Portfolio-grid1 align-content-center">
-                                <img src="Projet/Photos/Raifortissimo.jpg" alt=" " class="img-fluid" />
+                                <img style="width: 50%; height: 50%;" src="Projet/Photos/Coconut_kiss.jpg" alt=" " class="img-fluid" />
                             </div>
                             <div class="port-desc text-center">
-                                <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                                <a href="#" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
+                                <h6 class="main-title-w3pvt text-center">COCONUT KISS</h6>
+                                <a href="./recettes/index.php?nom=Coconut kiss" class="scroll text-capitalize serv_link btn bg-theme2">DECOUVRIR LA RECETTE</a>
                             </div>
                         </div>
                     </li>
@@ -231,30 +231,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </script>
     <!-- //testimonials  Responsiveslides -->
     <!-- Portfolio -->
-    <script src="js/jquery.picEyes.js"></script>
-    <script>
-        $(function () {
-            //picturesEyes($('.demo li'));
-            $('.demo li').picEyes();
-        });
-    </script>
     <!-- //Portfolio -->
     <!-- script for password match -->
-    <script>
-        window.onload = function () {
-            document.getElementById("password1").onchange = validatePassword;
-            document.getElementById("password2").onchange = validatePassword;
-        }
-        function validatePassword() {
-            var pass2 = document.getElementById("password2").value;
-            var pass1 = document.getElementById("password1").value;
-            if (pass1 != pass2)
-                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-            else
-                document.getElementById("password2").setCustomValidity('');
-            //empty string means no validation error
-        }
-    </script>
+
     <!-- script for password match -->
     <script src="js/counter.js"></script>
     <!-- start-smooth-scrolling -->

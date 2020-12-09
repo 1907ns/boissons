@@ -4,8 +4,7 @@
 .img-grid {
     padding: 1em;
     background: #eee;
-	width: 200px;
-	height: 300px;
+    margin: 10px;
 }
 .img-grid:hover {
 	background: #ffffff;
@@ -125,24 +124,18 @@ h6.main-title-w3pvt {
 }
 
 .Portfolio-grid1 {
-	position: absolute;
-	align-content: center;
+	position: relative;
 	overflow: hidden;
-	width: 50%;
-	height: 50%;
 	cursor: pointer;
 }
 
 .pictures_eyes_in {
-	position: absolute;
-	align-content: center;
+	position: relative;
 	text-align: center;
 }
 
 .pictures_eyes_in img {
-	width: 50%;
-	height: 50%;
-	alignment: center;
+	width: 100%;
 }
 
 /* //Portfolio */

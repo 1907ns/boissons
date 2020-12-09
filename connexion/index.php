@@ -93,27 +93,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             header("location: ../index.php");
                         } else{
                         // Si le mot de passe n'est pas bon: erreur
-                            $password_err = "The password you entered was not valid.";
+                            $password_err = "Le mot de passe entré n'est pas valide.";
 
                         }
                     }
                 } else{
                     // Si le pseudo n'existe pas: erreur
-                    $username_err = "No account found with that username.";
+                    $username_err = "Aucun compte lié à ce pseudo.";
 
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Erreur. Essayez ultérieurement.";
             }
 
-            // Close statement
+            // Fermeture statement
             mysqli_stmt_close($stmt);
         }else{
             echo 'error';
         }
     }
 
-    // Close connection
+    // Fermeture
     mysqli_close($link);
 }
 ?>
