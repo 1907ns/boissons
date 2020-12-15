@@ -52,7 +52,7 @@ if (isset($_POST['func'])){
 function getBaseArbo(){
     $Hierarchie = array();
     $res = '{"fail":"false","nom":[';
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     foreach ($Hierarchie as $nom) {
         if (!isset($nom['super-categorie'])) {
             $cles = array_keys($Hierarchie, $nom, true);
@@ -73,7 +73,7 @@ function getBaseArbo(){
 function getSousCategories($nomSource){
     //preg_replace('/\'/', $nomSource, '\\\'');
     $Hierarchie = array();
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     $res = '{"fail":"false","nom":[';
     if (isset($Hierarchie[$nomSource]['sous-categorie'])) {
         foreach ($Hierarchie[$nomSource]['sous-categorie'] as $value) {
@@ -95,7 +95,7 @@ function getSousCategories($nomSource){
 function getSurCategories($nomSource){
     //preg_replace('/\'/', $nomSource, '\\\'');
     $Hierarchie = array();
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     $res = '{"fail":"false", "nom":["'.$nomSource.'",';
     while(isset($Hierarchie[$nomSource]['super-categorie'])) {
         $nomSource = $Hierarchie[$nomSource]['super-categorie'][0];
@@ -112,7 +112,7 @@ function getSurCategories($nomSource){
 function getSupCategories($nomSource){
     //preg_replace('/\'/', $nomSource, '\\\'');
     $Hierarchie = array();
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     $res = '{"fail":"true", "nom":[';
     if(isset($Hierarchie[$nomSource]['super-categorie'])) {
         foreach ($Hierarchie[$nomSource]['super-categorie'] as $value) {
@@ -131,7 +131,7 @@ function getSupCategories($nomSource){
 function getIngredientMatchNom($match){
     preg_replace('/\'/', $match, '\\\'');
     $Hierarchie = array();
-    include "Donnees.inc.php";
+    include "../Projet/Donnees.inc.php";
     $res = '{"fail":"false", "nom":[';
     $exp = '/.*?'.$match.'.*?/i';
     $isEmpty = true;

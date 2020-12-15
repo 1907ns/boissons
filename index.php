@@ -27,12 +27,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         }
     </script>
     <!-- Custom Theme files -->
-    <link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <!-- Portfolio-->
-    <link href="css/portfolio.css" type="text/css" rel="stylesheet" media="all">
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="assets/css/portfolio.css" type="text/css" rel="stylesheet" media="all">
+    <link href="assets/css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
-    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.css" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
     <link href="//fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
@@ -203,7 +203,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </section>
     <!-- //populaire -->
 
-
+    <!-- footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 footer-logo mb-lg-0 mb-4 text-lg-left text-center">
+                    <h2>
+                        <a href="#">Cocktailand</a>
+                    </h2>
+                </div>
+                <div class="col-lg-6 cpy-right text-lg-right text-center">
+                    <p>© 2018 Cafe. All rights reserved | Design by
+                        <a href="http://w3layouts.com"> W3layouts.</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
     <!-- js -->
     <script src="js/jquery-2.2.3.min.js"></script>
     <!-- //js -->
@@ -235,10 +252,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- script for password match -->
 
     <!-- script for password match -->
-    <script src="js/counter.js"></script>
+    <script src="assets/js/counter.js"></script>
     <!-- start-smooth-scrolling -->
-    <script src="js/move-top.js"></script>
-    <script src="js/easing.js"></script>
+    <script src="assets/js/move-top.js"></script>
+    <script src="assets/js/easing.js"></script>
     <!--<script>
         jQuery(document).ready(function ($) {
             $(".scroll").click(function (event) {
@@ -269,12 +286,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         });
     </script>
-    <script src="js/SmoothScroll.min.js"></script>
+    <script src="assets/js/SmoothScroll.min.js"></script>
     <!-- //smooth-scrolling-of-move-up -->
     <!-- Bootstrap core JavaScript
 ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/bootstrap.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
 </body>
 
 </html>

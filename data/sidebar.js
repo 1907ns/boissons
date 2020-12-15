@@ -14,7 +14,7 @@ function sidebar(){
                 alert("Erreur de chargement de la sidebar")
             }else{
                 for (let i = 0; i < result.nom.length; i++) {
-                    resLoad += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
+                    resLoad += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../assets/images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
                 }
             }
         }
@@ -25,9 +25,9 @@ function sousMenu(nom){
     isSM = true;
     nomSM = nom;
     if(document.getElementById(nom).parentElement.value){
-        document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
+        document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../assets/images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
     }else {
-        document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/rewind.png" style="max-width:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
+        document.getElementById(nom).parentElement.innerHTML = '<li value=0><span id="' + nom + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + nom + '\'">' + nom + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../assets/images/rewind.png" style="max-width:20px;" onclick="sousMenu(\'' + nom + '\')"/></li>';
         $.ajax({
             type: "POST",
             url: "../data/TraitementHierarchie.php",
@@ -46,7 +46,7 @@ function sousMenu(nom){
                                 retour = false;
                             }
                             if(retour){
-                                resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
+                                resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="../assets/images/next.png" style="max-height:20px;" onclick="sousMenu(\'' + result.nom[i] + '\')"/></span></li>';
                             }else{
                                 resSM += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' + result.nom[i] + '" onclick="window.location.href=\'../ingredients/index.php?nom=' + result.nom[i] + '\'">' + result.nom[i] + '</span></li>';
                             }

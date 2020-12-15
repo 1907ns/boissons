@@ -57,7 +57,7 @@ if (isset($_POST['func'])){
 
 function getNumRecettesFromIndex($index){
     $Recettes=array();
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     $res = '{"fail":"false", "index":[';
     $existe = false;
     foreach ($Recettes as $type){
@@ -82,7 +82,7 @@ function getNumRecettesFromIndex($index){
 function getRecetteFromIngredient($ingredient){
     //preg_replace('/\'/', $ingredient, '\\\'');
     $Recettes=array();
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     $res = '{"fail":"false", "titre":[';
     $existe = false;
     foreach ($Recettes as $recette) {
@@ -105,7 +105,7 @@ function getRecetteFromIngredient($ingredient){
 
 function getRecetteFromNum($index){
     $Recettes=array();
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     $res = $Recettes[$index];
     preg_replace('/\'/', '\\\'', $res['titre']);
     preg_replace('/\'/', '\\\'', $res['ingredients']);
@@ -119,7 +119,7 @@ function getRecetteFromNum($index){
 
 function getAllRecettes(){
     $Recettes=array();
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     $res='{"fail":"false", "titre":[';
     foreach ($Recettes as $type){
         $titre = $type['titre'];
@@ -135,7 +135,7 @@ function getAllRecettes(){
 function getRecetteFromNom($nom){
     //preg_replace('/\'/', $nom, '\\\'');
     $Recettes = array();
-    include 'Donnees.inc.php';
+    include '../Projet/Donnees.inc.php';
     $res = '{"fail":"false", "titre":"';
     $existe = false;
     foreach ($Recettes as $type) {
@@ -167,7 +167,7 @@ function getRecetteFromNom($nom){
 function getRecetteMatchNom($match){
     //preg_replace('/\'/', $match, '\\\'');
     $Recettes = array();
-    include "Donnees.inc.php";
+    include "../Projet/Donnees.inc.php";
     $res = '{"fail":"false", "titre":[';
     $exp = '/.*?'.$match.'.*?/i';
     $isEmpty = true;

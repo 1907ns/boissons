@@ -111,12 +111,12 @@ session_start();
         }
     </script>
     <!-- Custom Theme files -->
-    <link href="../css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../assets/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
     <!-- Portfolio-->
-    <link href="../css/portfolio.css" type="text/css" rel="stylesheet" media="all">
-    <link href="../css/style.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../assets/css/portfolio.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../assets/css/style.css" type="text/css" rel="stylesheet" media="all">
     <!-- font-awesome icons -->
-    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/font-awesome.css" rel="stylesheet">
     <!-- //Custom Theme files -->
     <!-- online-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
@@ -194,6 +194,26 @@ session_start();
 </header>
 
 <div class="justify-content-center" id="ResSearch"></div>
+
+
+<!-- footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 footer-logo mb-lg-0 mb-4 text-lg-left text-center">
+                <h2>
+                    <a href="../index.php">Cocktailand</a>
+                </h2>
+            </div>
+            <div class="col-lg-6 cpy-right text-lg-right text-center">
+                <p>© 2018 Cafe. All rights reserved | Design by
+                    <a href="http://w3layouts.com"> W3layouts.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- //footer -->
 </body>
 </html>
 <!-- //header -->
