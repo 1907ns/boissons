@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validation des infos récupérées
     if(empty($username_err) && empty($password_err)){
         // Requête SQL pour choisir le bon utilisateur
-        $sql = "SELECT id, pseudo, password, nom, prenom, mail, phone, birthdate, adresse, cpville, ville, sexe FROM users WHERE pseudo = ?";
+        $sql = "SELECT id, pseudo, password, nom, prenom, mail, phone, birthdate, adresse, cpville, ville, sexe, favoris FROM users WHERE pseudo = ?";
         $hashed_password= "SELECT password FROM users WHERE pseudo = ?";
         $nom="SELECT password FROM users WHERE pseudo = ?";
         $stmt = mysqli_prepare($link, $sql);
@@ -66,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 if(mysqli_stmt_num_rows($stmt) == 1){
 
                     // Bind les variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password,$nom, $prenom, $mail, $phone, $birthdate, $adresse, $cpville, $ville, $sexe);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password,$nom, $prenom, $mail, $phone, $birthdate, $adresse, $cpville, $ville, $sexe, $favoris);
                     if(mysqli_stmt_fetch($stmt)){
 
                         //Vérifier sue le mot de passe saisie correspons au hash
@@ -88,6 +88,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["cpville"]=$cpville;
                             $_SESSION["ville"]=$ville;
                             $_SESSION["sexe"]=$sexe;
+                            $_SESSION["favoris"]=$favoris;
 
                             // Redirection de l'utilisateur vers l'accueil
                             header("location: ../index.php");
