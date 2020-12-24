@@ -2,6 +2,21 @@
 //Initialisation de la session
 session_start();
 include '../data/nom_image.php';
+include '../data/GestionFavoris.php';
+include '../Projet/Donnees.inc.php';
+
+
+
+function getID($recettes, $field, $value)
+{
+    foreach($recettes as $key => $product)
+    {
+        if ( $recettes[$field] === $value )
+            return $key;
+    }
+    return false;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +42,7 @@ include '../data/nom_image.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script  src="../data/liste.js"></script>
     <script  src="../data/nom_image.js"></script>
+    <script  src="../data/GestionFavoris.js"></script>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -203,6 +219,8 @@ include '../data/nom_image.php';
                     </div>
                     <div class="align-content-center col-lg-9" >
                     <?php
+
+                        $cocktail_id = array_search($_GET['nom'], array_column($Recettes, 'titre'));
                         $img = name_image($_GET['nom']); //nom de l'image sans espaces et caractères spéciaux
                         echo "<h1 class='text-center' style='color: #5341b4'> Recette de le/ la ". $_GET['nom'] . "</h1>";
                         echo "<br>";
@@ -236,10 +254,13 @@ include '../data/nom_image.php';
                         echo "<div class='row' >";
                         echo "<div class='col-3 justify-content-center' ></div>";
                         echo "<div class='col-6 justify-content-center' >";
-                        echo '<a href="#" class="align-content-center scroll text-capitalize serv_link btn bg-theme2">AJOUTER AUX FAVORIS</a>';
+                        echo '<a  href="#" class="align-content-center scroll text-capitalize serv_link btn bg-theme2" onclick="ajouterFav(' . $cocktail_id . ' ) " >AJOUTER AUX FAVORIS</a>';
                         echo '</div>';
                         echo "<div class='col-3 justify-content-center' ></div>";
-                        echo "<br>"
+                        echo "<br>";
+                    if(isset($_SESSION["favoris"])){
+                        echo $_SESSION["favoris"];
+                    }
                     ?> </div> </div><?php }else {
                     ?>
 

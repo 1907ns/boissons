@@ -48,7 +48,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Requête SQL pour choisir le bon utilisateur
         $sql = "SELECT id, pseudo, password, nom, prenom, mail, phone, birthdate, adresse, cpville, ville, sexe, favoris FROM users WHERE pseudo = ?";
         $hashed_password= "SELECT password FROM users WHERE pseudo = ?";
-        $nom="SELECT password FROM users WHERE pseudo = ?";
+        $nom="SELECT nom FROM users WHERE pseudo = ?";
+        $favoris="SELECT favoris FROM users WHERE pseudo = ?";
         $stmt = mysqli_prepare($link, $sql);
         if($stmt){
             // Bind les variables
@@ -282,5 +283,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
     </footer>
     <!-- //footer -->
-    <!-- //Login modal -->
+
 </body>

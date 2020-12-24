@@ -1,6 +1,7 @@
 <?php
 
 if(isset($_POST['func'])){
+
     $fail = true;
     switch ($_POST['func']){
         case 'get':
@@ -70,6 +71,7 @@ function ajoutFavoris($id){
             $link = mysqli_connect("localhost", "root", "", "boissons");
             $sql = "SELECT favoris FROM users WHERE id = " . $_SESSION['id'];
             $stmt = mysqli_prepare($link, $sql);
+            echo 'console.log("test")';
             if ($stmt) {
                 if (mysqli_stmt_execute($stmt)) {
                     mysqli_stmt_store_result($stmt);
