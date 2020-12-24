@@ -6,9 +6,10 @@ function ajouterFav(id){
     $.ajax({ url: '../data/GestionFavoris.php',
             data: {func: 'ajout',var: id},
             type: 'POST',
+            //dataType: 'JSON',
             success: function(output) {
-                console.log(output)
-                console.log(id);
+                //console.log(output);
+                //console.log(id);
                 alert("Ce cocktail a bien été ajouté à votre panier");
             }
         });

@@ -1,5 +1,7 @@
 <?php
-
+if(session_id() == ''){
+    session_start();
+}
 if(isset($_POST['func'])){
 
     $fail = true;
@@ -29,8 +31,8 @@ if(isset($_POST['func'])){
 function getFavoris(){
     $res = '{"fail":"false", "fav":[';
     $favoris = "";
-    if(isset($_SESSION['loggedin'])) {
-        if ($_SESSION['loggedin'] == true) {
+    if(isset($_SESSION["loggedin"])) {
+        if ($_SESSION["loggedin"] == true) {
             $link = mysqli_connect("localhost", "root", "", "boissons");
             $sql = "SELECT favoris FROM users WHERE id = " . $_SESSION['id'];
             $stmt = mysqli_prepare($link, $sql);
@@ -51,8 +53,8 @@ function getFavoris(){
                 }
             }
         } else {
-            if (isset($_SESSION['favoris'])) {
-                $favoris = $_SESSION['favoris'];
+            if (isset($_SESSION["favoris"])) {
+                $favoris = $_SESSION["favoris"];
                 $favArray = preg_split('|', $favoris);
                 foreach ($favArray as $fav) {
                     $res = $res . '"' . $fav . '",';
@@ -66,55 +68,57 @@ function getFavoris(){
 }
 
 function ajoutFavoris($id){
-    if(isset($_SESSION['loggedin'])) {
-        if ($_SESSION['loggedin'] == true) {
+    if(isset($_SESSION["loggedin"])) {
+        if ($_SESSION["loggedin"] == true) {
             $link = mysqli_connect("localhost", "root", "", "boissons");
             $sql = "SELECT favoris FROM users WHERE id = " . $_SESSION['id'];
             $stmt = mysqli_prepare($link, $sql);
-            echo 'console.log("test")';
             if ($stmt) {
                 if (mysqli_stmt_execute($stmt)) {
                     mysqli_stmt_store_result($stmt);
                     if (mysqli_stmt_num_rows($stmt) == 1) {
                         mysqli_stmt_bind_result($stmt, $favoris);
-                        if ($favoris != "")
-                            $favoris = $favoris . '|' . $id;
-                        else
-                            $favoris = $id;
-                        $_SESSION['favoris'] = $favoris;
-                        $sqlUpdate = "UPDATE users SET favoris = " . $favoris . " WHERE id = " . $_SESSION['id'];
-                        $stmtUpdate = mysqli_prepare($link, $sqlUpdate);
-                        if ($stmtUpdate) {
-                            mysqli_stmt_execute($stmtUpdate);
+                        if(mysqli_stmt_fetch($stmt)) {
+                            if ($favoris != "")
+                                $favoris = $favoris . '|' . $id;
+                            else
+                                $favoris = $id;
+                            $_SESSION["favoris"] = $favoris;
+                            $sqlUpdate = "UPDATE users SET favoris = '" . $favoris . "' WHERE id = " . $_SESSION['id'];
+                            $stmtUpdate = mysqli_prepare($link, $sqlUpdate);
+                            if ($stmtUpdate) {
+                                mysqli_stmt_execute($stmtUpdate);
+                            }
                         }
                     }
                 }
             }
         } else {
-            if (isset($_SESSION['favoris']))
-                if($_SESSION['favoris'] != "")
-                    $_SESSION['favoris'] = $_SESSION['favoris'] . '|' . $id;
+            if (isset($_SESSION["favoris"]))
+                if($_SESSION["favoris"] != "")
+                    $_SESSION["favoris"] = $_SESSION["favoris"] . '|' . $id;
                 else
-                    $_SESSION['favoris'] = $id;
+                    $_SESSION["favoris"] = $id;
             else
-                $_SESSION['favoris'] = $id;
+                $_SESSION["favoris"] = $id;
         }
-    }else{
-        $_SESSION['loggedin'] = false;
-        if (isset($_SESSION['favoris']))
-            if($_SESSION['favoris'] != "")
-                $_SESSION['favoris'] = $_SESSION['favoris'] . '|' . $id;
+    }else {
+        $_SESSION["loggedin"] = false;
+        if (isset($_SESSION["favoris"])) {
+            if ($_SESSION["favoris"] != "")
+                $_SESSION["favoris"] = $_SESSION["favoris"] . '|' . $id;
             else
-                $_SESSION['favoris'] = $id;
-        else
-            $_SESSION['favoris'] = $id;
+                $_SESSION["favoris"] = $id;
+        }else {
+            $_SESSION["favoris"] = $id;
+        }
     }
 }
 
 function supprFavoris($id){
     $favUpdate = "";
-    if(isset($_SESSION['loggedin'])) {
-        if ($_SESSION['loggedin'] == true) {
+    if(isset($_SESSION["loggedin"])) {
+        if ($_SESSION["loggedin"] == true) {
             $link = mysqli_connect("localhost", "root", "", "boissons");
             $sql = "SELECT favoris FROM users WHERE id = " . $_SESSION['id'];
             $stmt = mysqli_prepare($link, $sql);
@@ -123,52 +127,54 @@ function supprFavoris($id){
                     mysqli_stmt_store_result($stmt);
                     if (mysqli_stmt_num_rows($stmt) == 1) {
                         mysqli_stmt_bind_result($stmt, $favoris);
-                        $favArray = preg_split('|', $favoris);
-                        foreach ($favArray as $fav) {
-                            if ($fav != $id)
-                                $favUpdate = $favUpdate . $fav . '|';
-                        }
-                        $favUpdate = substr_replace($favUpdate, "", -1);
-                        $_SESSION['favoris'] = $favUpdate;
-                        $sqlUpdate = "UPDATE users SET favoris = " . $favUpdate . " WHERE id = " . $_SESSION['id'];
-                        $stmtUpdate = mysqli_prepare($link, $sqlUpdate);
-                        if ($stmtUpdate) {
-                            mysqli_stmt_execute($stmtUpdate);
+                        if (mysqli_stmt_fetch($stmt)) {
+                            $favArray = preg_split('|', $favoris);
+                            foreach ($favArray as $fav) {
+                                if ($fav != $id)
+                                    $favUpdate = $favUpdate . $fav . '|';
+                            }
+                            $favUpdate = substr_replace($favUpdate, "", -1);
+                            $_SESSION["favoris"] = $favUpdate;
+                            $sqlUpdate = "UPDATE users SET favoris = '" . $favUpdate . "' WHERE id = " . $_SESSION['id'];
+                            $stmtUpdate = mysqli_prepare($link, $sqlUpdate);
+                            if ($stmtUpdate) {
+                                mysqli_stmt_execute($stmtUpdate);
+                            }
                         }
                     }
                 }
             }
         } else {
-            if(isset($_SESSION['favoris'])) {
-                $favoris = $_SESSION['favoris'];
+            if(isset($_SESSION["favoris"])) {
+                $favoris = $_SESSION["favoris"];
                 $favArray = preg_split('|', $favoris);
                 foreach ($favArray as $fav) {
                     if ($fav != $id)
                         $favUpdate = $favUpdate . $fav . '|';
                 }
                 $favUpdate = substr_replace($favUpdate, "", -1);
-                $_SESSION['favoris'] = $favUpdate;
+                $_SESSION["favoris"] = $favUpdate;
             }
         }
     }else{
-        $_SESSION['loggedin'] = false;
-        if(isset($_SESSION['favoris'])) {
-            $favoris = $_SESSION['favoris'];
+        $_SESSION["loggedin"] = false;
+        if(isset($_SESSION["favoris"])) {
+            $favoris = $_SESSION["favoris"];
             $favArray = preg_split('|', $favoris);
             foreach ($favArray as $fav) {
                 if ($fav != $id)
                     $favUpdate = $favUpdate . $fav . '|';
             }
             $favUpdate = substr_replace($favUpdate, "", -1);
-            $_SESSION['favoris'] = $favUpdate;
+            $_SESSION["favoris"] = $favUpdate;
         }
     }
 }
 
 function estFavoris($id){
     $ok = false;
-    if(isset($_SESSION['favoris'])) {
-        $favs = $_SESSION['favoris'];
+    if(isset($_SESSION["favoris"])) {
+        $favs = $_SESSION["favoris"];
         $favArray = preg_split('|', $favs);
         foreach ($favArray as $fav) {
             if ($fav == $id)
