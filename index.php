@@ -86,7 +86,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                             <a class="nav-link scroll" href="recettes/index.php">Tous nos cocktails</a>
                                         </li>
                                         <li class="nav-item   mr-lg-3">
-                                            <a class="nav-link scroll" href="#">Mes cocktails préférés</a>
+                                            <a class="nav-link scroll" href="mes_favoris/index.php">Mes cocktails préférés</a>
                                         </li>
                                         <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){ ?>
                                             <li class="nav-item   mr-lg-3">

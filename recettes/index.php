@@ -179,7 +179,7 @@ function getID($recettes, $field, $value)
                                     <a class="nav-link scroll" href="index.php">Tous nos cocktails</a>
                                 </li>
                                 <li class="nav-item   mr-lg-3">
-                                    <a class="nav-link scroll" href="#">Mes cocktails préférés</a>
+                                    <a class="nav-link scroll" href="../mes_favoris/index.php">Mes cocktails préférés</a>
                                 </li>
                                 <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){ ?>
                                     <li class="nav-item   mr-lg-3">
@@ -254,7 +254,12 @@ function getID($recettes, $field, $value)
                         echo "<div class='row' >";
                         echo "<div class='col-3 justify-content-center' ></div>";
                         echo "<div class='col-6 justify-content-center' >";
-                        echo '<a  href="#" class="align-content-center scroll text-capitalize serv_link btn bg-theme2" onclick="ajouterFav(' . $cocktail_id . ' ) " >AJOUTER AUX FAVORIS</a>';
+                        if(!estFavoris($cocktail_id)){
+                            echo '<a  href="#" class="align-content-center scroll text-capitalize serv_link btn bg-theme2" onclick="ajouterFav(' . $cocktail_id . ' ) " >AJOUTER AUX FAVORIS</a>';
+                        }else{
+                            echo '<a  href="#" class="align-content-center scroll text-capitalize serv_link btn bg-theme2" onclick="supprimerFav(' . $cocktail_id . ' ) " >SUPPRIMER DES FAVORIS</a>';
+                        }
+
                         echo '</div>';
                         echo "<div class='col-3 justify-content-center' ></div>";
                         echo "<br>";

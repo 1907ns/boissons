@@ -1,5 +1,5 @@
 
-let resFav = "";
+
 
 
 function ajouterFav(id){
@@ -11,18 +11,20 @@ function ajouterFav(id){
                 //console.log(output);
                 //console.log(id);
                 alert("Ce cocktail a bien été ajouté à votre panier");
+                document.location.reload();
             }
         });
 
 }
 
 
-function supprimerFav(nom){
+function supprimerFav(id){
     $.ajax({ url: '../data/GestionFavoris.php',
-        data: {func:'suppr',var: nom},
+        data: {func:'suppr',var: id},
         type: 'POST',
         success: function(output) {
             alert("Ce cocktail a bien été supprimé votre panier");
+            document.location.reload();
         }
     });
 }
@@ -31,7 +33,7 @@ function getFav(){
     document.getElementById("ResFav").innerHTML = '<h2 class="text-center"  style=\'color: #5341b4\'>Mes recettes préférées </h><p id="listeResults" style="justify-content: center">';
     $.ajax({
         type: "POST",
-        url: "../data/TraitementHierarchie.php",
+        url: "../data/GestionFavoris.php",
         data: {func: 'get'},
         dataType:'JSON',
         success: function (ret) {
@@ -39,8 +41,9 @@ function getFav(){
             if (result.fail == "true") {
                 alert("Erreur de chargement des favoris");
             } else {
-                for (let i = 0; i < result.tab.length; i++) {
-                    hasNext(result.tab[i],function(ret){
+                document.getElementById("ResFav").innerHTML +='<ul>';
+                for (let i = 0; i < result.fav.length; i++) {
+                    hasNext(result.fav[i],function(ret){
                         resultat = JSON.parse(ret);
                         retour = true;
                         if(resultat == "none") {
@@ -49,7 +52,7 @@ function getFav(){
                         $.ajax({
                             type:"POST",
                             url:"../data/TraitementRecettes.php",
-                            data:{func:'recNum', var:result.tab[i]},
+                            data:{func:'recNum', var:resultat[i]},
                             dataType:'JSON',
                             success: function(ret){
                                 document.getElementById("ResFav").innerHTML += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' +ret + '" onclick="window.location.href=\'../recettes/index.php?nom=' + ret + '\'"></span></li>';
@@ -57,6 +60,7 @@ function getFav(){
                         })
                     });
                 }
+                document.getElementById("ResFav").innerHTML +='</ul>';
             }
         }
     })

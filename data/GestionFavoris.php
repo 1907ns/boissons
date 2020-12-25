@@ -173,15 +173,24 @@ function supprFavoris($id){
 
 function estFavoris($id){
     $ok = false;
-    if(isset($_SESSION["favoris"])) {
-        $favs = $_SESSION["favoris"];
-        $favArray = preg_split('|', $favs);
-        foreach ($favArray as $fav) {
-            if ($fav == $id)
-                $ok = true;
+    if(isset($_SESSION['favoris'])) {
+        $favs = $_SESSION['favoris'];
+        if (strpos($favs, '|')){
+            $favArray = explode('|', $favs);
+            foreach ($favArray as $fav) {
+                if ($fav == $id)
+                    $ok = true;
+            }
+        }else{
+            if($favs==$id){
+                $ok=true;
+            }
         }
+
     }
-    $res = '{"fail":"false", "estFav":"'.$ok.'"}';
-    echo json_encode($res);
+    //$res = '{"fail":"false", "estFav":"'.$ok.'"}';
+    //echo json_encode($favArray);
+
+    return $ok;
 }
 ?>
