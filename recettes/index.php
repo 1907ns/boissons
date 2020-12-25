@@ -81,14 +81,16 @@ function getID($recettes, $field, $value)
 
                             /** Vérifier si la photo existe */
                             if(!doesFileExist('../Projet/Photos/'+nom_im+'.jpg')){
-                                nom_im="Raifortissimo";
+                                nom_im="../assets/images/no_image";
+                            }else{
+                                nom_im='../Projet/Photos/'+nom_im;
                             }
                             console.log(nom_im);
                             div.className = 'col-lg-6';
                             var onecocktail =
                                 '                    <div class="img-grid" >' +
                                 '                        <div class="Portfolio-grid1">' +
-                                '                            <img style="width: 50%; height: 50%;" src="../Projet/Photos/' +nom_im + '.jpg" alt=" " class="img-fluid" />' +
+                                '                            <img style="width: 50%; height: 50%;" src="'+nom_im + '.jpg" alt=" " class="img-fluid" />' +
                                 '                        </div>' +
                                 '                        <div class="port-desc text-center">' +
                                 '                            <h6 class="main-title-w3pvt text-center">'+ liste.titre[i] +'</h6>' +
@@ -263,9 +265,7 @@ function getID($recettes, $field, $value)
                         echo '</div>';
                         echo "<div class='col-3 justify-content-center' ></div>";
                         echo "<br>";
-                    if(isset($_SESSION["favoris"])){
-                        echo $_SESSION["favoris"];
-                    }
+
                     ?> </div> </div><?php }else {
                     ?>
 
