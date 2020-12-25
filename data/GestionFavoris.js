@@ -23,6 +23,7 @@ function supprimerFav(id){
         data: {func:'suppr',var: id},
         type: 'POST',
         success: function(output) {
+            console.log(output);
             alert("Ce cocktail a bien été supprimé votre panier");
             document.location.reload();
         }
