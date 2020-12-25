@@ -42,13 +42,13 @@ function getFavoris(){
                     if (mysqli_stmt_num_rows($stmt) == 1) {
                         mysqli_stmt_bind_result($stmt, $favoris);
                         if(mysqli_stmt_fetch($stmt)) {
-                            $favArray = explode('|', $favoris);
-                            if ($favoris != "") {
+                            if(strpos($favoris, '|') !== false) {
+                                $favArray = explode('|', $favoris);
                                 foreach ($favArray as $fav) {
                                     $res = $res . '"' . $fav . '",';
                                 }
-                            } else {
-                                $res = $res . ',';
+                            }else{
+                                $res = $res.'"'.$favoris.'",';
                             }
                         }
                     }
@@ -57,12 +57,16 @@ function getFavoris(){
         } else {
             if (isset($_SESSION["favoris"])) {
                 $favoris = $_SESSION["favoris"];
-                $favArray = explode('|', $favoris);
-                foreach ($favArray as $fav) {
-                    $res = $res . '"' . $fav . '",';
+                if(strpos($favoris, '|') !== false) {
+                    $favArray = explode('|', $favoris);
+                    foreach ($favArray as $fav) {
+                        $res = $res . '"' . $fav . '",';
+                    }
+                }else{
+                    $res = $res.'"'.$favoris.'"';
                 }
             }else{
-                $res = $res.",";
+                $res = $res.'"",';
             }
         }
         $res = substr_replace($res, "", -1);
