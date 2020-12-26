@@ -134,7 +134,6 @@ function getAllRecettes(){
 }
 
 function getRecetteFromNom($nom){
-    $nom = preg_replace('/\([^*]*\)/', '', $nom);
     $Recettes = array();
     include '../Projet/Donnees.inc.php';
     $res = '{"fail":"false", "titre":"';
