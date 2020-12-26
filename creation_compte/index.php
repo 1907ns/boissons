@@ -248,7 +248,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </div>
                     <div class="form-group">
                         <label for="dnaissance" class="col-form-label">Date de naissance</label>
-                        <input type="text" class="form-control border" placeholder="********" name="dnaissance"
+                        <input type="text" class="form-control border" placeholder="01/01/1993" name="dnaissance"
                                id="dnaissance" required="">
                     </div>
                     <div class="form-group">
@@ -284,6 +284,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <div class="right-w3l">
                         <input type="submit" class="form-control bg-theme text-white" value="Valider">
                     </div>
+                    <p class="text-center text-secondary">Déjà inscrit?
+                        <a href="../connexion/index.php" data-toggle="modal" data-target="#exampleModal1" class="text-dark font-weight-bold">
+                            Connectez-vous!</a>
+                    </p>
                 </form>
             </div>
         </div>

@@ -31,37 +31,38 @@ function supprimerFav(id){
 }
 
 function getFav(){
-    document.getElementById("ResFav").innerHTML = '<h2 class="text-center"  style=\'color: #5341b4\'>Mes recettes préférées </h><p id="listeResults" style="justify-content: center">';
+    document.getElementById("ResFav").innerHTML = '<h2 class="text-center"  style=\'color: #5341b4\'>Mes recettes préférées </h><p class="text-center"  style="justify-content: center">';
     $.ajax({
         type: "POST",
         url: "../data/GestionFavoris.php",
         data: {func: 'get'},
         dataType:'JSON',
         success: function (ret) {
+            console.log(ret)
             result = JSON.parse(ret);
             if (result.fail == "true") {
                 alert("Erreur de chargement des favoris");
             } else {
-                document.getElementById("ResFav").innerHTML +='<ul>';
-                for (let i = 0; i < result.fav.length; i++) {
-                    hasNext(result.fav[i],function(ret){
-                        resultat = JSON.parse(ret);
-                        retour = true;
-                        if(resultat == "none") {
-                            retour = false;
-                        }
+                if(result.fav[0]===""){
+                    document.getElementById("ResFav").innerHTML +="<p class='text-center'>Vous n'avez pas de cocktails favoris </p>";
+                }else{
+                    document.getElementById("ResFav").innerHTML +='<ul>';
+                    for (let i = 0; i < result.fav.length; i++) {
                         $.ajax({
                             type:"POST",
                             url:"../data/TraitementRecettes.php",
-                            data:{func:'recNum', var:resultat[i]},
+                            data:{func:'recNum', var:result.fav[i]},
                             dataType:'JSON',
                             success: function(ret){
-                                document.getElementById("ResFav").innerHTML += '<li value=0 class=" text-center" style="cursor: pointer"><span id="' +ret + '" onclick="window.location.href=\'../recettes/index.php?nom=' + ret + '\'"></span></li>';
+                                console.log(ret.titre);
+                                document.getElementById("ResFav").innerHTML += '<li style="overflow: visible; cursor:pointer" class=" text-center" ><a id="' +ret.titre+ '" onclick="window.location.href=\'../recettes/index.php?nom=' +ret.titre+ '\'">'+ret.titre+ '</a></li>';
                             }
                         })
-                    });
+
+                    }
+                    document.getElementById("ResFav").innerHTML +='</ul>';
                 }
-                document.getElementById("ResFav").innerHTML +='</ul>';
+
             }
         }
     })

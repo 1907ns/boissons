@@ -69,7 +69,9 @@ function getFavoris(){
                 $res = $res.'"",';
             }
         }
-        $res = substr_replace($res, "", -1);
+        if(substr($res,-1)===','){
+            $res = substr_replace($res, "", -1);
+        }
     }
     $res = $res . ']}';
     echo json_encode($res);
