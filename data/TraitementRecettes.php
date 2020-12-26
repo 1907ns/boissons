@@ -110,6 +110,7 @@ function getRecetteFromNum($index){
     preg_replace('/\'/', '\\\'', $res['titre']);
     preg_replace('/\'/', '\\\'', $res['ingredients']);
     preg_replace('/\'/', '\\\'', $res['preparation']);
+    $res['preparation'] = preg_replace('/"/', '\\"', $res['preparation']);
     for($i = 0; $i < count($res['index']); $i++){
         preg_replace('/\'/', '\\\'', $res['index'][$i]);
     }
@@ -133,7 +134,7 @@ function getAllRecettes(){
 }
 
 function getRecetteFromNom($nom){
-    //preg_replace('/\'/', $nom, '\\\'');
+    $nom = preg_replace('/\([^*]*\)/', '', $nom);
     $Recettes = array();
     include '../Projet/Donnees.inc.php';
     $res = '{"fail":"false", "titre":"';
@@ -147,6 +148,7 @@ function getRecetteFromNom($nom){
             preg_replace('/\'/', '\\\'', $ingredients);
             $preparation = $type['preparation'];
             preg_replace('/\'/', '\\\'', $preparation);
+            $preparation = preg_replace('/"/', '\\"', $preparation);
             $res = $res.$titre.'","ingredients":"'.$ingredients.'","preparation":"'.$preparation.'","index":[';
             foreach ($type['index'] as $index){
                 preg_replace('/\'/', $index, '\\\'');
@@ -165,7 +167,7 @@ function getRecetteFromNom($nom){
 }
 
 function getRecetteMatchNom($match){
-    //preg_replace('/\'/', $match, '\\\'');
+    $match = preg_replace('/\([^*]*\)/', '', $match);
     $Recettes = array();
     include "../Projet/Donnees.inc.php";
     $res = '{"fail":"false", "titre":[';
