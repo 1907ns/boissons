@@ -89,6 +89,46 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["cpville"]=$cpville;
                             $_SESSION["ville"]=$ville;
                             $_SESSION["sexe"]=$sexe;
+                            if(strpos($favoris, '|') !== false) {
+                                $favBDD = explode('|', $favoris);
+                            }else{
+                                $favBDD = $favoris;
+                            }
+                            if(isset($_SESSION['favoris'])) {
+                                if(strpos($_SESSION['favoris'], '|') !== false) {
+                                    $favCookies = explode('|', $_SESSION['favoris']);
+                                }else{
+                                    $favCookies = $_SESSION['favoris'];
+                                }
+                                if(is_array($favCookies)){
+                                    foreach($favCookies as $fav){
+                                        if(is_array($favBDD)){
+                                            if(!in_array($fav, $favBDD, true)){
+                                                $favoris = $favoris.'|'.$fav;
+                                            }
+                                        }else{
+                                            if($fav != $favBDD){
+                                                $favoris = $favoris.'|'.$fav;
+                                            }
+                                        }
+                                    }
+                                }else{
+                                    if(is_array($favBDD)){
+                                        if(!in_array($favCookies, $favBDD, true)){
+                                            $favoris = $favoris.'|'.$favCookies;
+                                        }
+                                    }else{
+                                        if($favCookies != $favBDD){
+                                            $favoris = $favoris.'|'.$favCookies;
+                                        }
+                                    }
+                                }
+                            }
+                            $sqlUpdate = "UPDATE users set favoris = ".$favoris." WHERE id = ".$id;
+                            $stmtUpdate = mysqli_prepare($link, $sqlUpdate);
+                            if ($stmtUpdate) {
+                                mysqli_stmt_execute($stmtUpdate);
+                            }
                             $_SESSION["favoris"]=$favoris;
 
                             // Redirection de l'utilisateur vers l'accueil
