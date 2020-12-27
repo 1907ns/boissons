@@ -108,7 +108,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                             }
                                         }else{
                                             if($fav != $favBDD){
-                                                $favoris = $favoris.'|'.$fav;
+                                                if($favoris != "") {
+                                                    $favoris = $favoris . '|' . $fav;
+                                                }else{
+                                                    $favoris = $fav;
+                                                }
                                             }
                                         }
                                     }
@@ -119,12 +123,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                         }
                                     }else{
                                         if($favCookies != $favBDD){
-                                            $favoris = $favoris.'|'.$favCookies;
+                                            if($favoris != "") {
+                                                $favoris = $favoris . '|' . $favCookies;
+                                            }else{
+                                                $favoris = $favCookies;
+                                            }
                                         }
                                     }
                                 }
                             }
-                            $sqlUpdate = "UPDATE users set favoris = ".$favoris." WHERE id = ".$id;
+                            $sqlUpdate = "UPDATE users set favoris = '".$favoris."' WHERE id = ".$id;
                             $stmtUpdate = mysqli_prepare($link, $sqlUpdate);
                             if ($stmtUpdate) {
                                 mysqli_stmt_execute($stmtUpdate);
