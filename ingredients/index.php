@@ -97,22 +97,30 @@ session_start();
             })
         }
         $(document).ajaxStop( function() {
+            let affichage = "";
             for (let i = 0; i < resSurIng.length; i++) {
                 if(i != resSurIng.length-1){
-                    document.getElementById('surIng').innerHTML += '<a href="?nom=' + resSurIng[i] + '">' + resSurIng[i] + '</a>&nbsp;&nbsp;&nbsp;<img style="max-height: 10px;" src="../assets/images/next.png"/>&nbsp;&nbsp;&nbsp;';
+                    affichage += '<a href="?nom=' + resSurIng[i] + '">' + resSurIng[i] + '</a>&nbsp;&nbsp;&nbsp;<img style="max-height: 10px;" src="../assets/images/next.png"/>&nbsp;&nbsp;&nbsp;';
                 }else{
-                    document.getElementById('surIng').innerHTML += resSurIng[i];
+                    affichage += resSurIng[i];
                 }
             }
+            document.getElementById('surIng').innerHTML = affichage;
+            affichage = "";
             for (let i = 0; i < resRec.length; i++) {
-                document.getElementById('listeRecettes').innerHTML += '<a href="../recettes/index.php?nom='+ resRec[i] + '">' + resRec[i] + '</a><br/>';
+                affichage += '<a href="../recettes/index.php?nom='+ resRec[i] + '">' + resRec[i] + '</a><br/>';
             }
+            document.getElementById('listeRecettes').innerHTML = affichage;
+            affichage = "";
             for (let i = 0; i < resSubIng.length; i++) {
-                document.getElementById('sousIng').innerHTML +='<a href="?nom=' + resSubIng[i] + '">' + resSubIng[i] + '</a><br/>';
+                affichage += '<a href="?nom=' + resSubIng[i] + '">' + resSubIng[i] + '</a><br/>';
             }
+            document.getElementById('sousIng').innerHTML = affichage;
+            affichage = "";
             for (let i = 0; i < resSupIng.length; i++) {
-                document.getElementById('supIng').innerHTML +='<a href="?nom=' + resSupIng[i] + '">' + resSupIng[i] + '</a><br/>';
+                affichage +='<a href="?nom=' + resSupIng[i] + '">' + resSupIng[i] + '</a><br/>';
             }
+            document.getElementById('supIng').innerHTML = affichage;
         });
     </script>
 </head>
