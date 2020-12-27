@@ -6,8 +6,7 @@ session_start();
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
     <meta name="keywords" content="Cafe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
 
@@ -22,7 +21,7 @@ session_start();
     <!-- online-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
     <script  src="../data/liste.js"></script>
     <script  src="../data/nom_image.js"></script>
     <script  src="../data/GestionFavoris.js"></script>
@@ -136,7 +135,46 @@ session_start();
 </footer>
 <!-- //footer -->
 
+    <script src="../assets/js/counter.js"></script>
+    <!-- start-smooth-scrolling -->
+    <script src="../assets/js/move-top.js"></script>
+    <script src="../assets/js/easing.js"></script>
+    <!--<script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
 
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script> -->
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="../assets/js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/bootstrap.js"></script>
 
 </body>
 </html>

@@ -6,7 +6,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <?php
 //Initialisation de la session
 ini_set('error_reporting',-1);
-ini_set('display_errors', 'on');
+ini_set('display_errors', 1);
 session_start();
 
 
@@ -16,7 +16,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
 //connexion à la BDD
-$link= mysqli_connect("localhost", "root", "", "boissons");
+//$link= mysqli_connect("localhost", "root", "", "boissons");
 
 // Inclusion du fichier de configuration
 require "../data/config.php";
@@ -124,11 +124,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 <head>
     <title>Projet boissons</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
     <meta name="keywords" content="Cafe Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
     <script  src="../data/liste.js"></script>
     <script>
         addEventListener("load", function () {
@@ -283,5 +282,46 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
     </footer>
     <!-- //footer -->
+
+    <script src="../assets/js/counter.js"></script>
+    <!-- start-smooth-scrolling -->
+    <script src="../assets/js/move-top.js"></script>
+    <script src="../assets/js/easing.js"></script>
+    <!--<script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script> -->
+    <!-- //end-smooth-scrolling -->
+    <!-- smooth-scrolling-of-move-up -->
+    <script>
+        $(document).ready(function () {
+            /*
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+            };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <script src="../assets/js/SmoothScroll.min.js"></script>
+    <!-- //smooth-scrolling-of-move-up -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/bootstrap.js"></script>
 
 </body>

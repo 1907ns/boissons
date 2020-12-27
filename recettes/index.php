@@ -4,6 +4,7 @@ session_start();
 include '../data/nom_image.php';
 include '../data/GestionFavoris.php';
 include '../Projet/Donnees.inc.php';
+ini_set('display_errors', 1);
 
 
 
@@ -39,7 +40,7 @@ function getID($recettes, $field, $value)
     <!-- online-fonts -->
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../assets/js/jquery-3.5.1.min.js"></script>
     <script  src="../data/liste.js"></script>
     <script  src="../data/nom_image.js"></script>
     <script  src="../data/GestionFavoris.js"></script>
@@ -99,9 +100,6 @@ function getID($recettes, $field, $value)
                                 '                    </div>'
 
                             div.innerHTML = onecocktail.trim();
-                            //document.getElementById("liste").innerHTML += '<a href="?nom=' +liste.titre[i] + '">' + liste.titre[i] + '</a><br/>';
-                            //document.getElementById("liste").innerHTML +=
-
                             divcocktail.appendChild(div);
                         }
                     }
@@ -297,5 +295,47 @@ function getID($recettes, $field, $value)
     </div>
 </footer>
 <!-- //footer -->
+
+
+<script src="../assets/js/counter.js"></script>
+<!-- start-smooth-scrolling -->
+<script src="../assets/js/move-top.js"></script>
+<script src="../assets/js/easing.js"></script>
+<!--<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script> -->
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script>
+    $(document).ready(function () {
+        /*
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+        };
+        */
+
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+
+    });
+</script>
+<script src="../assets/js/SmoothScroll.min.js"></script>
+<!-- //smooth-scrolling-of-move-up -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../assets/js/bootstrap.js"></script>
 </body>
 </html>

@@ -38,6 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="//fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <script  src="data/liste.js"></script>
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
@@ -222,10 +223,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </footer>
     <!-- //footer -->
     <!-- js -->
-    <script src="js/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!-- testimonials  Responsiveslides -->
-    <script src="js/responsiveslides.min.js"></script>
     <script>
         // You can also use"$(window).load(function() {"
         $(function () {
