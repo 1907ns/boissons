@@ -1,16 +1,5 @@
 <?php
 
-//echo(getNumRecettesFromIndex('Limonade'));
-//echo "<br/>";
-//echo getRecetteFromIngredient('Jus de mangue');
-//echo "<br/>;
-//print_r(getRecetteFromNum(51));
-//echo "<br/>";
-//echo getAllRecettes();
-//echo "<br/>";
-//echo getRecetteMatchNom("velv");
-//echo "<br/>";
-//echo getRecetteMatchNom("velc");
 
 if (isset($_POST['func'])){
     $fail = true;

@@ -256,7 +256,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         </div>
                     </div>
                     <p class="text-center text-secondary">Pas de compte?
-                        <a href="../creation_compte/index.php" data-toggle="modal" data-target="#exampleModal1" class="text-dark font-weight-bold">
+                        <a href="../creation_compte/index.php"  class="text-dark font-weight-bold">
                             Créez-en un!</a>
                     </p>
                 </form>

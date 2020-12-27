@@ -285,7 +285,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         <input type="submit" class="form-control bg-theme text-white" value="Valider">
                     </div>
                     <p class="text-center text-secondary">Déjà inscrit?
-                        <a href="../connexion/index.php" data-toggle="modal" data-target="#exampleModal1" class="text-dark font-weight-bold">
+                        <a href="../connexion/index.php"  class="text-dark font-weight-bold">
                             Connectez-vous!</a>
                     </p>
                 </form>

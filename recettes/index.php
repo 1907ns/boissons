@@ -7,7 +7,13 @@ include '../Projet/Donnees.inc.php';
 ini_set('display_errors', 1);
 
 
-
+/**
+ * Fonction permettant de récupérer l'ID d'un cocktail à l'aide de son nom
+ * @param $recettes tableau de recettes
+ * @param $field champ du tableau
+ * @param $value valeur sur laquelle pointe le champ du tableau
+ * @return false|int|string  false si le cocktail est introuvable, l'ID du cocktail sinon
+ */
 function getID($recettes, $field, $value)
 {
     foreach($recettes as $key => $product)
@@ -58,7 +64,13 @@ function getID($recettes, $field, $value)
     <script src="../data/sidebar.js">
     </script>
     <script type="text/javascript">
+        /**
+         * Fonction permettant de charger toutes les recettes, ou bien une recette spécifique si
+         * l'utilisateur a cliqué sur le bouton "Découvrir la recette"
+         * @param nomRec nom de la recette sur laquelle l'utilisateur a cliqué
+         */
         function load(nomRec){
+            //si l'utilisateur a cliqué sur aucune recette spécifique on charge tout le panel de recettes
             if(nomRec == "index"){
                 $.ajax({
                     type:'POST',
@@ -71,14 +83,14 @@ function getID($recettes, $field, $value)
                         var sidebar  = document.createElement('div');
                         sidebar.className = 'col-lg-3 border-left';
                         var sidebarhtml = ' <ul id = \'sidebar\' class=\'text-center\' style=\'background-color: mediumpurple; cursor: pointer; border-radius: 10px  \'></ul>\n'
-                        sidebar.innerHTML= sidebarhtml.trim();
+                        sidebar.innerHTML= sidebarhtml.trim(); // on insère  la sidebar
                         var divcocktail = document.createElement('div');
                         divcocktail.className='row col-lg-9';
                         cocktails.appendChild(sidebar);
                         cocktails.appendChild(divcocktail);
                         for(let i = 0; i < liste.titre.length; i++) {
                             var div = document.createElement('div');
-                            var nom_im = name_str(liste.titre[i]);
+                            var nom_im = name_cocktail(liste.titre[i]);
 
                             /** Vérifier si la photo existe */
                             if(!doesFileExist('../Projet/Photos/'+nom_im+'.jpg')){
@@ -86,8 +98,9 @@ function getID($recettes, $field, $value)
                             }else{
                                 nom_im='../Projet/Photos/'+nom_im;
                             }
-                            console.log(nom_im);
                             div.className = 'col-lg-6';
+
+                            //variable représentant un cocktail dans la liste de "tous les cocktails"
                             var onecocktail =
                                 '                    <div class="img-grid" >' +
                                 '                        <div class="Portfolio-grid1">' +
@@ -104,7 +117,7 @@ function getID($recettes, $field, $value)
                         }
                     }
                 })
-            }else{
+            }else{ //sinon on charge la recette sur laquelle l'utilisateur a cliqué
                 $.ajax({
                     type:'POST',
                     url:'../data/TraitementRecettes.php',
@@ -204,7 +217,7 @@ function getID($recettes, $field, $value)
 <!-- //header -->
 
 
-<!-- populaires -->
+
 <section class="portfolio-wthree align-w3" id="populaires">
     <div class="container-fluid">
         <div class="title-w3ls text-center">
@@ -212,6 +225,7 @@ function getID($recettes, $field, $value)
         </div>
         <?php
 
+        //si l'utilisateur a cliqué sur un cocktail spécifique on affiche le cocktail en question
         if(isset($_GET['nom'])){ ?>
                 <div class="row">
                     <div class="col-lg-3 border-left">
@@ -225,7 +239,7 @@ function getID($recettes, $field, $value)
                         echo "<h1 class='text-center' style='color: #5341b4'> Recette de le/ la ". $_GET['nom'] . "</h1>";
                         echo "<br>";
 
-                        //on affiche l'image si elle existe
+                        //on affiche l'image du cocktail si elle existe
                         if(file_exists("../Projet/Photos/" . $img . ".jpg")) {
 
                             echo "<div class='row' >";
@@ -254,6 +268,9 @@ function getID($recettes, $field, $value)
                         echo "<div class='row' >";
                         echo "<div class='col-3 justify-content-center' ></div>";
                         echo "<div class='col-6 justify-content-center' >";
+
+                        /*si le cocktail n'est pas dans les favoris de l'utilisateur,
+                         on aura un bouton 'ajouter aux favoris', sinon on ura un bouton 'supprimer des favoris'  */
                         if(!estFavoris($cocktail_id)){
                             echo '<a  href="#" class="align-content-center scroll text-capitalize serv_link btn bg-theme2" onclick="ajouterFav(' . $cocktail_id . ' ) " >AJOUTER AUX FAVORIS</a>';
                         }else{
@@ -269,9 +286,9 @@ function getID($recettes, $field, $value)
 
         <div class="row" id="cocktails">
 
-                <?php echo "
-                            <div  id = 'liste'></div>
-                            ";
+                <?php
+                    //si l'utilisateur n'a clqiué sur aucun cocktail, on affiche la liste de tous les cocktails
+                    echo " <div  id = 'liste'></div>";
                 }?>
         </div>
     </div>
@@ -301,19 +318,7 @@ function getID($recettes, $field, $value)
 <!-- start-smooth-scrolling -->
 <script src="../assets/js/move-top.js"></script>
 <script src="../assets/js/easing.js"></script>
-<!--<script>
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
 
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
-        });
-    });
-</script> -->
-<!-- //end-smooth-scrolling -->
-<!-- smooth-scrolling-of-move-up -->
 <script>
     $(document).ready(function () {
         /*

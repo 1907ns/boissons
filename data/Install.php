@@ -1,4 +1,4 @@
-<?php // Cr�ation de la base de donn�es
+<?php // Création de la base de données
 
 function query($link,$requete)
 {
@@ -8,7 +8,7 @@ function query($link,$requete)
 
 
 $mysqli=mysqli_connect('localhost', 'root', '') or die("Erreur de connexion");
-$base="Boissons";
+$base="boissons";
 $Sql="
 		DROP DATABASE IF EXISTS $base;
 		CREATE DATABASE $base;
@@ -18,7 +18,6 @@ $Sql="
 		 password VARCHAR(255) NOT NULL, phone VARCHAR(30), birthdate VARCHAR(50), 
 		 adresse VARCHAR(50), cpville VARCHAR(50),ville VARCHAR(50), sexe VARCHAR(20), favoris VARCHAR(500));
 		 
-		 INSERT INTO users VALUES (1, '','pseudotest','','','admin123','','','','','','','');
 		 
 		";
 
