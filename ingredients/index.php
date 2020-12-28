@@ -2,7 +2,11 @@
 //Initialisation de la session
 session_start();
 ?>
-
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -232,21 +236,12 @@ session_start();
     </div>
 </footer>
 <!-- //footer -->
+
+<!--Template scripts -->
     <script src="../assets/js/counter.js"></script>
     <!-- start-smooth-scrolling -->
     <script src="../assets/js/move-top.js"></script>
     <script src="../assets/js/easing.js"></script>
-    <!--<script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script> -->
     <!-- //end-smooth-scrolling -->
     <!-- smooth-scrolling-of-move-up -->
     <script>

@@ -222,48 +222,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </footer>
     <!-- //footer -->
-    <!-- js -->
-    <script>
-        // You can also use"$(window).load(function() {"
-        $(function () {
-            // Slideshow 4
-            $("#slider3").responsiveSlides({
-                auto: true,
-                pager: true,
-                nav: false,
-                speed: 500,
-                namespace: "callbacks",
-                before: function () {
-                    $('.events').append("<li>before event fired.</li>");
-                },
-                after: function () {
-                    $('.events').append("<li>after event fired.</li>");
-                }
-            });
 
-        });
-    </script>
-    <!-- //testimonials  Responsiveslides -->
-    <!-- Portfolio -->
-    <!-- //Portfolio -->
-    <!-- script for password match -->
 
-    <!-- script for password match -->
+<!--Template scripts -->
+
+
+
     <script src="assets/js/counter.js"></script>
     <!-- start-smooth-scrolling -->
     <script src="assets/js/move-top.js"></script>
     <script src="assets/js/easing.js"></script>
-    <!--<script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
 
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script> -->
     <!-- //end-smooth-scrolling -->
     <!-- smooth-scrolling-of-move-up -->
     <script>

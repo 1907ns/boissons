@@ -54,15 +54,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     //Autres parametres
-    $nomuser=trim($_POST["nomuser"]);
-    $prenomuser=trim($_POST["prenomuser"]);
-    $emailuser=trim($_POST["emailuser"]);
-    $dnaissance=trim($_POST["dnaissance"]);
-    $telephone=trim($_POST["telephone"]);
-    $adresse=trim($_POST["adresse"]);
-    $cpville=trim($_POST["cpville"]);
-    $ville=trim($_POST["ville"]);
-    $sexe=trim($_POST["sexe"]);
+    $nomuser=trim($_POST["nomuser"]); //nom de l'utilisateur
+    $prenomuser=trim($_POST["prenomuser"]); //prénom de l'utilisateur
+    $emailuser=trim($_POST["emailuser"]); //adresse mail de l'utilisateur
+    $dnaissance=trim($_POST["dnaissance"]); //date de naissance de l'utilisateur
+    $telephone=trim($_POST["telephone"]); //numéro de téléphone de l'utilisateur
+    $adresse=trim($_POST["adresse"]); //adresse de l'utilisateur
+    $cpville=trim($_POST["cpville"]); //code postal de l'utilisateur
+    $ville=trim($_POST["ville"]); //ville de l'utilisateur
+    $sexe=trim($_POST["sexe"]); //sexe de l'utilisateur
 
 
     // Verifier s'il n'y a pas d'erreurs
@@ -107,6 +107,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -139,7 +144,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 </head>
-<!-- Login modal -->
+
 <body>
     <!-- header -->
     <header class="main-header">
@@ -223,23 +228,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <form action="#" method="post">
                     <div class="form-group">
                         <label for="pseudo" class="col-form-label">Pseudo</label>
-                        <input type="text" class="form-control border" placeholder="Enes88" name="pseudo" id="pseudo"
+                        <input type="text" class="form-control border" placeholder="pseudo" name="pseudo" id="pseudo"
                                required="">
                     </div>
                     <div class="form-group">
                         <label for="nomuser" class="col-form-label">Nom</label>
-                        <input type="text" class="form-control border" placeholder="Ayata" name="nomuser" id="nomuser"
-                               required="">
+                        <input type="text" class="form-control border" placeholder="Dupont" name="nomuser" id="nomuser">
                     </div>
                     <div class="form-group">
                         <label for="prenomuser" class="col-form-label">Prénom</label>
-                        <input type="text" class="form-control border" placeholder="Enes" name="prenomuser" id="prenomuser"
-                               required="">
+                        <input type="text" class="form-control border" placeholder="Jacques" name="prenomuser" id="prenomuser">
                     </div>
                     <div class="form-group">
                         <label for="emailuser" class="col-form-label">Email</label>
                         <input type="email" class="form-control border" placeholder="username@email.com" name="emailuser"
-                               id="emailuser" required="">
+                               id="emailuser" >
                     </div>
                     <div class="form-group">
                         <label for="telephone" class="col-form-label">Numéro de tél.</label>
@@ -249,22 +252,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <div class="form-group">
                         <label for="dnaissance" class="col-form-label">Date de naissance</label>
                         <input type="text" class="form-control border" placeholder="01/01/1993" name="dnaissance"
-                               id="dnaissance" required="">
+                               id="dnaissance" >
                     </div>
                     <div class="form-group">
                         <label for="adresse" class="col-form-label">Adresse</label>
                         <input type="text" class="form-control border" placeholder="19 rue des cerisiers" name="adresse"
-                               id="adresse" required="">
+                               id="adresse" >
                     </div>
                     <div class="form-group">
                         <label for="cpville" class="col-form-label">CP </label>
-                        <input type="text" class="form-control border" placeholder="54000" name="cpville"
-                               id="cpville" required="">
+                        <input type="text" class="form-control border" placeholder="75000" name="cpville"
+                               id="cpville" >
                     </div>
                     <div class="form-group">
                         <label for="ville" class="col-form-label">Ville</label>
-                        <input type="text" class="form-control border" placeholder="Nancy" name="ville"
-                               id="ville" required="">
+                        <input type="text" class="form-control border" placeholder="Paris" name="ville"
+                               id="ville" >
                     </div>
                     <div class="form-group">
                         <label for="sexe" class="col-form-label">Sexe:</label>
@@ -278,7 +281,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                     <div class="form-group">
                         <label for="password" class="col-form-label">Mot de passe</label>
-                        <input type="password" class="form-control border" placeholder="********" name="password" id="password"
+                        <input type="password" class="form-control border" placeholder="******" name="password" id="password"
                                required="">
                     </div>
                     <div class="right-w3l">
@@ -316,17 +319,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <!-- start-smooth-scrolling -->
     <script src="../assets/js/move-top.js"></script>
     <script src="../assets/js/easing.js"></script>
-    <!--<script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script> -->
     <!-- //end-smooth-scrolling -->
     <!-- smooth-scrolling-of-move-up -->
     <script>

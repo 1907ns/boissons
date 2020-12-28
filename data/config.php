@@ -1,15 +1,14 @@
 <?php
-/* Database credentials. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-define('DB_SERVER', '127.0.0.1');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'boissons');
 
-/* Attempt to connect to MySQL database */
+define('DB_SERVER', 'localhost'); //server localhost pour l'éxécution du projet en local
+define('DB_USERNAME', 'root'); //pseudo 'root' pour la connexion à la bdd via phpMyAdmin
+define('DB_PASSWORD', '');//Mot de passe vide pour la connexion à phpMyAdmin (sur Windows)
+define('DB_NAME', 'boissons');//nom de la base de données
+
+// Tentative de connexion à la base de données MySQL
 $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-// Check connection
+// vérification de la vonnexion
 if($link === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }

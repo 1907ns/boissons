@@ -1,8 +1,4 @@
-<!--Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <?php
 //Initialisation de la session
 ini_set('error_reporting',-1);
@@ -15,8 +11,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ../index.php");
     exit;
 }
-//connexion à la BDD
-//$link= mysqli_connect("localhost", "root", "", "boissons");
 
 // Inclusion du fichier de configuration
 require "../data/config.php";
@@ -167,6 +161,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($link);
 }
 ?>
+
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -271,7 +271,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </header>
     <!-- //header -->
 
-    <!-- Login modal -->
+
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header bg-theme2">
@@ -290,7 +290,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </div>
                     <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                         <label for="password" class="col-form-label">Mot de passe</label>
-                        <input type="password" class="form-control border" placeholder="********" name="password" id="password"
+                        <input type="password" class="form-control border" placeholder="******" name="password" id="password"
                                required="">
                         <span class="help-block"><?php echo $password_err; ?></span>
                     </div>
@@ -331,21 +331,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </footer>
     <!-- //footer -->
 
+    <!-- Template scripts -->
     <script src="../assets/js/counter.js"></script>
     <!-- start-smooth-scrolling -->
     <script src="../assets/js/move-top.js"></script>
     <script src="../assets/js/easing.js"></script>
-    <!--<script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script> -->
     <!-- //end-smooth-scrolling -->
     <!-- smooth-scrolling-of-move-up -->
     <script>

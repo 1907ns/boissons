@@ -25,7 +25,11 @@ function getID($recettes, $field, $value)
 }
 
 ?>
-
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -88,17 +92,21 @@ function getID($recettes, $field, $value)
                         divcocktail.className='row col-lg-9';
                         cocktails.appendChild(sidebar);
                         cocktails.appendChild(divcocktail);
-                        for(let i = 0; i < liste.titre.length; i++) {
-                            var div = document.createElement('div');
-                            var nom_im = name_cocktail(liste.titre[i]);
 
-                            /** Vérifier si la photo existe */
+                        /* pour chaque cocktail on affiche la photo si elle existe,
+                        le titre et le bouton "Découvrir la recette"
+                        */
+                        for(let i = 0; i < liste.titre.length; i++) {
+                            var div = document.createElement('div');//création de la div contenant la photo, le nom du cocktail et le bouton 'Découvrir la recette'
+                            var nom_im = name_cocktail(liste.titre[i]); //nom de l'image sans caractère spécial pour récupérer la photo du cocktail si elle existe
+
+                            /* Vérifier si la photo existe */
                             if(!doesFileExist('../Projet/Photos/'+nom_im+'.jpg')){
                                 nom_im="../assets/images/no_image";
                             }else{
                                 nom_im='../Projet/Photos/'+nom_im;
                             }
-                            div.className = 'col-lg-6';
+                            div.className = 'col-lg-6'; //div utilisant Bootstrap
 
                             //variable représentant un cocktail dans la liste de "tous les cocktails"
                             var onecocktail =
@@ -113,7 +121,7 @@ function getID($recettes, $field, $value)
                                 '                    </div>'
 
                             div.innerHTML = onecocktail.trim();
-                            divcocktail.appendChild(div);
+                            divcocktail.appendChild(div); //on ajoute le cocktail àa la div principale
                         }
                     }
                 })
@@ -128,11 +136,14 @@ function getID($recettes, $field, $value)
                         let ing = recette.ingredients.split('|');
 
                         var cocktails = document.getElementById('cocktails');
-                        for (let i = 0; i < ing.length; i++) {
 
+                        //récupération  des ingrédients de la recette
+                        for (let i = 0; i < ing.length; i++) {
                             document.getElementById("ingredientsPrep").innerHTML += ing[i] + "<br/>";
                         }
-                        document.getElementById("recette").innerHTML = recette.preparation;
+                        document.getElementById("recette").innerHTML = recette.preparation; //récupération de la préparation de la recette
+
+                        //lien pour chaque ingrédient de la recette
                         for(let i = 0; i < recette.index.length; i++){
                             document.getElementById("ingredients").innerHTML += '<a href="../ingredients/index.php?nom=' + recette.index[i] + '">' + recette.index[i] + "</a><br/>";
                         }
@@ -143,6 +154,7 @@ function getID($recettes, $field, $value)
 
     </script>
 </head>
+<!--On charge une recette spécifique si elle est définie, on charge aussi la sidebar pour la navigation entre hiérarchies -->
 <body onload="load('<?php if(isset($_GET['nom'])){echo preg_replace('/\'/', '\\\'', $_GET['nom']);}else{echo "index";}?>'); sidebar();">
 
 
@@ -313,6 +325,7 @@ function getID($recettes, $field, $value)
 </footer>
 <!-- //footer -->
 
+<!--Template scripts -->
 
 <script src="../assets/js/counter.js"></script>
 <!-- start-smooth-scrolling -->

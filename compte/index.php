@@ -33,48 +33,56 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         $nom='Non renseigné';
     }
 
+    //prenom de l'utilisateur
     if(isset($_SESSION["prenomuser"])){
         $prenom=$_SESSION["prenomuser"];
     }else{
         $prenom='Non renseigné';
     }
 
+    //e-mail de l'utilisateur
     if(isset($_SESSION["emailuser"])){
         $email=$_SESSION["emailuser"];
     }else{
         $email='Non renseigné';
     }
 
+    //numéro de téléphone de l'utilisateur
     if(isset($_SESSION["telephone"])){
         $tel=$_SESSION["telephone"];
     }else{
         $tel='Non renseigné';
     }
 
+    //date de naissance de l'utilisateur
     if(isset($_SESSION["dnaissance"])){
         $dnaissance=$_SESSION["dnaissance"];
     }else{
         $dnaissance='Non renseigné';
     }
 
+    //adresse de l'utilisateur
     if(isset($_SESSION["adresse"])){
         $adresse=$_SESSION["adresse"];
     }else{
         $adresse='Non renseigné';
     }
 
+    //code postal de l'utilisateur
     if(isset($_SESSION["cpville"])){
         $cpville=$_SESSION["cpville"];
     }else{
         $cpville='Non renseigné';
     }
 
+    //ville de l'utilisateur
     if(isset($_SESSION["ville"])){
         $ville=$_SESSION["ville"];
     }else{
         $ville='Non renseigné';
     }
 
+    //sexe de l'utilisateur
     if(isset($_SESSION["sexe"])){
         $sexe=$_SESSION["sexe"];
     }else{
@@ -130,15 +138,15 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         }
 
         //Autres parametres
-        $nomuser=trim($_POST["nomuser"]);
-        $prenomuser=trim($_POST["prenomuser"]);
-        $emailuser=trim($_POST["emailuser"]);
-        $dnaissance=trim($_POST["dnaissance"]);
-        $telephone=trim($_POST["telephone"]);
-        $adresse=trim($_POST["adresse"]);
-        $cpville=trim($_POST["cpville"]);
-        $ville=trim($_POST["ville"]);
-        $sexe=trim($_POST["sexe"]);
+        $nomuser=trim($_POST["nomuser"]); //nom de l'utilisateur
+        $prenomuser=trim($_POST["prenomuser"]); //prenom de l'utilisateur
+        $emailuser=trim($_POST["emailuser"]); //adresse mail de l'utilisateur
+        $dnaissance=trim($_POST["dnaissance"]); //date de naissance de l'utilisateur
+        $telephone=trim($_POST["telephone"]); //numéro de téléphone de l'utilisateur
+        $adresse=trim($_POST["adresse"]); //adresse de l'utilisateur
+        $cpville=trim($_POST["cpville"]); //code postal de l'utilisateur
+        $ville=trim($_POST["ville"]); //ville de l'utilisateur
+        $sexe=trim($_POST["sexe"]); //sexe de l'utilisateur
 
 
         // Verifier s'il n'y a pas d'erreurs
@@ -182,7 +190,11 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
 
 
-
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -215,7 +227,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i%22" rel="stylesheet">
 </head>
-<!-- Login modal -->
+
 <body>
 
     <!-- header -->
@@ -305,17 +317,17 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     <div class="form-group">
                         <label for="nomuser" class="col-form-label">Nom</label>
                         <input type="text" class="form-control border" value="<?php echo $nom ?>" name="nomuser" id="nomuser"
-                               required="">
+                               >
                     </div>
                     <div class="form-group">
                         <label for="prenomuser" class="col-form-label">Prénom</label>
                         <input type="text" class="form-control border" value="<?php echo $prenom ?>" name="prenomuser" id="prenomuser"
-                               required="">
+                               >
                     </div>
                     <div class="form-group">
                         <label for="emailuser" class="col-form-label">Email</label>
                         <input type="email" class="form-control border" value="<?php echo $email ?>" name="emailuser"
-                               id="emailuser" required="">
+                               id="emailuser" >
                     </div>
                     <div class="form-group">
                         <label for="telephone" class="col-form-label">Numéro de tél.</label>
@@ -325,22 +337,22 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     <div class="form-group">
                         <label for="dnaissance" class="col-form-label">Date de naissance</label>
                         <input type="text" class="form-control border" value="<?php echo $dnaissance ?>" name="dnaissance"
-                               id="dnaissance" required="">
+                               id="dnaissance" >
                     </div>
                     <div class="form-group">
                         <label for="adresse" class="col-form-label">Adresse</label>
                         <input type="text" class="form-control border" value="<?php echo $adresse ?>" name="adresse"
-                               id="adresse" required="">
+                               id="adresse" >
                     </div>
                     <div class="form-group">
                         <label for="cpville" class="col-form-label">CP </label>
                         <input type="text" class="form-control border" value="<?php echo $cpville ?>" name="cpville"
-                               id="cpville" required="">
+                               id="cpville" >
                     </div>
                     <div class="form-group">
                         <label for="ville" class="col-form-label">Ville</label>
                         <input type="text" class="form-control border" value="<?php echo $ville ?>" name="ville"
-                               id="ville" required="">
+                               id="ville" >
                     </div>
                     <div class="form-group">
                         <label for="sexe" class="col-form-label">Sexe:</label>
@@ -355,7 +367,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
                     <div class="form-group">
                         <label for="password" class="col-form-label">Choisissez un nouveau mot de passe, ou entrez l'actuel</label>
-                        <input type="password" class="form-control border" placeholder="********" name="password" id="password"
+                        <input type="password" class="form-control border" placeholder="******" name="password" id="password"
                                required="">
                     </div>
                     <div class="right-w3l">
@@ -409,26 +421,12 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
         });
     </script>
-    <!-- //testimonials  Responsiveslides -->
 
-
+    <!-- Template scripts-->
     <script src="../assets/js/counter.js"></script>
     <!-- start-smooth-scrolling -->
     <script src="../assets/js/move-top.js"></script>
     <script src="../assets/js/easing.js"></script>
-    <!--<script>
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-
-                $('html,body').animate({
-                    scrollTop: $(this.hash).offset().top
-                }, 1000);
-            });
-        });
-    </script> -->
-    <!-- //end-smooth-scrolling -->
-    <!-- smooth-scrolling-of-move-up -->
     <script>
         $(document).ready(function () {
             /*

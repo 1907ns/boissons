@@ -2,7 +2,11 @@
 //Initialisation de la session
 session_start();
 ?>
-
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -122,7 +126,8 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i%22" rel="stylesheet">
 </head>
-<!-- Login modal -->
+
+<!-- On charge les résultats de la recherche -->
 <body  onload="afficherResultats('<?php if(isset($_GET['name'])){echo preg_replace('/\'/', '\\\'', $_GET['name']);}?>', '../data/');" >
 
 <!-- header -->
@@ -215,21 +220,13 @@ session_start();
 </footer>
 <!-- //footer -->
 
+<!--Template scripts -->
+
 <script src="../assets/js/counter.js"></script>
 <!-- start-smooth-scrolling -->
 <script src="../assets/js/move-top.js"></script>
 <script src="../assets/js/easing.js"></script>
-<!--<script>
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
 
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
-        });
-    });
-</script> -->
 <!-- //end-smooth-scrolling -->
 <!-- smooth-scrolling-of-move-up -->
 <script>

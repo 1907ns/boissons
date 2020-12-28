@@ -50,7 +50,7 @@ function getFav(){
             if (result.fail == "true") {
                 alert("Erreur de chargement des favoris");
             } else {
-                if(result.fav[0]===""){ //s'il n'y a pas de cocktails en favoris, on affiche cette phrase.
+                if(result.fav[0]==="" || result.fav.length===0){ //s'il n'y a pas de cocktails en favoris, on affiche cette phrase.
                     document.getElementById("ResFav").innerHTML +="<p class='text-center'>Vous n'avez pas de cocktails favoris </p>";
                 }else{
                     document.getElementById("ResFav").innerHTML +='<ul>';
