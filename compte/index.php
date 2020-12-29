@@ -5,7 +5,7 @@ session_start();
 require "../data/config.php";
 mysqli_report(MYSQLI_REPORT_ALL);
 
-$password_err = $username_err= " ";
+
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
     $pseudo=" ";
@@ -20,74 +20,56 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     $sexe=" ";
     $password=" ";
 
+    $password_err = $username_err= "";
+
     //pseudo
     if(isset($_SESSION["pseudo"])){
         $pseudo=$_SESSION["pseudo"];
-    }else{
-        $pseudo='Non renseigné';
     }
 
     //nom de l'utilisateur
     if(isset($_SESSION["nomuser"])){
         $nom=$_SESSION["nomuser"];
-    }else{
-        $nom='Non renseigné';
     }
 
     //prenom de l'utilisateur
     if(isset($_SESSION["prenomuser"])){
         $prenom=$_SESSION["prenomuser"];
-    }else{
-        $prenom='Non renseigné';
     }
 
     //e-mail de l'utilisateur
     if(isset($_SESSION["emailuser"])){
         $email=$_SESSION["emailuser"];
-    }else{
-        $email='Non renseigné';
     }
 
     //numéro de téléphone de l'utilisateur
     if(isset($_SESSION["telephone"])){
         $tel=$_SESSION["telephone"];
-    }else{
-        $tel='Non renseigné';
     }
 
     //date de naissance de l'utilisateur
     if(isset($_SESSION["dnaissance"])){
         $dnaissance=$_SESSION["dnaissance"];
-    }else{
-        $dnaissance='Non renseigné';
     }
 
     //adresse de l'utilisateur
     if(isset($_SESSION["adresse"])){
         $adresse=$_SESSION["adresse"];
-    }else{
-        $adresse='Non renseigné';
     }
 
     //code postal de l'utilisateur
     if(isset($_SESSION["cpville"])){
         $cpville=$_SESSION["cpville"];
-    }else{
-        $cpville='Non renseigné';
     }
 
     //ville de l'utilisateur
     if(isset($_SESSION["ville"])){
         $ville=$_SESSION["ville"];
-    }else{
-        $ville='Non renseigné';
     }
 
     //sexe de l'utilisateur
     if(isset($_SESSION["sexe"])){
         $sexe=$_SESSION["sexe"];
-    }else{
-        $sexe='Non renseigné';
     }
 
 
@@ -129,7 +111,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             }
         }
 
-        // Vaidation du mot de passe
+        // Validation du mot de passe
         if(empty(trim($_POST["password"]))){
             $password_err = "Entrez un mot de passe SVP.";
         } elseif(strlen(trim($_POST["password"])) < 6){
@@ -154,9 +136,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         if(empty($username_err) && empty($password_err)){
 
             // Update de la BDD
-
             $sql= "UPDATE users SET pseudo =?, password = ?, nom=?, prenom=?, mail=?, birthdate=?, phone=?, adresse=?, cpville=?, ville=?, sexe=? WHERE id = ?";
             if($stmt = mysqli_prepare($link, $sql)){
+
                 // Bind variables
                 mysqli_stmt_bind_param($stmt, "sssssssssssi", $param_username, $param_password,$nomuser, $prenomuser, $emailuser, $dnaissance, $telephone, $adresse, $cpville, $ville, $sexe, $param_id);
 
@@ -182,7 +164,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
         // Fermeture connexion
         mysqli_close($link);
     }
-    
+
 
 } ?>
 
