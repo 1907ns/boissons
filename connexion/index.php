@@ -152,8 +152,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Fermeture statement
             mysqli_stmt_close($stmt);
-        }else{
-            echo 'error';
         }
     }
 

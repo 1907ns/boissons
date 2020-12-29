@@ -5,6 +5,7 @@ session_start();
 require "../data/config.php";
 mysqli_report(MYSQLI_REPORT_ALL);
 
+$password_err = $username_err= " ";
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 
     $pseudo=" ";
@@ -176,8 +177,6 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 // Fermeture statement
                 mysqli_stmt_close($stmt);
             }
-        }else{
-            echo $username_err. ' '. $password_err;
         }
 
         // Fermeture connexion
@@ -309,10 +308,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
             <div class="modal-body">
                 <form action="#" method="post">
-                    <div class="form-group">
+                    <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                         <label for="pseudo" class="col-form-label">Pseudo</label>
                         <input type="text" class="form-control border" value="<?php echo $pseudo ?>" name="pseudo" id="pseudo"
                                required="">
+                        <span class="help-block"><?php echo $username_err; ?></span>
                     </div>
                     <div class="form-group">
                         <label for="nomuser" class="col-form-label">Nom</label>
@@ -365,10 +365,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </select>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                         <label for="password" class="col-form-label">Choisissez un nouveau mot de passe, ou entrez l'actuel</label>
                         <input type="password" class="form-control border" placeholder="******" name="password" id="password"
                                required="">
+                        <span class="help-block"><?php echo $password_err; ?></span>
                     </div>
                     <div class="right-w3l">
                         <input type="submit" class="form-control bg-theme text-white" value="Modifier mes informations">
