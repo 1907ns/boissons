@@ -51,6 +51,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script  src="../data/liste.js"></script>
     <script  src="../data/nom_image.js"></script>
     <script  src="../data/GestionFavoris.js"></script>
@@ -64,7 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         }
     </script>
     <title><?php if(isset($_GET['nom'])){echo $_GET['nom'];}else{echo "Toutes nos recettes";}?></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="../data/sidebar.js">
     </script>
     <script type="text/javascript">
