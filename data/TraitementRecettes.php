@@ -1,6 +1,6 @@
 <?php
 
-
+//Cette partie permet d'utiliser différentes fonctions par rapport au type de POST envoyé
 if (isset($_POST['func'])){
     $fail = true;
     switch ($_POST['func']){
@@ -44,6 +44,7 @@ if (isset($_POST['func'])){
     }
 }
 
+//Cette fonction permet de récupérer les numéros de recettes contenant un index donné
 function getNumRecettesFromIndex($index){
     $Recettes=array();
     include '../Projet/Donnees.inc.php';
@@ -68,6 +69,7 @@ function getNumRecettesFromIndex($index){
     echo json_encode($res);
 }
 
+//Cette fonction permet d'obtenir la liste des recettes contenant un ingrédient donné
 function getRecetteFromIngredient($ingredient){
     //preg_replace('/\'/', $ingredient, '\\\'');
     $Recettes=array();
@@ -92,6 +94,7 @@ function getRecetteFromIngredient($ingredient){
     //echo json_encode($res);
 }
 
+//Cette fonction permet d'obtenir une recette en fonction de son id
 function getRecetteFromNum($index){
     $Recettes=array();
     include '../Projet/Donnees.inc.php';
@@ -107,6 +110,7 @@ function getRecetteFromNum($index){
     echo json_encode($res);
 }
 
+//Cette fonction permet d'obtenir toutes les recettes
 function getAllRecettes(){
     $Recettes=array();
     include '../Projet/Donnees.inc.php';
@@ -122,6 +126,7 @@ function getAllRecettes(){
     echo json_encode($res);
 }
 
+//Cette fonction permet d'obtenir une recette à partir de son nom
 function getRecetteFromNom($nom){
     $Recettes = array();
     include '../Projet/Donnees.inc.php';
@@ -154,6 +159,7 @@ function getRecetteFromNom($nom){
     echo json_encode($res);
 }
 
+//Cette fonction permet de récupérer une recette en fonction d'un match donnée, grâce à l'utilisation de regex
 function getRecetteMatchNom($match){
     $match = preg_replace('/\([^*]*\)/', '', $match);
     $Recettes = array();

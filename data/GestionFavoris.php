@@ -1,9 +1,12 @@
 <?php
+
+//Si la session n'est pas accessible, alors elle est lancée
 if(session_id() == ''){
     session_start();
 }
-if(isset($_POST['func'])){
 
+//Cette partie permet d'utiliser différentes fonctions par rapport au type de POST envoyé
+if(isset($_POST['func'])){
     $fail = true;
     switch ($_POST['func']){
         case 'get':
@@ -28,6 +31,7 @@ if(isset($_POST['func'])){
     }
 }
 
+//Cette fonction permet de récupérer les favoris de l'utilisateur connecté ou non, respectivement à partir de la base de données ou des cookies de session
 function getFavoris(){
     $res = '{"fail":"false", "fav":[';
     $favoris = "";
@@ -77,6 +81,7 @@ function getFavoris(){
     echo json_encode($res);
 }
 
+//Cette fonction permet d'ajouter un favoris à un utilisateur connecté ou non, respectivement en base de données ou dans les cookies de session
 function ajoutFavoris($id){
     if(isset($_SESSION["loggedin"])) {
         if ($_SESSION["loggedin"] == true) {
@@ -125,6 +130,7 @@ function ajoutFavoris($id){
     }
 }
 
+//Cette fonction permet de supprimer un favoris pour un utilisateur connecté ou non, respectivement en base de données ou dans les cookies de session
 function supprFavoris($id){
     $favUpdate = "";
     if(isset($_SESSION["loggedin"])) {
@@ -193,6 +199,7 @@ function supprFavoris($id){
     }
 }
 
+//Cette fonction permet de détecter si une recette dont l'id est donné en paramètre est dans les favoris de l'utilisateur ou non
 function estFavoris($id){
     $ok = false;
     if(isset($_SESSION['favoris'])) {

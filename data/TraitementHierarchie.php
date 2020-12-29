@@ -10,7 +10,7 @@
 //echo "<br/><br/>";
 //echo getIngredientMatchNom("Black velvet");
 
-
+//Cette partie permet d'utiliser différentes fonctions par rapport au type de POST envoyé
 if (isset($_POST['func'])){
     $fail = true;
     switch ($_POST['func']){
@@ -109,6 +109,8 @@ function getSurCategories($nomSource){
     echo json_encode($res);
 }
 
+
+//Cette fonction permet d'obtenir toutes les sur-catégories d'un élément
 function getSupCategories($nomSource){
     //preg_replace('/\'/', $nomSource, '\\\'');
     $Hierarchie = array();
@@ -128,6 +130,7 @@ function getSupCategories($nomSource){
     echo json_encode($res);
 }
 
+//Cette fonction permet d'obtenir les ingrédients ressemblant à un match donné, grâce à l'utilisation de regex
 function getIngredientMatchNom($match){
     preg_replace('/\'/', $match, '\\\'');
     $Hierarchie = array();
@@ -149,6 +152,5 @@ function getIngredientMatchNom($match){
         $res = substr_replace($res, "", -1);
     }
     $res = $res.']}';
-    //return $res;
     echo json_encode($res);
 }
