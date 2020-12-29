@@ -396,10 +396,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </footer>
     <!-- //footer -->
-    <!-- js -->
-    <script src="../assets/js/jquery-2.2.3.min.js"></script>
-    <!-- //js -->
-    <!-- testimonials  Responsiveslides -->
+    <!-- Template scripts-->
     <script src="../assets/js/responsiveslides.min.js"></script>
     <script>
         // You can also use"$(window).load(function() {"
