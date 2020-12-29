@@ -21,7 +21,11 @@ $Sql="
 		 
 		";
 
+echo "Base de données installée avec succès. Si 'Query est vide' est affiché, c'est que tout s'est bien passé.";
+
+echo "<br>";
 foreach(explode(';',$Sql) as $Requete) query($mysqli,$Requete);
 
 mysqli_close($mysqli);
+
 ?>
