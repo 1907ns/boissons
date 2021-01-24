@@ -8,4 +8,5 @@ Les technologies utilisées pour le développement de la plateforme sont les sui
 
 Le template source provient de https://w3layouts.com/.
 
-Ce projet est hébergé en ligne et peut être consulté ici: https://nscorp.fr
+Ce projet est hébergé en ligne et peut être consulté ici: https://nscorp.fr/boissons
+
